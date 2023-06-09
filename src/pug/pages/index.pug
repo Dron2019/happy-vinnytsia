@@ -1,0 +1,30 @@
+
+extends ../layout/main
+block variable
+
+block meta
+  title= 'Rams Garden - Bahçelievler'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+block content
+  .container.container--full-screen.home-screen1
+    +responsiveImage([
+      './assets/images/home/home-page-screen1.jpg 1920',
+      './assets/images/home/home-page-screen1@75x.jpg 1240',
+      './assets/images/home/home-page-screen1@05x.jpg 600',
+      './assets/images/home/home-page-screen1@05x.jpg 320',
+    ], 'Альтернативний текст', true)
+    div
+      .text-style-h-1.text-white.text-uppercase Твої мрії,
+      .text-style-h-1.text-white.text-uppercase твої цінності,
+      .text-style-h-1.text-white.text-uppercase твій Щасливий
+      button(type="button" class="button-30") Обрати квартиру
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug
