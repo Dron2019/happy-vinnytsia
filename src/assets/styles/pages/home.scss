@@ -18,6 +18,13 @@
     }
 }
 
+
+@import '../parts/home/home-grid-block';
+@import '../parts/home/genplan';
+@import '../parts/home/home-gallery';
+
+
+
 .button-30 {
     background: var(--color-white);
     --color: var(--button-color);
@@ -82,8 +89,9 @@
         --color: var(--color-white);
     }
   
-    &--red {
-      background: var(--color-red);
+    &--blue {
+      background: #001A58;
+      color: var(--color-white);
     }
     svg {
             position: relative;

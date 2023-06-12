@@ -118,6 +118,13 @@ body.focus-tab--enable *:focus {
   outline-width: 7px;
 }
 
+button {
+	background: none;
+	border: navajowhite;
+	margin: 0;
+	padding: 0;
+}
+
 button:hover,
 a:hover,
 select:hover {
@@ -197,3 +204,5 @@ input[type=number]::-webkit-outer-spin-button {
 .text-uppercase {
 	text-transform: uppercase;
 }
+
+@import '../components/new-card';

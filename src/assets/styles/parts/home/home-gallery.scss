@@ -1,0 +1,45 @@
+.home-gallery {
+    height: auto;
+    &__title {
+        margin-bottom: 40px;
+        width: 100%;
+        text-align: center;
+    }
+    &>.button-30 {
+        margin: 40px auto 0 auto;
+    }
+    &__container {
+        position: relative;
+    }
+    &__arrow {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+        z-index: 2;
+        padding: 0 5vw;
+        &-prev {
+            cursor: pointer;
+        }
+        &-next {
+            cursor: pointer;
+
+            transform-origin: center;
+            transform-box: fill-box;
+            transform: rotate(180deg);
+        }
+    }
+    .swiper-slide {
+        position: relative;
+        &>div {
+            position: absolute;
+            top: 6vh;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+    }
+}

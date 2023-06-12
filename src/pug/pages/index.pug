@@ -1,6 +1,18 @@
 
 extends ../layout/main
 block variable
+  -
+    var genplan = [
+      'Підземні паркінги',
+      'Лікарня',
+      'Паркова зона',
+      'Зона барбекю',
+      'Зона для вигулу собак',
+      'Зелені зони',
+      'Дитячі майданчики',
+      'Спортивні майданчики',
+      'Workout зони',
+    ]
 
 block meta
   title= 'Rams Garden - Bahçelievler'
@@ -23,6 +35,98 @@ block content
       .text-style-h-1.text-white.text-uppercase твої цінності,
       .text-style-h-1.text-white.text-uppercase твій Щасливий
       button(type="button" class="button-30") Обрати квартиру
+  .container.home-grid-block
+    .home-grid-block__img1
+      +responsiveImage([
+        './assets/images/home/home-grid-block/home-grid-block1.jpg 1920',
+        './assets/images/home/home-grid-block/home-grid-block1@075x.jpg 1240',
+        './assets/images/home/home-grid-block/home-grid-block1@05x.jpg 600',
+        './assets/images/home/home-grid-block/home-grid-block1@05x.jpg 320',
+      ], 'Альтернативний текст', true)
+    .home-grid-block__text
+      +responsiveImage([
+        './assets/images/home/home-grid-block/home-grid-block-text.jpg 1920',
+        './assets/images/home/home-grid-block/home-grid-block-text@075x.jpg 1240',
+        './assets/images/home/home-grid-block/home-grid-block-text@05x.jpg 600',
+        './assets/images/home/home-grid-block/home-grid-block-text@05x.jpg 320',
+      ], 'Альтернативний текст', true)
+      .text-style-h-1.text-blue.text-uppercase Дивитися квартири
+      .text-style-h-4.text-blue Вільне планування - це чудова можливість не купувати квартиру з певною кількістю та типологією кімнат, а самостійно вирішити які саме зони з'являться на цій площі, визначити їх метраж та конфігурацію. 
+      a(href="#" class="button-30 button-30--blue") Перейти до планувань
+    .home-grid-block__img2
+      +responsiveImage([
+        './assets/images/home/home-grid-block/home-grid-block2.jpg 1920',
+        './assets/images/home/home-grid-block/home-grid-block2@075x.jpg 1240',
+        './assets/images/home/home-grid-block/home-grid-block2@05x.jpg 600',
+        './assets/images/home/home-grid-block/home-grid-block2@05x.jpg 320',
+      ], 'Альтернативний текст', true)
+  .container.container--full-screen.genplan
+    <svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <rect width="1920" height="1080" fill="url(#pattern0)"/>
+      <path opacity="0.6" d="M942.013 382.5H993.5C994.328 382.5 995 381.828 995 381V152C995 150.895 994.105 150 993 150H975.5C974.395 150 973.5 149.105 973.5 148V146C973.5 144.895 972.605 144 971.5 144H961C959.895 144 959 144.895 959 146V148C959 149.105 958.105 150 957 150H943.487C942.388 150 941.494 150.888 941.487 151.987L940.013 380.487C940.006 381.597 940.903 382.5 942.013 382.5Z" fill="#4AC1F3" stroke="white"/>
+      <path opacity="0.6" d="M992.5 693V649V415.5C992.5 414.395 991.605 413.5 990.5 413.5H977.25C976.284 413.5 975.5 412.716 975.5 411.75C975.5 410.784 974.716 410 973.75 410H961.25C960.284 410 959.5 410.784 959.5 411.75C959.5 412.716 958.716 413.5 957.75 413.5H941C939.895 413.5 939 414.354 939 415.459V626C939 629.17 940.963 641.436 941.972 647.336C941.991 647.448 942 647.557 942 647.67V693C942 694.105 942.895 695 944 695H990.5C991.605 695 992.5 694.105 992.5 693Z" fill="#4AC1F3" stroke="white"/>
+      <path opacity="0.6" d="M1326.5 223H1343.5C1344.6 223 1345.5 222.105 1345.5 221V113C1345.5 111.895 1344.6 111 1343.5 111H1339H1320.75C1319.75 111 1318.9 110.258 1318.77 109.264L1318.24 105.273C1318.1 104.264 1317.23 103.516 1316.21 103.538L1108.46 107.958C1107.37 107.981 1106.5 108.87 1106.5 109.958V231.5C1106.5 232.605 1107.4 233.5 1108.5 233.5H1207.89C1208.58 233.5 1209.22 233.145 1209.59 232.56L1213.41 226.44C1213.78 225.855 1214.42 225.5 1215.11 225.5H1278.5C1279.6 225.5 1280.5 226.395 1280.5 227.5V231.5C1280.5 232.605 1281.4 233.5 1282.5 233.5H1284C1285.1 233.5 1286 234.395 1286 235.5C1286 236.605 1286.9 237.5 1288 237.5H1322.5C1323.6 237.5 1324.5 236.605 1324.5 235.5V225C1324.5 223.895 1325.4 223 1326.5 223Z" fill="#4AC1F3" stroke="white"/>
+      <defs>
+      <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+      <use xlink:href="#image0_1003_11806" transform="scale(0.000244141 0.000434028)"/>
+      </pattern>
+      <image id="image0_1003_11806" width="4096" height="2304" xlink:href="./assets/images/home/genplan/genplan-image.jpg">
+      </defs>
+      </svg>
+    .genplan__legend
+      .text-style-h-1.text-white Генплан
+      each val in genplan
+        button.genplan__legend-point 
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            g.when-active <path fill-rule="evenodd" clip-rule="evenodd" d="M12 13.2C15.9764 13.2 19.2 9.97645 19.2 6H24C24 12.6274 18.6274 18 12 18C5.37258 18 0 12.6274 0 6H4.8C4.8 9.97645 8.02355 13.2 12 13.2Z" fill="#4AC1F3"/>
+            <mask id="path-2-inside-1_1003_15701" fill="white">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 10.8C8.02355 10.8 4.8 14.0235 4.8 18L0 18C5.79387e-07 11.3726 5.37258 6 12 6C18.6274 6 24 11.3726 24 18L19.2 18C19.2 14.0235 15.9765 10.8 12 10.8Z"/>
+            </mask>
+            g.when-innactive <path d="M4.8 18L4.8 19L5.8 19L5.8 18L4.8 18ZM0 18L-1 18L-1 19L-8.74228e-08 19L0 18ZM24 18L24 19L25 19L25 18L24 18ZM19.2 18L18.2 18L18.2 19L19.2 19L19.2 18ZM5.8 18C5.8 14.5758 8.57584 11.8 12 11.8L12 9.8C7.47127 9.8 3.8 13.4713 3.8 18L5.8 18ZM4.8 17L8.74228e-08 17L-8.74228e-08 19L4.8 19L4.8 17ZM1 18C1 11.9249 5.92487 7 12 7L12 5C4.8203 5 -0.999999 10.8203 -1 18L1 18ZM12 7C18.0751 7 23 11.9249 23 18L25 18C25 10.8203 19.1797 5 12 5L12 7ZM24 17L19.2 17L19.2 19L24 19L24 17ZM12 11.8C15.4242 11.8 18.2 14.5758 18.2 18L20.2 18C20.2 13.4713 16.5287 9.8 12 9.8L12 11.8Z" fill="white" mask="url(#path-2-inside-1_1003_15701)"/>
+            </svg>
+          span #{val}
+  .container.container--full-screen.home-gallery 
+    .text-style-h-1.text-new-blue.text-uppercase.home-gallery__title Галерея
+    .home-gallery__container.swiper-container
+      .home-gallery__arrow
+        <svg class="home-gallery__arrow-prev" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="49.5" stroke="white"/>
+          <circle cx="50" cy="50" r="46" fill="white"/>
+          <rect x="67" y="50.5" width="30" height="1" transform="rotate(-180 67 50.5)" fill="#001A58"/>
+          <path d="M37.3495 50.2122L39.9685 55.7995C40.1992 56.2916 39.5898 56.7465 39.1836 56.3854L32.4204 50.3737C32.1967 50.1748 32.1967 49.8252 32.4204 49.6263L39.1836 43.6146C39.5898 43.2535 40.1992 43.7084 39.9685 44.2005L37.3495 49.7878C37.2865 49.9222 37.2864 50.0778 37.3495 50.2122Z" fill="#001A58"/>
+          </svg>
+        <svg class="home-gallery__arrow-next" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="49.5" stroke="white"/>
+          <circle cx="50" cy="50" r="46" fill="white"/>
+          <rect x="67" y="50.5" width="30" height="1" transform="rotate(-180 67 50.5)" fill="#001A58"/>
+          <path d="M37.3495 50.2122L39.9685 55.7995C40.1992 56.2916 39.5898 56.7465 39.1836 56.3854L32.4204 50.3737C32.1967 50.1748 32.1967 49.8252 32.4204 49.6263L39.1836 43.6146C39.5898 43.2535 40.1992 43.7084 39.9685 44.2005L37.3495 49.7878C37.2865 49.9222 37.2864 50.0778 37.3495 50.2122Z" fill="#001A58"/>
+          </svg>
+      .swiper-wrapper
+        .swiper-slide
+          .text-style-h-1.text-white ПАРК
+          img(src="./assets/images/home/home-page-screen1.jpg")
+    a(href="#").button-30.button-30--blue Дивитися більше фото
+  .container
+    .text-style-h-1.text-new-blue.text-uppercase Новини та акції
+    .news-card.news
+      img(src="./assets/images/home/home-page-screen1.jpg").news-card__image
+      .news-card__text
+        .news-card__label Новина
+        .news-card__title Старт продаж нових секцій
+        p Гарна новина! Розпочато продаж квартир у 7 секції в ЖК Щасливий у Дніпрі. Встигніть забронювати квартири площею від 40.7 м2 за кращою ціною. 
+        .news-card__date 
+          +svg('calendar')
+          span 24.02.2023
+    .news-card.promotion
+      img(src="./assets/images/home/home-page-screen1.jpg").news-card__image
+      .news-card__text
+        .news-card__label Новина
+        .news-card__title Старт продаж нових секцій
+        p Гарна новина! Розпочато продаж квартир у 7 секції в ЖК Щасливий у Дніпрі. Встигніть забронювати квартири площею від 40.7 м2 за кращою ціною. 
+        .news-card__date 
+          +svg('calendar')
+          span 24.02.2023
+
 block footer
   include ../includes/footer.pug
 

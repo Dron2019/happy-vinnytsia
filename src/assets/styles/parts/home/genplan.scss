@@ -1,0 +1,40 @@
+.genplan {
+    position: relative;
+    height: 100vh;
+    &__legend {
+        background-color: var(--color-new-blue);
+        border-radius: 12px 0px 0px 12px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 485px;
+        padding-left: 80px;
+        padding-right: 80px;
+        padding-top: 4.25vh;
+        padding-bottom: 4.25vh;
+        &>:nth-child(n+2) {
+            margin-top: 4vh;
+        }
+        &-point {
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 140%;
+            color: var(--color-white);
+            svg {
+                margin-right: 24px;
+            }
+            .when-active {
+                display: none;
+            }
+            &.active {
+                .when-innactive {
+                    display: none;
+                }
+                .when-active {
+                    display: initial;
+                }
+            }
+        }
+    }
+}
