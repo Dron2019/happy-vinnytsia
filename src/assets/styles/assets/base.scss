@@ -16,6 +16,9 @@
 
 .container {
 	@include wrapper();
+	&~& {
+		margin-top: 150px;
+	}
 }
 
 

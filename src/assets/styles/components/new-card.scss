@@ -1,11 +1,13 @@
 .news-card {
     @include row-flex();
+    text-decoration: none;
 
     &__image {
         @include size(12);
         @include shift(0);
         border-radius: 10px;
-        overflow: hidden
+        overflow: hidden;
+        object-fit: cover
     }
     &__text {
         @include size(12);
@@ -13,15 +15,21 @@
         background: rgba(0, 26, 88, 0.1);
         border-radius: 10px;
         padding: 20px;
+        display: flex;
+        flex-direction: column;
         p {
             color: rgba($color-new-blue, 0.7);
+            margin-bottom: 13vh;
         }
 
     }
     &__title {
         text-transform: uppercase;
-        @include text-style-h-1;
+        font-size: 1.6vw;
+        font-weight: 700;
+        line-height: 140%;
         color: var(--color-new-blue);
+        margin-bottom: 20px;
     }
     &__label {
         border-radius: 32px;
@@ -35,6 +43,7 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
+        margin-bottom: 10px;
         &:before {
             content: '';
             display: inline-block;
@@ -52,6 +61,20 @@
         background-color: #308A38;
     }
     &__date {
-
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 140%;
+        color: var(--color-new-blue);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: auto;
+        svg {
+            fill: none;
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
     }
 }
