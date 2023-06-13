@@ -80,6 +80,7 @@ $gold: #CFA46E;
 	--color-white: rgba(255,255,255,1);
 	--color-new-blue: rgba(0,26,88,1);
 	--color-light-blue: rgba(77,95,139,1);
+	--color-gray-bg: #E6ECF2;
 }
 
 $color-white: rgba(255,255,255,1);
@@ -89,6 +90,7 @@ $color-green: rgba(122,144,73,1);
 $color-gray-body: rgba(97,97,97,1);
 $color-red: rgba(211,7,36,1);
 $color-gray-light: rgba(210,210,211,1);
+$color-gray-bg: #E6ECF2;
 
 
 .text-white {
@@ -152,9 +154,9 @@ $color-gray-light: rgba(210,210,211,1);
 	}
 }
 .text-style-h-3 {
-	font-size: 2.08vw;
-	font-family: "Arial", sans-serif;
-	font-weight: 400;
+	font-size: 1.2vw;
+	font-family: $default-font, sans-serif;
+	font-weight: 700;
 	font-style: normal;
 	line-height: 120%;
 	// letter-spacing: -0.03em;
@@ -183,9 +185,9 @@ $color-gray-light: rgba(210,210,211,1);
 }
 
 .text-style-h-4 {
-	font-size: 1.04vw;
-	font-family: "Arial", sans-serif;
-	font-weight: 400;
+	font-size: 0.707vw;
+	font-family: $default-font, sans-serif;
+	font-weight: 700;
 	font-style: normal;
 	line-height: 140%;
 	// letter-spacing: -0.03em;
@@ -196,9 +198,9 @@ $color-gray-light: rgba(210,210,211,1);
 
 
 .text-style-h-4-important {
-	font-size: 1.04vw !important; 
-	font-family: "Arial", sans-serif !important; 
-	font-weight: 400 !important; 
+	font-size: 0.707vw !important; 
+	font-family: $default-font, sans-serif !important; 
+	font-weight: 700 !important; 
 	font-style: normal !important; 
 	line-height: 140% !important; 
 	// letter-spacing: -0.03em !important; 
@@ -215,12 +217,11 @@ $color-gray-light: rgba(210,210,211,1);
 }
 
 .text-style-body {
-	font-size: 0.83vw;
-	font-family: "Arial", sans-serif;
-	font-weight: 400;
+	font-size: 0.93vw;
+	font-family: $default-font, sans-serif;
+	font-weight: 700;
 	font-style: normal;
 	line-height: 140%;
-	// letter-spacing: -0.03em;
 	text-decoration: none;
 	text-transform: none;
 }
@@ -242,12 +243,12 @@ $color-gray-light: rgba(210,210,211,1);
 	line-height: 100%;
 }
 @mixin text-style-h-3() {
-	font-size: 2.08vw;
-	font-family: "Arial", sans-serif;
-	font-weight: 400;
+	font-size: 1.25vw;
+	font-family: $default-font, sans-serif;
+	font-weight: 700;
 	font-style: normal;
 	line-height: 120%;
-	letter-spacing: -0.03em;
+	// letter-spacing: -0.03em;
 	text-decoration: none;
 	text-transform: none;
 }
@@ -262,12 +263,11 @@ $color-gray-light: rgba(210,210,211,1);
 	text-transform: none;
 }
 @mixin text-style-body() {
-	font-size: 0.83vw;
-	font-family: "Arial", sans-serif;
-	font-weight: 400;
+	font-size: 0.93vw;
+	font-family: $default-font, sans-serif;
+	font-weight: 700;
 	font-style: normal;
 	line-height: 140%;
-	letter-spacing: -0.03em;
 	text-decoration: none;
 	text-transform: none;
 }

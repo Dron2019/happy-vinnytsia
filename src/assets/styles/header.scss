@@ -33,7 +33,23 @@
 			// height: auto;
 		}
 	}
-
+	&__menu-call {
+		font-family: $default-font;
+		font-weight: 700;
+		font-size: 14px;
+		line-height: 140%;
+		color: var(--color-new-blue);
+		border-radius: 12px;
+		background-color: var(--color-white);
+		padding: 20px 28px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-transform: uppercase;
+		span {
+			margin-right: 12px;
+		}
+	}
   &>:first-child {
     margin-right: auto;
   }
