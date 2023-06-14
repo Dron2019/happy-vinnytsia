@@ -1,53 +1,22 @@
 <nav class="menu menu--active">
     <div class="menu__item menu__item--1" data-direction="bt">
         .menu__item-inner
-            a(href="#section2" data-menu-close).text-style-h-3.text-green Proje Hakkında
-            a(href="#section3" data-menu-close).text-style-h-3.text-green Bölge
-            a(href="#section5" data-menu-close).text-style-h-3.text-green All In One
-            a(href="#location" data-menu-close).text-style-h-3.text-green Lokasyon
-            a(href="#section7" data-menu-close).text-style-h-3.text-green Peyzaj
-            a(href="#section10" data-menu-close).text-style-h-3.text-green Özellikler
-            a(href="#section4" data-menu-close).text-style-h-3.text-green Planlar
-            a(href="#section12" data-menu-close).text-style-h-3.text-green Sık Sorulanlar
-            a(href="#section13" data-menu-close).text-style-h-3.text-green İnşaat Şirketi
-            a(href="#section14" data-menu-close).text-style-h-3.text-green İletişim bilgileri
+            a(href="/" data-title="Головна").menu__link Головна
+            a(href="/project" data-menu-close data-title="Про об'єкт").menu__link Про об'єкт
+            a(href="#section2" data-menu-close data-title="Хід будівництва").menu__link Хід будівництва
+            a(href="#section2" data-menu-close data-title="Планування").menu__link Планування
+            a(href="#section2" data-menu-close data-title="Галерея").menu__link Галерея
+            a(href="#section2" data-menu-close data-title="Новини та акції").menu__link Новини та акції
+            a(href="#section2" data-menu-close data-title="Контакти").menu__link Контакти
     </div>
-    <div class="menu__item menu__item--2" data-direction="lr">
-        +responsiveImage([
-            './assets/images/menu/menu-right-top.jpg 1920',
-            './assets/images/menu/menu-right-top@075x.jpg 1240',
-            './assets/images/menu/menu-right-top@05x.jpg 600',
-            './assets/images/menu/menu-right-top@05x.jpg 320',
-        ], 'Rams Hakkinda')
-    </div>
-    <div class="menu__item menu__item--3 menu-right-top" data-direction="bt">
-        +responsiveImage([
-            './assets/images/menu/menu-left-top.jpg 1920',
-            './assets/images/menu/menu-left-top@075x.jpg 1240',
-            './assets/images/menu/menu-left-top@05x.jpg 600',
-            './assets/images/menu/menu-left-top@05x.jpg 320',
-        ], 'Rams Hakkinda')
-    </div>
-    <div class="menu__item menu__item--4" data-direction="rl">
-        +responsiveImage([
-            './assets/images/menu/menu-left-bottom.jpg 1920',
-            './assets/images/menu/menu-left-bottom@075x.jpg 1240',
-            './assets/images/menu/menu-left-bottom@05x.jpg 600',
-            './assets/images/menu/menu-left-bottom@05x.jpg 320',
-        ], 'Rams Hakkinda')
-    </div>
-    <div class="menu__item menu__item--5" data-direction="tb">
-        +responsiveImage([
-            './assets/images/menu/menu-right-bottom.jpg 1920',
-            './assets/images/menu/menu-right-bottom@075x.jpg 1240',
-            './assets/images/menu/menu-right-bottom@05x.jpg 600',
-            './assets/images/menu/menu-right-bottom@05x.jpg 320',
-        ], 'Rams Hakkinda')
-    </div>
-    <button class="action action--menu"><svg class="icon icon--menu"><use xlink:href="#icon-menu"></use></svg></button>
-    <button class="action action--close" data-menu-close>
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M28 28L4 4M4 28L28 4L4 28Z" stroke="#7A9049" stroke-width="2"/>
-        </svg>
-    </button>
+    .menu__header
+        a(href="tel: +380671953122").menu__header-link +38 (067) 195-31-22
+        button(class="button-30 button-30--transparent-bordered" type="button") Замовити дзвінок
+        <button class="action action--close" data-menu-close>
+            span Меню
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.99902 6L10.9488 10.9497L17.3127 17.3137" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M17.3127 5.68629L12.363 10.636L5.99902 17" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+        </button>
 </nav>

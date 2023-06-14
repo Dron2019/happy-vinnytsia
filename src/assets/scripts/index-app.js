@@ -46,6 +46,7 @@ const forms = [
 ];
 
 forms.forEach((form) => {
+  return;
   const $form = document.querySelector(form);
   if ($form) {
     /* eslint-disable */
@@ -104,92 +105,14 @@ forms.forEach((form) => {
  * form handlers end
  */
 
-// eslint-disable-next-line no-new
-const sec1Slider = new Swiper('[data-section-1-slider]', {
-  effect: 'fade',
-  loop: true,
-  speed: 500,
-  fadeEffect: {
-    crossFade: true,
-  },
-  navigation: {
-    nextEl: document.querySelector('[data-section-1-slider-next]'),
-    prevEl: document.querySelector('[data-section-1-slider-prev]'),
-  },
-  on: {
-    init: (e) => {
-      document.querySelector('.section-1__nav-digits span:nth-child(3)').textContent = e.slides.length;
-      console.log(e);
-    }
-  }
-});
-
-sec1Slider.on('activeIndexChange',  ({ activeIndex, realIndex }) => {
-  document.querySelector('.section-1__nav-digits span:nth-child(1)')
-    .textContent = realIndex + 1;
-})
-
-// eslint-disable-next-line no-new
-new Swiper('[data-sec-5-slider]', {
-  slidesPerView: 1.05,
-  speed: 1750,
-  // spaceBetween: 20,
-  navigation: {
-    nextEl: document.querySelector('[data-sec-5-slider-next]'),
-    prevEl: document.querySelector('[data-sec-5-slider-prev]'),
-  },
-});
 
 
 
 
-// document.body.addEventListener('change', (evt) => {
-//   const target = evt.target.closest('[name="genplan"]');
-//   if (!target) return;
-//   const { value } = target;
-//   document.querySelectorAll('[data-build]').forEach((el) => {
-//     const regExp = new RegExp(el.dataset.build);
-//     el.setAttribute('stroke-opacity', regExp.test(value) ? 1 : 0);
-//   });
 
-//   document.querySelectorAll('[name="genplan"]').forEach((el) => {
-//     if (el === target) {
-//       el.closest('label').classList.add('active');
-//       return;
-//     }
-//     el.closest('label').classList.remove('active');
-//   });
-// });
 
-document.querySelectorAll('.bordered-block__item').forEach(el => {
-  el.addEventListener('mouseenter',function(evt){
-    const target = el.querySelector('input');
-    if (!target) return;
-    const { value } = target;
-    document.querySelectorAll('[data-build]').forEach((el) => {
-      const regExp = new RegExp(el.dataset.build);
-      el.setAttribute('stroke-opacity', regExp.test(value) ? 1 : 0);
-    });
 
-    document.querySelectorAll('[name="genplan"]').forEach((el) => {
-      if (el === target) {
-        el.closest('label').classList.add('active');
-        return;
-      }
-      el.closest('label').classList.remove('active');
-    });
 
-  });
-  el.addEventListener('mouseleave',function(evt){
-    document.querySelectorAll('[data-build]').forEach((el) => {
-      const regExp = new RegExp(el.dataset.build);
-      el.setAttribute('stroke-opacity', 0);
-    });
-    document.querySelectorAll('[name="genplan"]').forEach((el) => {
-      el.closest('label').classList.remove('active');
-    });
-  });
-})
 
 
 document.body.addEventListener('click',function(evt){
@@ -220,79 +143,6 @@ document.body.addEventListener('click',function(evt){
 });
 
 
-function screen3Effects() {
-  const swiper = new Swiper('.zoom-slider-wrapper', {
-      // Optional parameters
-    modules: [ Navigation],
-    slidesPerView: 4.5,
-    loop: false,
-    spaceBetween: 40,
-    breakpoints: {
-      // when window width is >= 320px
-      320: {
-        slidesPerView: 1.5,
-        spaceBetween: 20
-      },
-      // when window width is >= 480px
-      993: {
-        slidesPerView: 3.5,
-        spaceBetween: 30
-      },
-      1440: {
-        slidesPerView: 4.5,
-        spaceBetween: 40
-      }
-      // when window width is >= 640px
-    },
-    navigation: {
-      nextEl: document.querySelector('[data-screen3-next]'),
-      prevEl: document.querySelector('[data-screen3-prev]'),
-    },
-  });
-  gsap.to('.zoom-slider .swiper-slide__arrow', {
-    autoAlpha: 0
-  });
-
-  gsap.to(`.zoom-slider .swiper-slide:nth-child(5) .swiper-slide__arrow, .zoom-slider .swiper-slide-active .swiper-slide__arrow`, {
-    autoAlpha: 1
-  });
-
-
-  swiper.on('slideChangeTransitionStart', () => {
-    // document.querySelectorAll('.zoom-slider .swiper-slide__arrow').forEach(el => {
-    //   el.style.display = 'none';
-    // });
-    gsap.to('.zoom-slider .swiper-slide__arrow', {
-      autoAlpha: 0
-    })
-  });
-  swiper.on('slideChangeTransitionEnd', ({ realIndex }) => {
-
-    gsap.to(`.zoom-slider .swiper-slide:nth-child(${realIndex + 5}) .swiper-slide__arrow, .zoom-slider .swiper-slide-active .swiper-slide__arrow`, {
-      autoAlpha: 1
-    });
-  })
-
-  document.body.addEventListener('click',function zoomSliderClicker(evt){
-    const target = evt.target.closest('.swiper-slide__arrow');
-    if (!target) return;
-
-    if (target.closest('.swiper-slide-active')) {
-      swiper.slidePrev();
-    } else {
-      swiper.slideNext();
-    }
-  });
-  // swiper.on('touchStart', () => {
-  //   document.querySelector('.zoom-slider-wrapper').classList.add('drag')
-
-  // });
-  // swiper.on('touchEnd', () => {
-  //   document.querySelector('.zoom-slider-wrapper').classList.remove('drag')
-  // });
-}
-
-screen3Effects();
 
 
 
@@ -316,41 +166,12 @@ document.body.addEventListener('click',function(evt){
 
 
 
-document.querySelector('[data-up-arrow]').style.visibility = 'hidden';
+// document.querySelector('[data-up-arrow]').style.visibility = 'hidden';
 
-window.addEventListener('scroll', (evt) => {
-  document.querySelector('[data-up-arrow]').style.visibility  = window.scrollY > (document.body.scrollHeight * 0.5) ? '' : 'hidden';
-})
+// window.addEventListener('scroll', (evt) => {
+//   document.querySelector('[data-up-arrow]').style.visibility  = window.scrollY > (document.body.scrollHeight * 0.5) ? '' : 'hidden';
+// })
 
-function worldMapHandler() {
-  document.querySelectorAll('button[data-world-map-marker]').forEach(el => {
-    const targetValue = el.dataset.worldMapMarker;
-
-    el.addEventListener('mouseenter',function(evt){
-      hideMarkers();
-      document.querySelectorAll(`g[data-world-map-marker="${targetValue}"]`).forEach(marker => {
-        marker.style.opacity = 1;
-      })
-    });
-    el.addEventListener('mouseleave',function(evt){
-      showMarkers();
-    });
-  });
-
-  function showMarkers() {
-    document.querySelectorAll('g[data-world-map-marker]').forEach(marker => {
-      marker.style.opacity = 1;
-    })
-  }
-  function hideMarkers() {
-    document.querySelectorAll('g[data-world-map-marker]').forEach(marker => {
-      marker.style.opacity = 0;
-    })
-  }
-
-}
-
-worldMapHandler();
 
 
 
@@ -563,6 +384,3 @@ document.querySelectorAll('.web-item').forEach(item => {
     once: true
   })
 });
-
-
-new Accordion('.accordion-container');
