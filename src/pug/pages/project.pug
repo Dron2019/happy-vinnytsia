@@ -6,11 +6,30 @@ block variable
     var id_page = 'id-page-project'
     var class_page = 'class-page-project'
     var breadcrumbsSubitem = [
-      {
-        label: 'About',
-        link: pagesLink[0].about
-      }
+    ];
+    var distances = [
+      ['15',
+      'хвилин',
+    'до центу Дніпра',
+    '6 км'],
+    ['5',
+    'хвилин',
+    'до магазину Метро',
+    '3 км'],
+    ['5',
+    'хвилин',
+    'до магазину Епіцентр',
+    '3 км'],
+    ['2',
+    ' хвилини',
+    'до магазину АТБ',
+    '0.5 км'],
+    ['2',
+    'хвилини',
+    'до ТРЦ Дафі',
+    '1 км'],
     ]
+    
   
 block meta
   title= title_page
@@ -19,13 +38,106 @@ block head
     link(rel='stylesheet', href="./assets/styles/main.min.css")
 block scripts
   script(defer src='./assets/scripts/vendors.bundle.js')
-  script(defer src='./assets/scripts/index.bundle.js')
-  script(defer src='./assets/scripts/libs.js')
-  script(defer src='./assets/scripts/index.js')
-  script(defer src='./assets/scripts/header.js')
-  script(defer src='./assets/scripts/project.js')
+  script(defer src='./assets/scripts/project.bundle.js')
 block content
-  h1 project
+  .container.container--full-screen.complex-front-screen
+    include ../includes/breadcrumbs.pug
+    .text-style-h-1.text-new-blue.text-uppercase Комплекс
+    +responsiveImage([
+      './assets/images/project/complex-front-image.jpg 1920',
+      './assets/images/project/complex-front-image@075x.jpg 1240',
+      './assets/images/project/complex-front-image@05x.jpg 600',
+      './assets/images/project/complex-front-image@05x.jpg 320',
+    ], 'Альтернативний текст', true).complex-front-screen__bg
+  .container.project-slider-wrapper
+    .project-slider-wrapper__top
+      .text-style-h-1.text-new-blue.text-uppercase Щасливий у Дніпрі
+      .project-slider-wrapper__text Новий мікрорайон на ж/м Тополь, де є все для щасливого життя
+    .swiper-container.project-slider(data-project-slider)
+      .project-slider__navigation 
+        <svg data-project-slider-prev width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M30.8495 29.7878L33.4685 24.2005C33.6992 23.7084 33.0898 23.2535 32.6836 23.6146L25.9204 29.6263C25.6967 29.8252 25.6967 30.1748 25.9204 30.3737L32.6836 36.3854C33.0898 36.7465 33.6992 36.2916 33.4685 35.7995L30.8495 30.2122C30.7864 30.0778 30.7864 29.9222 30.8495 29.7878Z" fill="#001A58"/>
+          <path d="M-2.57897e-06 1L60 0.999997L60 -1L-2.66639e-06 -1L-2.57897e-06 1ZM60 59L-4.37114e-08 59L4.37114e-08 61L60 61L60 59Z" fill="#4D5F8B" mask="url(#path-1-inside-1_1009_680)"/>
+          </svg>
+        <div class="slider-counter js-gallery-slider-counter">
+            <div class="slider-counter__arrow slider-counter__arrow-current current">1</div>
+            <div class="slider-counter__delimiter">/</div>
+            <div class="slider-counter__arrow slider-counter__arrow-total total">12</div>
+        </div>
+        <svg data-project-slider-next width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M29.1505 29.7878L26.5315 24.2005C26.3008 23.7084 26.9102 23.2535 27.3164 23.6146L34.0796 29.6263C34.3033 29.8252 34.3033 30.1748 34.0796 30.3737L27.3164 36.3854C26.9102 36.7465 26.3008 36.2916 26.5315 35.7995L29.1505 30.2122C29.2136 30.0778 29.2136 29.9222 29.1505 29.7878Z" fill="#001A58"/>
+          <path d="M60 1L2.57897e-06 0.999997L2.66639e-06 -1L60 -1L60 1ZM4.37114e-08 59L60 59L60 61L-4.37114e-08 61L4.37114e-08 59Z" fill="#4D5F8B" mask="url(#path-1-inside-1_1009_683)"/>
+          </svg>
+      .swiper-wrapper 
+        .swiper-slide
+          .swiper-slide__text
+            .swiper-slide__text-title Паркова зона
+            .swiper-slide__text-delimiter
+            .swiper-slide__text-text 37.5% всієї території комплексу займає паркова зона. Тут будуть прокладені пішохідні та велосипедні доріжки, облаштовано дитячі та спортивні майданчики, футбольне поле, а також лаунж-зони з продуманим ландшафтним дизайном.
+          img(src="./assets/images/project/slider/1.jpg").swiper-slide__img
+        .swiper-slide
+          .swiper-slide__text
+            .swiper-slide__text-title Паркова зона
+            .swiper-slide__text-delimiter
+            .swiper-slide__text-text 37.5% всієї території комплексу займає паркова зона. Тут будуть прокладені пішохідні та велосипедні доріжки, облаштовано дитячі та спортивні майданчики, футбольне поле, а також лаунж-зони з продуманим ландшафтним дизайном.
+          img(src="./assets/images/project/slider/1.jpg").swiper-slide__img
+        .swiper-slide
+          .swiper-slide__text
+            .swiper-slide__text-title Паркова зона
+            .swiper-slide__text-delimiter
+            .swiper-slide__text-text 37.5% всієї території комплексу займає паркова зона. Тут будуть прокладені пішохідні та велосипедні доріжки, облаштовано дитячі та спортивні майданчики, футбольне поле, а також лаунж-зони з продуманим ландшафтним дизайном.
+          img(src="./assets/images/project/slider/1.jpg").swiper-slide__img
+        .swiper-slide
+          .swiper-slide__text
+            .swiper-slide__text-title Паркова зона
+            .swiper-slide__text-delimiter
+            .swiper-slide__text-text 37.5% всієї території комплексу займає паркова зона. Тут будуть прокладені пішохідні та велосипедні доріжки, облаштовано дитячі та спортивні майданчики, футбольне поле, а також лаунж-зони з продуманим ландшафтним дизайном.
+          img(src="./assets/images/project/slider/1.jpg").swiper-slide__img
+        .swiper-slide
+          .swiper-slide__text
+            .swiper-slide__text-title Паркова зона
+            .swiper-slide__text-delimiter
+            .swiper-slide__text-text 37.5% всієї території комплексу займає паркова зона. Тут будуть прокладені пішохідні та велосипедні доріжки, облаштовано дитячі та спортивні майданчики, футбольне поле, а також лаунж-зони з продуманим ландшафтним дизайном.
+          img(src="./assets/images/project/slider/1.jpg").swiper-slide__img
+  .container.project-text-block
+    <svg width="83" height="41" viewBox="0 0 83 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M41.4939 40.5C19.3349 40.5 1.2718 22.6023 1.00304 0.5H17.8418C17.8746 3.4569 18.4611 6.38306 19.5727 9.12644C20.7475 12.026 22.4854 14.6638 24.6859 16.8873C26.8864 19.1108 29.5059 20.8759 32.3928 22.0806C35.2797 23.2852 38.3768 23.9055 41.5049 23.9055C44.633 23.9055 47.73 23.2852 50.6169 22.0806C53.5038 20.8759 56.1233 19.1108 58.3238 16.8873C60.5243 14.6638 62.2623 12.026 63.4371 9.12644C64.5486 6.38306 65.1352 3.45691 65.168 0.5H81.997C81.7282 22.6022 63.6651 40.5 41.4939 40.5Z" stroke="#001A58"/>
+      </svg>
+    p ЖК розташований в Шевченківському районі Дніпра та має зручну транспортну розв’язку,  як для пересування автомобілем, так і для пішої прогулянки
+  .container.project-areas
+    each val in distances
+      .area-item
+        .area-item__row
+          .area-item__title #{val[0]}&nbsp;
+          .area-item__subtitle #{val[1]}
+        .area-item__row
+          .area-item__text #{val[2]}
+        .area-item__row.area-item__icons-row
+          <svg class="area-item__icon" width="50" height="29" viewBox="0 0 50 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13.9999 18.9999C13.9999 20.5493 12.5469 21.9999 10.4999 21.9999C8.4529 21.9999 6.99988 20.5493 6.99988 18.9999C6.99988 17.4505 8.4529 15.9999 10.4999 15.9999C12.5469 15.9999 13.9999 17.4505 13.9999 18.9999Z" stroke="#4D5F8B" stroke-width="2"/>
+            <path d="M42.9999 18.9999C42.9999 20.5493 41.5469 21.9999 39.4999 21.9999C37.4529 21.9999 35.9999 20.5493 35.9999 18.9999C35.9999 17.4505 37.4529 15.9999 39.4999 15.9999C41.5469 15.9999 42.9999 17.4505 42.9999 18.9999Z" stroke="#4D5F8B" stroke-width="2"/>
+            <path d="M12.8945 18.4203C16.5764 18.6956 27.7339 19.3341 36.1843 19.408M41.9224 19.6513C43.6024 19.7736 47.8172 19.789 48.0252 18.7357C48.2853 17.419 48.3882 16.1979 48.529 15.2847C48.6699 14.3715 46.5546 11.269 36.0033 10.8215C35.8086 10.8133 35.6044 10.8046 35.3916 10.7956M10.0947 6.45466C11.2966 5.80775 14.4548 4.54594 17.4724 4.67391C19.4768 4.75891 20.5876 4.80602 21.1424 4.82955M10.0947 6.45466C12.2855 8.91559 17.6876 9.90179 20.9162 10.1628M10.0947 6.45466L7.21337 8.17078L3.28849 8.00433C2.94795 8.00691 2.25996 8.17518 2.23229 8.82763C2.20462 9.48008 2.13573 11.1044 2.10475 11.835L1.31638 12.3633L1.20181 15.0648L7.24141 17.7617M35.3916 10.7956C31.5502 10.6327 24.9481 10.3527 21.9859 10.2271C21.6677 10.2154 21.308 10.1944 20.9162 10.1628M35.3916 10.7956C30.6373 6.34542 24.217 4.97696 21.6012 4.849C21.5612 4.84731 21.4228 4.84144 21.1424 4.82955M21.1424 4.82955L20.9162 10.1628" stroke="#4D5F8B" stroke-width="2"/>
+            </svg>
+          <svg class="area-item__arrow" width="142" height="16" viewBox="0 0 142 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0.25" y="7.75" width="136.3" height="0.5" rx="0.25" stroke="#4D5F8B" stroke-width="0.5" stroke-dasharray="1 1"/>
+            <path d="M136.451 7.78778L133.832 2.20049C133.601 1.7084 134.21 1.25351 134.616 1.61457L141.38 7.6263C141.603 7.82519 141.603 8.17481 141.38 8.3737L134.616 14.3854C134.21 14.7465 133.601 14.2916 133.832 13.7995L136.451 8.21222C136.514 8.07776 136.514 7.92224 136.451 7.78778Z" fill="#4D5F8B"/>
+            </svg>
+          .area-item__distance #{val[3]}
+  .container.project-quote.container--full-screen
+    .project-quote__content
+      <svg width="48" height="43" viewBox="0 0 48 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6.51757 0L12.4984 3.3738C10.5559 7.25879 9.2524 10.3003 8.58786 12.4984C7.92332 14.6965 7.41214 17.5335 7.05431 21.0096H13.8786V42.0958H0V28.9073C0 22.3131 0.434505 17.1502 1.30351 13.4185C2.22364 9.63578 3.96166 5.16294 6.51757 0ZM40.639 0L46.6198 3.3738C44.6773 7.25879 43.3738 10.3003 42.7093 12.4984C42.0447 14.6965 41.5335 17.5335 41.1757 21.0096H48V42.0958H34.1214V28.9073C34.1214 22.3131 34.5559 17.1502 35.4249 13.4185C36.2939 9.63578 38.0319 5.16294 40.639 0Z" fill="#4D5F8B"/>
+        </svg>
+      p Щасливий у Дніпрі. Для родин з міцними традиціями
+    +responsiveImage([
+      './assets/images/project/project-render.jpg 1920',
+      './assets/images/project/project-render@075x.jpg 1240',
+      './assets/images/project/project-render@05x.jpg 600',
+      './assets/images/project/project-render@05x.jpg 320',
+    ], 'Альтернативний текст', true)
+  include ../includes/contact-screen.pug
+
+
 block footer
   include ../includes/footer.pug
 

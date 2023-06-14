@@ -1,0 +1,202 @@
+.complex-front-screen {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: calc(var(--header-h) + 20px);
+    &__bg {
+        img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            z-index: -1;
+        }
+    }
+}
+
+.project-slider-wrapper {
+    &__top {
+        margin-bottom: 40px;
+        @include row-flex();
+        &>:nth-child(1) {
+            @include size(16);
+            @include shift(0);
+        }
+    }
+    &__text {
+        @include size(8);
+        @include shift(0);
+        font-size: 1.6vw;
+        line-height: 140%;
+        color: rgba($color-new-blue, 0.7);
+    }
+}
+
+.project-slider {
+    position: relative;
+    &__navigation {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        left: 0;
+        bottom: 0;
+        z-index: 2;
+        &>:nth-child(n+2) {
+            margin-left: 20px; 
+        }
+        svg {
+            cursor: pointer;
+        }
+    }
+    .slider-counter {
+        --self-color: var(--color-new-blue);
+        color: var(--self-color);
+        display: flex;
+        align-items: center;
+        &__arrow {
+            font-size: 14px;
+            line-height: 24px;
+            letter-spacing: 0.04em;
+        }
+        &__delimiter {
+            color: var(--self-color);
+            margin-right: 1ch;
+            margin-left: 1ch;
+        }
+    }
+    .swiper-slide {
+        @include row-flex();
+        &__text {
+            @include size(8);
+            @include shift(0);
+            @include shift-padding-right(1);
+            &-title {
+                font-weight: 400;
+                font-size: 32px;
+                line-height: 140%;
+                color: var(--color-new-blue);
+                margin-bottom: 20px;
+            }
+            &-delimiter {
+                margin-bottom: 20px;
+                width: 70px;
+                height: 1px;
+                background-color: var(--color-light-blue);
+            }
+            &-text {
+                color: rgba($color-new-blue, 0.7);
+            }
+        }
+        &__img {
+            @include size(16);
+            @include shift(0);
+            height: 100%;
+            object-fit: cover;
+
+        }
+    }
+}
+
+
+.project-text-block {
+    @include shift-padding(2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgba($color-new-blue, 0.7);
+    svg {
+        margin-bottom: 20px;
+    }
+    p {
+        position: relative;
+        padding-bottom: 20px;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 140%;
+        text-align: center;
+    }
+    p:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 70px;
+        height: 1px;
+        background-color: var(--color-light-blue);
+    }
+}
+
+.project-areas {
+    @include row-flex();
+    &>* {
+        @include size(4.8);
+        @include shift(0);
+    }
+}
+
+.area-item {
+    color: var(--color-new-blue);
+    &__title {
+        font-weight: 400;
+        font-size: 6vw;
+        line-height: 100%;
+        /* identical to box height, or 120px */
+        text-align: center;
+        letter-spacing: -0.005em;
+    }
+    &__subtitle {
+        font-size: 1.6vw;
+    }
+    &__distance {
+        font-size: 1vw;
+        color: var(--color-light-blue);
+
+    }
+    &__text {
+        font-size: 1vw;
+    }
+    &__row {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+    }
+    &__row~&__row {
+        margin-top: 20px;
+    }
+    &__icons-row {
+        &>:nth-child(n+2) {
+            margin-left: 20px;
+        }
+    }
+}
+
+
+.project-quote {
+    position: relative;
+    &__content {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding-left: var(--page-side-fields);
+        padding-top: var(--page-side-fields);
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 140%;
+        color: rgba($color-new-blue, 0.7);
+        width: 30%;
+        svg {
+            margin-bottom: 20px;
+        }
+    }
+}

@@ -1,0 +1,123 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'progress'
+    var id_page = 'id-page-progress'
+    var class_page = 'class-page-progress'
+    var breadcrumbsSubitem = [
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/progress.bundle.js')
+
+block content
+  .build-progress-popup(data-build-popup-progress)
+    .build-progress-popup__nav
+      <svg data-circle-with-hover data-progress-popup-prev  width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <mask id="path-2-inside-1_721_20522" fill="white">
+        <path d="M0 60L-2.62268e-06 0L60 -2.62268e-06L60 60L0 60Z"/>
+        </mask>
+        <path d="M0 60L-2.62268e-06 0L60 -2.62268e-06L60 60L0 60Z" fill="#001A58" fill-opacity="0.3"/>
+        <path d="M30.8495 29.7878L33.4685 24.2005C33.6992 23.7084 33.0898 23.2535 32.6836 23.6146L25.9204 29.6263C25.6967 29.8252 25.6967 30.1748 25.9204 30.3737L32.6836 36.3854C33.0898 36.7465 33.6992 36.2916 33.4685 35.7995L30.8495 30.2122C30.7864 30.0778 30.7864 29.9222 30.8495 29.7878Z" fill="white"/>
+        <path d="M-2.57897e-06 1L60 0.999997L60 -1L-2.66639e-06 -1L-2.57897e-06 1ZM60 59L-4.37114e-08 59L4.37114e-08 61L60 61L60 59Z" fill="white" mask="url(#path-2-inside-1_721_20522)"/>
+        </svg>
+
+      <svg  data-circle-with-hover data-progress-popup-prev data-circle-with-hover data-progress-popup-next width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <mask id="path-1-inside-1_721_20524" fill="white">
+        <path d="M60 60L60 0L2.62268e-06 -2.62268e-06L0 60L60 60Z"/>
+        </mask>
+        <path d="M60 60L60 0L2.62268e-06 -2.62268e-06L0 60L60 60Z" fill="#001A58" fill-opacity="0.3"/>
+        <path d="M29.1505 29.7878L26.5315 24.2005C26.3008 23.7084 26.9102 23.2535 27.3164 23.6146L34.0796 29.6263C34.3033 29.8252 34.3033 30.1748 34.0796 30.3737L27.3164 36.3854C26.9102 36.7465 26.3008 36.2916 26.5315 35.7995L29.1505 30.2122C29.2136 30.0778 29.2136 29.9222 29.1505 29.7878Z" fill="white"/>
+        <path d="M60 1L2.57897e-06 0.999997L2.66639e-06 -1L60 -1L60 1ZM4.37114e-08 59L60 59L60 61L-4.37114e-08 61L4.37114e-08 59Z" fill="white" mask="url(#path-1-inside-1_721_20524)"/>
+        </svg>
+    .build-progress-popup__close(data-circle-with-hover)
+      <svg data-circle-with-hover width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M38 38L22 22M22 38L38 22L22 38Z" style="stroke:#23242B"/>
+        </svg>
+    .build-progress-popup__text(data-state="1" data-opened-text="Згорнути" data-closed-text="Розгорнути")
+      .build-progress-popup__title ГРУДЕНЬ
+      .build-progress-popup__text-content 
+        p Завершені роботи по облаштуванню кровель на експлуатованих террасах 2 і 3 поверхів;
+        p Смонтували нержавеючі стійки під стекляне ограждение на террасах 2го и 3го этажей;
+        p Виполняется пристрій плитки на террасах 2, 3, 5, 16 поверхів-35%;
+        p Заавансовані та запущені в виготовлення конструкцій для обслуговування головного фасаду;
+        p Выполняется разуклонка и гидроизоляция кровли на пристроенном паркинге, там, где будет парковая зона- 60%;
+        p Завершаем подготовку для монтажа в 3х оставшихся шахтах под пассажирские лифты-65%;
+        p Завершается подготовка мест общего пользования под чистовую отделку-70%;
+    .build-progress-popup__slider
+      .build-swiper 
+        .swiper-wrapper 
+          img(src="./assets/images/test-build.jpg").swiper-slide
+          img(src="./assets/images/test-build.jpg").swiper-slide
+          img(src="./assets/images/test-build.jpg").swiper-slide
+  .container.container--full-screen.progress-front-screen
+    include ../includes/breadcrumbs.pug
+    .text-style-h-1.text-new-blue.text-uppercase Хід будівництва
+    .progress-tabs
+      .progress-tabs__tab.active Секції
+      .progress-tabs__tab Паркінг
+    .progress-card
+      .progress-card__delimiter
+        <svg class="progress-card__delimiter-top" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="8" cy="8" r="8" fill="#001A58"/>
+          <circle cx="8" cy="8" r="4" fill="white"/>
+          </svg>
+        .progress-card__delimiter-center
+        <svg class="progress-card__delimiter-bottom" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="8" cy="8" r="8" fill="#001A58"/>
+          <circle cx="8" cy="8" r="4" fill="white"/>
+          </svg>
+      .progress-card__img
+        img(src="./assets/images/home/home-page-screen1@05x.jpg")
+      .progress-card__text 
+        .progress-card__text-title хід будівництва, 10.04.2023
+        .progress-card__text-text У березні 2023 року на будівельному майданчику “ЩАСЛИВИЙ” виконано наступні роботи
+        button(data-id="2" type="button").button-30.button-30--blue Читати повністю
+    .progress-card.reverse
+      .progress-card__delimiter
+        <svg class="progress-card__delimiter-top" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="8" cy="8" r="8" fill="#001A58"/>
+          <circle cx="8" cy="8" r="4" fill="white"/>
+          </svg>
+        .progress-card__delimiter-center
+        <svg class="progress-card__delimiter-bottom" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="8" cy="8" r="8" fill="#001A58"/>
+          <circle cx="8" cy="8" r="4" fill="white"/>
+          </svg>
+      .progress-card__img
+        img(src="./assets/images/home/home-page-screen1@05x.jpg")
+      .progress-card__text 
+        .progress-card__text-title хід будівництва, 10.04.2023
+        .progress-card__text-text У березні 2023 року на будівельному майданчику “ЩАСЛИВИЙ” виконано наступні роботи
+        button(data-id="3" type="button").button-30.button-30--blue Читати повністю
+    .progress-card
+      .progress-card__delimiter
+        <svg class="progress-card__delimiter-top" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="8" cy="8" r="8" fill="#001A58"/>
+          <circle cx="8" cy="8" r="4" fill="white"/>
+          </svg>
+        .progress-card__delimiter-center
+        <svg class="progress-card__delimiter-bottom" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="8" cy="8" r="8" fill="#001A58"/>
+          <circle cx="8" cy="8" r="4" fill="white"/>
+          </svg>
+      .progress-card__delimiter
+      .progress-card__img
+        img(src="./assets/images/home/home-page-screen1@05x.jpg")
+      .progress-card__text 
+        .progress-card__text-title хід будівництва, 10.04.2023
+        .progress-card__text-text У березні 2023 року на будівельному майданчику “ЩАСЛИВИЙ” виконано наступні роботи
+        button(data-id="1" type="button").button-30.button-30--blue Читати повністю
+  include ../includes/contact-screen.pug
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

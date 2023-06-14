@@ -5,6 +5,8 @@ const config = {
   mode: process.argv.includes('--production') ? 'production' : 'development',
   entry: {
     index: './src/assets/scripts/index-app.js',
+    project: './src/assets/scripts/project.js',
+    progress: './src/assets/scripts/progress.js',
   },
   output: {
     filename: '[name].bundle.js',
