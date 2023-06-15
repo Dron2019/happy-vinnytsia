@@ -4,11 +4,45 @@
 	top: 0;
 	width: 100%;
 	z-index: 40;
-	transition: transform .45s ease-out;
-	&.headroom--unpinned {
-		transform: translateY(-100%);
+	transition: .45s ease-out;
+	
+	&.headroom--top {
+		background-color: transparent !important;
+		transform: translateY(10%);
 	}
-  background: transparent;
+
+	&.headroom--pinned,
+	&.headroom--unpinned {
+		// transform: translateY(-100%);
+		background-color: rgba($color-new-blue, 0.7);
+	}
+	&--dark.headroom--pinned,
+	&--dark.headroom--unpinned  {
+		background-color: var(--color-white);
+	}
+	&--dark {
+		.header__logo-wrap svg {
+			[fill] {
+
+				fill: var(--color-new-blue);
+			}
+			[stroke] {
+				stroke: var(--color-new-blue);
+			}
+		}
+		.button-30--transparent-bordered {
+			border-color: var(--color-new-blue);
+			color: var(--color-new-blue);
+		}
+		.header__menu-call {
+			background-color: var(--color-new-blue);
+			color: var(--color-white);
+			[stroke] {
+				stroke: var(--color-white);
+			}
+		}
+	}
+  	background: transparent;
 	// background-color: #27314B;
     display: flex;
     align-items: center;
@@ -100,38 +134,7 @@
 		padding: 0;
     background-color: transparent;
     border: none;
-		.circle-hover {
-			transform: scale(0);
-			transform-origin: center;
-			transform-box: fill-box;
-			transition: .5s ease-out;
-		}
-		@include to(1024px){
-			span {
-				display: none;
-			}
-		}
 		
-		svg {
-      path {
-        fill: var(--color-white);
-      }
-			circle {
-        fill: var(--color-green);
-				transition: fill .3s ease-out;
-			}
-			@include from(1025px){
-				margin-left: 8px; 
-			}
-			@include to(575px){
-				width: 36px;
-				height: 36px;	
-			}
-			@include to(360px){
-				width: 30px;
-				height: 30px;
-			}
-		}
 		@include from(1025px){
 			&:hover circle:not(.circle-hover) {
 				// fill: var(--color-black);
@@ -371,8 +374,57 @@
 }
 
 
-.mobile,
+
 .tablet {
+	.header {
+
+		.button-30--transparent-bordered {
+			background-color: var(--color-white);
+			color: var(--color-new-blue);
+		}
+		&--dark .button-30--transparent-bordered {
+			color: var(--color-white);
+			background-color: var(--color-new-blue);
+
+		}
+		&.headroom--top {
+			transform: none;
+		}
+		&>:first-child {
+			svg {
+				width: 100%;
+				height: auto;
+			}
+		}
+		.header__menu {
+			font-size: 16px;
+			svg {
+				width: 40px;
+				height: 40px;
+			}
+		}
+		&__logo-wrap {
+			width: 150px;
+		}
+		&>svg {
+			width: 75px;
+		}
+		.button-30 {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-shrink: 0;
+			svg {
+				margin-right: 0;
+			}
+			span {
+				display: none;
+			}
+		}
+	}
+}
+
+.mobile {
 	.header {
 		&>:first-child {
 			width: 100px;

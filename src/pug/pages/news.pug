@@ -1,0 +1,83 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'news'
+    var id_page = 'id-page-news'
+    var class_page = 'class-page-news'
+        var header_class = 'header--dark'
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/news.bundle.js')
+block content
+  .container.news-front-screen
+    include ../includes/breadcrumbs.pug
+    .text-style-h-1.text-new-blue.text-uppercase Новини
+    .tabs(data-news-tabs)
+      .tabs__tab.active Всі
+      .tabs__tab Новини
+      .tabs__tab Акції
+  .container.news-container
+    a(href="/single-news").news-card.news
+      img(src="./assets/images/home/home-page-screen1.jpg").news-card__image
+      .news-card__text
+        .news-card__label Новина
+        .news-card__title Старт продаж нових секцій
+        p Гарна новина! Розпочато продаж квартир у 7 секції в ЖК Щасливий у Дніпрі. Встигніть забронювати квартири площею від 40.7 м2 за кращою ціною. 
+        .news-card__date 
+          +svg('calendar')
+          span 24.02.2023
+    a(href="#").news-card.news
+      img(src="./assets/images/home/home-page-screen1.jpg").news-card__image
+      .news-card__text
+        .news-card__label Новина
+        .news-card__title Старт продаж нових секцій
+        p Гарна новина! Розпочато продаж квартир у 7 секції в ЖК Щасливий у Дніпрі. Встигніть забронювати квартири площею від 40.7 м2 за кращою ціною. 
+        .news-card__date 
+          +svg('calendar')
+          span 24.02.2023
+    a(href="#").news-card.news
+      img(src="./assets/images/home/home-page-screen1.jpg").news-card__image
+      .news-card__text
+        .news-card__label Новина
+        .news-card__title Старт продаж нових секцій
+        p Гарна новина! Розпочато продаж квартир у 7 секції в ЖК Щасливий у Дніпрі. Встигніть забронювати квартири площею від 40.7 м2 за кращою ціною. 
+        .news-card__date 
+          +svg('calendar')
+          span 24.02.2023
+    a(href="#").news-card.news
+      img(src="./assets/images/home/home-page-screen1.jpg").news-card__image
+      .news-card__text
+        .news-card__label Новина
+        .news-card__title Старт продаж нових секцій
+        p Гарна новина! Розпочато продаж квартир у 7 секції в ЖК Щасливий у Дніпрі. Встигніть забронювати квартири площею від 40.7 м2 за кращою ціною. 
+        .news-card__date 
+          +svg('calendar')
+          span 24.02.2023
+    a(href="#").news-card.news
+      img(src="./assets/images/home/home-page-screen1.jpg").news-card__image
+      .news-card__text
+        .news-card__label Новина
+        .news-card__title Старт продаж нових секцій
+        p Гарна новина! Розпочато продаж квартир у 7 секції в ЖК Щасливий у Дніпрі. Встигніть забронювати квартири площею від 40.7 м2 за кращою ціною. 
+        .news-card__date 
+          +svg('calendar')
+          span 24.02.2023
+  include ../includes/contact-screen.pug
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

@@ -1,0 +1,30 @@
+.news-front-screen {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: calc(var(--header-h) + 20px);
+    .tabs {
+        margin-top: 40px;
+    }
+}
+
+.news-container {
+    @include row-flex();
+    margin-top: 80px !important;
+    &>[class*="text-style"] {
+        @include size(24);
+        @include shift(0);
+        margin-bottom: 80px;
+        text-align: center
+
+    }
+    .news-card {
+        @include size(12);
+        @include shift(0);
+    }
+    .news-card:nth-of-type(n+3) {
+        margin-top: 80px;
+    }
+}

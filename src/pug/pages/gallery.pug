@@ -1,0 +1,97 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'gallery'
+    var id_page = 'id-page-gallery'
+    var class_page = 'class-page-gallery'
+    var header_class = 'header--dark'
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/gallery.bundle.js')
+block content
+  .container.complex-front-screen
+    include ../includes/breadcrumbs.pug
+    .text-style-h-1.text-new-blue.text-uppercase Галерея
+  .container.gallery-slider.swiper-container(data-gallery-slider)
+    .gallery-slider__navigation
+      <svg class="gallery-slider__navigation-prev" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="49.5" stroke="white"/>
+        <circle cx="50" cy="50" r="46" fill="white"/>
+        <rect x="67" y="50.5" width="30" height="1" transform="rotate(-180 67 50.5)" fill="#001A58"/>
+        <path d="M37.3495 50.2122L39.9685 55.7995C40.1992 56.2916 39.5898 56.7465 39.1836 56.3854L32.4204 50.3737C32.1967 50.1748 32.1967 49.8252 32.4204 49.6263L39.1836 43.6146C39.5898 43.2535 40.1992 43.7084 39.9685 44.2005L37.3495 49.7878C37.2865 49.9222 37.2864 50.0778 37.3495 50.2122Z" fill="#001A58"/>
+        </svg>
+      <svg class="gallery-slider__navigation-next" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="49.5" stroke="white"/>
+        <circle cx="50" cy="50" r="46" fill="white"/>
+        <rect x="67" y="50.5" width="30" height="1" transform="rotate(-180 67 50.5)" fill="#001A58"/>
+        <path d="M37.3495 50.2122L39.9685 55.7995C40.1992 56.2916 39.5898 56.7465 39.1836 56.3854L32.4204 50.3737C32.1967 50.1748 32.1967 49.8252 32.4204 49.6263L39.1836 43.6146C39.5898 43.2535 40.1992 43.7084 39.9685 44.2005L37.3495 49.7878C37.2865 49.9222 37.2864 50.0778 37.3495 50.2122Z" fill="#001A58"/>
+        </svg>
+
+    .gallery-slider__menu
+      div.gallery-menu-item.text-white 
+        span Комплекс
+        ul.gallery-menu-item__inner
+          li.gallery-menu-item__inner-item Point A
+          li.gallery-menu-item__inner-item Point B
+          li.gallery-menu-item__inner-item Point C
+          li.gallery-menu-item__inner-item Point D
+          li.gallery-menu-item__inner-item Point E
+      div.gallery-menu-item.text-white 
+        span Під’їзд
+        ul.gallery-menu-item__inner
+          li.gallery-menu-item__inner-item Point A
+          li.gallery-menu-item__inner-item Point B
+          li.gallery-menu-item__inner-item Point C
+          li.gallery-menu-item__inner-item Point D
+          li.gallery-menu-item__inner-item Point E
+      div.gallery-menu-item.text-white 
+        span Парк
+        ul.gallery-menu-item__inner
+          li.gallery-menu-item__inner-item Point A
+          li.gallery-menu-item__inner-item Point B
+          li.gallery-menu-item__inner-item Point C
+          li.gallery-menu-item__inner-item Point D
+          li.gallery-menu-item__inner-item Point E
+      div.gallery-menu-item.text-white 
+        span Квартири
+        ul.gallery-menu-item__inner
+          li.gallery-menu-item__inner-item Point A
+          li.gallery-menu-item__inner-item Point B
+          li.gallery-menu-item__inner-item Point C
+          li.gallery-menu-item__inner-item Point D
+          li.gallery-menu-item__inner-item Point E
+    .gallery-slider__bottom
+      img(src="./assets/images/gallery/flat.png")
+      a.button-30.button-30--blue(href="3d" type="button") обрати квартиру
+    .swiper-wrapper
+      .swiper-slide
+        img(src="./assets/images/home/home-page-screen1.jpg" class="swiper-lazy" loading="lazy")
+        .swiper-lazy-preloader
+      .swiper-slide
+        img(src="./assets/images/home/home-page-screen1.jpg" class="swiper-lazy" loading="lazy")
+        .swiper-lazy-preloader
+      .swiper-slide
+        img(src="./assets/images/home/home-page-screen1.jpg" class="swiper-lazy" loading="lazy")
+        .swiper-lazy-preloader
+      .swiper-slide
+        img(src="./assets/images/home/home-page-screen1.jpg" class="swiper-lazy" loading="lazy")
+        .swiper-lazy-preloader
+  include ../includes/contact-screen.pug
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

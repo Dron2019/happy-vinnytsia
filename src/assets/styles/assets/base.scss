@@ -24,6 +24,16 @@
 	}
 }
 
+.tablet {
+	.container~.container {
+		margin-top: 80px;
+
+	}
+	.container:last-child {
+		margin-bottom: 80px;
+	}
+	
+}
 
 html{
 	font-size: 14px;

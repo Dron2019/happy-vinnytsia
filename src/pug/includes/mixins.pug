@@ -62,3 +62,5 @@ mixin responsiveImage(srcset, alt, plainLoad)
 			img(src=srcset[0].split(' ')[0], alt=alt)
 		else 
 			img(data-src=srcset[0].split(' ')[0], alt=alt)
+
+include ../components/form/form.pug

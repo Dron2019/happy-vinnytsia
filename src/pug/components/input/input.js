@@ -115,14 +115,14 @@ export default class SexyInput {
       /* eslint-disable */
       input.setAttribute('inputmode', 'tel');
       input.intTelIput = intlTelInput(input, {
-        preferredCountries: ['tr', 'kz', 'th', 'de', 'ae'],
+        preferredCountries: ['ua', 'pl'],
         autoPlaceholder: 'off',
       });
       let cleave = new Cleave(input, {
         /* eslint-enable */
         numericOnly: true,
-        prefix: '+90',
-        blocks: [3, 3, 3, 2, 2],
+        prefix: '+380',
+        blocks: [4, 2, 3, 2, 2],
         delimiters: [' ', ' ', ' ', ''],
       });
       input.addEventListener('countrychange', () => {

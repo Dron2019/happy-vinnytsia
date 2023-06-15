@@ -43,3 +43,35 @@
         }
     }
 }
+
+.tablet {
+    .home-gallery {
+        &__title {
+        }
+        &>.button-30 {
+        }
+        &__container {
+            width: calc(100% - (var(--page-side-fields) * 2));
+            margin-left: var(--page-side-fields);
+            margin-right: var(--page-side-fields);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        &__arrow {
+            &-prev {
+                width: 48px;
+                height: 48px;
+            }
+            &-next {
+                width: 48px;
+                height: 48px;
+            }
+        }
+        .swiper-slide {
+            &>div {
+                top: 45px;
+                font-size: 24px !important;
+            }
+        }
+    }
+}

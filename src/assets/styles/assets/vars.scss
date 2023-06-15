@@ -63,11 +63,21 @@ $gold: #CFA46E;
   }
 }
 
-.mobile,
+
 .tablet {
+	--page-side-fields: 20px;
+	--section-v-offset: 50px;
+	--header-h: 80px;
+	.page__inner {
+		max-width: 100vw;
+		overflow: hidden;
+	}
+}
+
+.mobile {
 	--page-side-fields: 10px;
 	--section-v-offset: 50px;
-	--header-h: 50px;
+	--header-h: 80px;
 	.page__inner {
 		max-width: 100vw;
 		overflow: hidden;
@@ -145,9 +155,13 @@ $color-gray-bg: #E6ECF2;
 	text-transform: none !important;
 }
 
-
-.mobile,
 .tablet {
+	.text-style-h-1-important,
+	.text-style-h-1 {
+		font-size: 48px !important;
+	}
+}
+.mobile {
 	.text-style-h-1-important,
 	.text-style-h-1 {
 		font-size: 32px !important;

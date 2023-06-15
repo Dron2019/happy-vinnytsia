@@ -5,6 +5,7 @@ block variable
     var title_page = 'progress'
     var id_page = 'id-page-progress'
     var class_page = 'class-page-progress'
+    var header_class = 'header--dark'
     var breadcrumbsSubitem = [
     ]
   
@@ -60,9 +61,9 @@ block content
   .container.container--full-screen.progress-front-screen
     include ../includes/breadcrumbs.pug
     .text-style-h-1.text-new-blue.text-uppercase Хід будівництва
-    .progress-tabs
-      .progress-tabs__tab.active Секції
-      .progress-tabs__tab Паркінг
+    .tabs(data-progress-tabs)
+      .tabs__tab.active Секції
+      .tabs__tab Паркінг
     .progress-card
       .progress-card__delimiter
         <svg class="progress-card__delimiter-top" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">

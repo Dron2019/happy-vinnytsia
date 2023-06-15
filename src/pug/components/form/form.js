@@ -14,7 +14,7 @@ const lang = langDetect();
 (async () => {
   await i18next.init({
     // lng: lang, // Текущий язык
-    lng: 'tr', // Текущий язык
+    lng: lang, // Текущий язык
     debug: true,
     resources: {
       ru: {
@@ -224,6 +224,7 @@ export default class FormMonster {
 
       /*  */
       if (this.watchedState.error === false) {
+        this.watchedState.status = 'successSand';
         try {
           this.watchedState.status = 'loading';
           const formData = new FormData(this.elements.$form);
@@ -232,7 +233,8 @@ export default class FormMonster {
           /* eslint-disable-next-line */
           const { error, code_error } = await sendForm(formData);
 
-          if (error === 0) {
+          if (true) {
+          // if (error === 0) {
             this.watchedState.status = 'successSand';
             return true;
           }

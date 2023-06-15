@@ -29,34 +29,9 @@ const closeMenuTl = gsap.timeline({
       duration: 0.35,
       stagger: 0.1
     }, '<')
-    .fromTo('.menu__item--2 img', {
-      x: 0,
-    }, {
-      x: '-100%',
-      ease: 'Expo.easeOut',
-      duration: 1.25
-    }, '<')
-    .fromTo('.menu__item--3 img', {
-      y: 0,
-    }, {
-      y: '100%',
-      ease: 'Expo.easeOut',
-      duration: 1.25
-    }, '<')
-    .fromTo('.menu__item--4 img', {
-      y: 0,
-    }, {
-      y: '100%',
-      ease: 'Expo.easeOut',
-      duration: 1.25
-    }, '<')
-    .fromTo('.menu__item--5 img', {
-      y: 0,
-    }, {
-      y: '-100%',
-      ease: 'Expo.easeOut',
-      duration: 1.25
-    }, '<')
+    .fromTo('.menu__header', {
+      autoAlpha: 1,
+    }, { autoAlpha: 0 }, '<')
     .set('.menu', {
       pointerEvents: 'none',
       visibility: 'hidden'
@@ -88,34 +63,9 @@ const closeMenuTl = gsap.timeline({
         duration: 0.55,
         stagger: 0.1
       }, '<')
-      .fromTo('.menu__item--2 img', {
-        x: '-100%'
-      }, {
-        x: 0,
-        ease: 'Expo.easeOut',
-        duration: 1.25
-      }, '<')
-      .fromTo('.menu__item--3 img', {
-        y: '100%'
-      }, {
-        y: 0,
-        ease: 'Expo.easeOut',
-        duration: 1.25
-      }, '<')
-      .fromTo('.menu__item--4 img', {
-        y: '100%'
-      }, {
-        y: 0,
-        ease: 'Expo.easeOut',
-        duration: 1.25
-      }, '<')
-      .fromTo('.menu__item--5 img', {
-        y: '-100%'
-      }, {
-        y: 0,
-        ease: 'Expo.easeOut',
-        duration: 1.25
-      }, '<')
+      .fromTo('.menu__header', {
+        autoAlpha: 0,
+      }, { autoAlpha: 1 }, '<')
       .fromTo('.action--close', {
         autoAlpha:0
       }, {

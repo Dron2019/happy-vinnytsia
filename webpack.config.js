@@ -7,6 +7,8 @@ const config = {
     index: './src/assets/scripts/index-app.js',
     project: './src/assets/scripts/project.js',
     progress: './src/assets/scripts/progress.js',
+    gallery: './src/assets/scripts/gallery.js',
+    news: './src/assets/scripts/news.js',
   },
   output: {
     filename: '[name].bundle.js',

@@ -145,7 +145,10 @@ function scssTemplateCreater() {
 function server() {
 	browserSync.init({
 	  server: {
-		baseDir: './',
+		baseDir: './dist',
+		serveStaticOptions: {
+            extensions: ['html']
+        },
 		routes: {},
 		middleware: function (req, res, next) {
 			if (/\.json|\.txt|\.html/.test(req.url) && req.method.toUpperCase() == 'POST') {

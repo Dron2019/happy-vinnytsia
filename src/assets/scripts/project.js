@@ -1,8 +1,15 @@
 import Swiper, { EffectFade, Navigation } from 'swiper';
 import menu from './modules/menu';
 import { lenis } from './modules/scroll/leniscroll';
-
+import Headroom from 'headroom.js';
+import './modules/form';
+import "current-device";
 Swiper.use([EffectFade, Navigation]);
+
+var myElement = document.querySelector("header");
+// construct an instance of Headroom, passing the element
+var headroom  = new Headroom(myElement);
+headroom.init();
 
 
 menu();

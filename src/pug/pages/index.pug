@@ -2,6 +2,9 @@
 extends ../layout/main
 block variable
   -
+    var title_page = 'project'
+    var id_page = 'home'
+    var class_page = 'home '
     var genplan = [
       'Підземні паркінги',
       'Лікарня',
@@ -105,6 +108,21 @@ block content
         .swiper-slide
           .text-style-h-1.text-white ПАРК
           img(src="./assets/images/home/home-page-screen1.jpg")
+        .swiper-slide
+          .text-style-h-1.text-white ПАРК1
+          img(src="./assets/images/home/home-page-screen1.jpg")
+        .swiper-slide
+          .text-style-h-1.text-white ПАРК2
+          img(src="./assets/images/home/home-page-screen1.jpg")
+        .swiper-slide
+          .text-style-h-1.text-white ПАРК3
+          img(src="./assets/images/home/home-page-screen1.jpg")
+        .swiper-slide
+          .text-style-h-1.text-white ПАРК4
+          img(src="./assets/images/home/home-page-screen1.jpg")
+        .swiper-slide
+          .text-style-h-1.text-white ПАРК5
+          img(src="./assets/images/home/home-page-screen1.jpg")
     a(href="#").button-30.button-30--blue Дивитися більше фото
   .container.home-news
     .text-style-h-1.text-new-blue.text-uppercase Новини та акції
@@ -184,7 +202,7 @@ block content
         <svg width="32" height="14" viewBox="0 0 32 14" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M0.25 0.666504H16H31.75C19.15 0.666504 16 9.55539 16 13.9998C16 9.55539 12.85 0.666504 0.25 0.666504Z" fill="#E6E6E6"/>
           </svg>
-    a(href="#").button-30.button-30--blue Ознайомитись детальніше
+    a(href="/progress").button-30.button-30--blue Ознайомитись детальніше
   include ../includes/contact-screen.pug
 block footer
   include ../includes/footer.pug

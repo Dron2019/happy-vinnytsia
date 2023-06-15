@@ -1,0 +1,70 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'ДОДАТКОВО -5% ДЛЯ ВІЙСЬКОВИХ'
+    var id_page = 'id-page-single-news'
+    var class_page = 'class-page-single-news'
+    var header_class = 'header--dark'
+    var breadcrumbsSubitem = [
+      {
+        label: 'News',
+        link: '/news'
+      }
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/single-news.js')
+block content
+  .container.news-front-screen
+    include ../includes/breadcrumbs.pug
+    .text-style-h-1.text-new-blue.text-uppercase Додатково -5% для військових
+  .container.single-news-container
+    img(src="./assets/images/home/home-page-screen1.jpg")
+    .single-news-container__title Подяка за службу: знижка від житлового комплексу для військовослужбовців.
+    .single-news-container__date
+      +svg('calendar')
+      span 24.02.2023
+    .single-news-container__text Військовослужбовці заслуговують на нашу подяку та підтримку, тому ми раді повідомити про нашу спеціальну пропозицію. Відтепер у ЖК "Героїв" діє знижка в розмірі 5% для всіх військових.
+    ul.single-news-container__list
+      li Комфортне житло в новобудові зі зручним розташуванням
+      li Можливість придбання квартири в розстрочку без відсотків
+      li Безкоштовний доступ до фітнес-центру та інших інфраструктурних об'єктів ЖК "Щасливий"
+    a(href="/3d").button-30.button-30--blue Обрати квартиру
+  .container.news-container 
+    .text-style-h-1.text-new-blue.text-uppercase Останні новини та акції
+    a(href="/single-news").news-card.news
+      img(src="./assets/images/home/home-page-screen1.jpg").news-card__image
+      .news-card__text
+        .news-card__label Новина
+        .news-card__title Старт продаж нових секцій
+        p Гарна новина! Розпочато продаж квартир у 7 секції в ЖК Щасливий у Дніпрі. Встигніть забронювати квартири площею від 40.7 м2 за кращою ціною. 
+        .news-card__date 
+          +svg('calendar')
+          span 24.02.2023
+    a(href="/single-news").news-card.news
+      img(src="./assets/images/home/home-page-screen1.jpg").news-card__image
+      .news-card__text
+        .news-card__label Новина
+        .news-card__title Старт продаж нових секцій
+        p Гарна новина! Розпочато продаж квартир у 7 секції в ЖК Щасливий у Дніпрі. Встигніть забронювати квартири площею від 40.7 м2 за кращою ціною. 
+        .news-card__date 
+          +svg('calendar')
+          span 24.02.2023
+
+  include ../includes/contact-screen.pug
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

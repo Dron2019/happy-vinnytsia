@@ -50,3 +50,23 @@
         }
     }
 }
+
+
+.tablet {
+    .home-grid-block {
+        grid-template-columns: 1fr 1fr ; 
+        grid-template-rows: 1fr 1fr; 
+        gap: 20px; 
+        grid-template-areas: 
+          "img1 img2"
+          "text1 text1"; 
+          height: 65vh;
+
+          &__text {
+            border-radius: 12px;
+            overflow: hidden;
+            @include shift-padding-left(2);
+            @include shift-padding-right(2);
+          }
+    }
+}

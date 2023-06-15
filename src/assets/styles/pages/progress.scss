@@ -22,13 +22,26 @@
         padding-top: 8.3vh;
         padding-bottom: 8.3vh;
     }
-    .progress-tabs {
+    .tabs {
         margin-bottom: 12.5vh;
         margin-top: 40px;
     }
 }
 
-.progress-tabs {
+.tablet,
+.mobile {
+    .progress-front-screen  {
+        .tabs {
+           margin-bottom: 100px;
+        }
+    }
+    .progress-card {
+        padding-bottom: 40px;
+        padding-top: 40px;
+    }
+}
+
+.tabs {
     border-color: rgba(0, 26, 88, 0.3);
     border-radius: 24px;
     border-width: 1px;
@@ -37,7 +50,7 @@
     display: flex;
     align-items: center;
 
-    .progress-tabs__tab {
+    &__tab {
         font-weight: 400;
         font-size: 18px;
         line-height: 140%;
@@ -132,6 +145,41 @@
     }
     &.reverse {
         flex-direction: row-reverse;
+    }
+}
+
+.tablet {
+    .progress-card {
+        &__text {
+            
+    
+            &>:nth-child(n+2) {
+            }
+            &>:last-child {
+                    margin-top: 20px;
+            }
+            &-title {
+                font-size: 18px;
+            }
+            &-text {
+                font-size: 14px;
+            }
+        }
+        &__img {
+            @include size(10);
+            @include shift-left(1);
+            @include shift-right(1);
+            aspect-ratio: 1/1;
+        }
+        &__delimiter {
+            &-top,
+            &-bottom {
+            }
+            &-center {
+            }
+        }
+        &.reverse {
+        }
     }
 }
 
@@ -316,4 +364,23 @@
     .swiper-button-disabled {
         opacity: 0 !important;
    }
+}
+
+.tablet,
+.mobile {
+    .build-progress-popup {
+        flex-direction: column;
+        &__text {
+            width: 100%;
+            height: auto;
+            padding-bottom: 40px;
+        }
+        &__slider {
+            width: 100%;
+            flex-grow: 1;
+        }
+        &__nav {
+            width: calc(100% - 20px);
+        }
+    }
 }

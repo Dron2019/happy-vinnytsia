@@ -1,19 +1,14 @@
-import i18next from 'i18next';
 import axios from 'axios';
-import * as yup from 'yup';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import Swiper, { EffectFade, Navigation } from 'swiper';
-import FormMonster from '../../pug/components/form/form';
-import SexyInput from '../../pug/components/input/input';
-import Accordion from 'accordion-js';
 import Headroom from "headroom.js";
 import { lenis } from './modules/scroll/leniscroll';
 import buttonHover from './modules/buttonHover';
 import splitToLinesAndFadeUp from './modules/effects/splitLinesAndFadeUp';
 import { gsap, ScrollTrigger } from 'gsap/all';
 import "current-device";
-import googleMap from './modules/map/map';
 import menu from './modules/menu';
+import './modules/form';
 
 
 const scroller = lenis;
@@ -31,89 +26,10 @@ global.axios = axios;
 gsap.registerPlugin(ScrollTrigger);
 
 
-// var myElement = document.querySelector("header");
-// // construct an instance of Headroom, passing the element
-// var headroom  = new Headroom(myElement);
-// initialise
-// headroom.init();
-
-
-/*
- * form handlers start
- */
-const forms = [
-  '[data-bottom-form]',
-  '[data-form]',
-];
-
-forms.forEach((form) => {
-  return;
-  const $form = document.querySelector(form);
-  if ($form) {
-    /* eslint-disable */
-    new FormMonster({
-      /* eslint-enable */
-      elements: {
-        $form,
-        successAction: () => { window.location.href = 'thankyou'; },
-        $btnSubmit: $form.querySelector('[data-btn-submit]'),
-        fields: {
-          name: {
-            inputWrapper: new SexyInput({ animation: 'none', $field: $form.querySelector('[data-field-name]') }),
-            rule: yup.string().required(i18next.t('required')).trim(),
-            defaultMessage: i18next.t('name'),
-            valid: false,
-            error: [],
-          },
-          email: {
-            inputWrapper: new SexyInput({ animation: 'none', $field: $form.querySelector('[data-field-email]') }),
-            rule: yup.string().required(i18next.t('required')).trim(),
-            defaultMessage: i18next.t('email'),
-            valid: false,
-            error: [],
-          },
-
-          phone: {
-            inputWrapper: new SexyInput({ animation: 'none', $field: $form.querySelector('[data-field-phone]'), typeInput: 'phone' }),
-            rule: yup
-              .string()
-              .required(i18next.t('required'))
-              .min(17, i18next.t('field_too_short', { cnt: 17 - 5 })),
-
-            defaultMessage: i18next.t('phone'),
-            valid: false,
-            error: [],
-          },
-          agreement: {
-            inputWrapper: new SexyInput({ animation: 'none', $field: $form.querySelector('[data-field-agreement]') }),
-            rule: yup.string().required(i18next.t('required')).nullable(),
-            defaultMessage: i18next.t('agreement'),
-            valid: false,
-            error: [],
-          },
-        },
-
-      },
-    });
-
-    // $form.querySelector('.js-mask-absolute').addEventListener('click', () => {
-    //   $form.querySelector('[name="phone"]').focus();
-    // }, false);
-  }
-});
-
-/*
- * form handlers end
- */
-
-
-
-
-
-
-
-
-
+var myElement = document.querySelector("header");
+// construct an instance of Headroom, passing the element
+var headroom  = new Headroom(myElement);
+headroom.init();
 
 
 document.body.addEventListener('click',function(evt){
@@ -223,33 +139,11 @@ document.querySelectorAll('[data-lazy]').forEach(el => {
   })
 })
 
-googleMap();
 
 
-document.querySelectorAll('.web-item').forEach(item => {
-  const button = item.querySelector('[data-circle-with-hover]');
-  const frame = item.querySelector('iframe');
-  const playButtonPath = item.querySelector('[data-circle-with-hover] path');
-  const morphs = {
-      default: playButtonPath.getAttribute('d'),
-      custom: 'M 59 60 L 38 60 C 38 60 38 60 38 60 L 38 40 C 38 40 59 40 59 40 L 59 60 C 59 60 59 60 59 60 Z',
+new Swiper('.home-gallery__container', {
+  navigation: {
+    nextEl: '.home-gallery__arrow-next',
+    prevEl: '.home-gallery__arrow-prev'
   }
-  button.addEventListener('click', () => {
-      const isHaveClass = item.classList.toggle('is-playing');
-      if (isHaveClass) {
-          frame.src = frame.dataset.src;
-      } else {
-          frame.removeAttribute('src');
-      }
-      button.remove();
-      // gsap.to(playButtonPath, {
-      //     duration: 0.5,
-      //     ease: 'linear',
-      //     attr: {
-      //         d: isHaveClass ? morphs.custom : morphs.default,
-      //     } 
-      // })
-  }, {
-    once: true
-  })
-});
+})
