@@ -201,6 +201,9 @@
     --text-top-padding: 250px;
     opacity: 0;
     visibility: hidden;
+    border: 20px solid var(--color-light-blue);
+    border-left-width: 30px;
+    border-right-width: 30px;
     @include to(575px){
         --text-top-padding: 150px;
         // width: 100%;

@@ -28,3 +28,22 @@
         margin-top: 80px;
     }
 }
+.tablet,
+.mobile {
+    .news-container  {
+        margin-top: 60px !important;
+        &>[class*="text-style"] {
+            margin-bottom: 60px;
+        }
+        .news-card {
+            @include size(24);
+            @include shift(0);
+        }
+        .news-card~.news-card {
+            margin-top: 60px;
+        }
+        .news-card:nth-of-type(n+3) {
+            margin-top: 60px;
+        }
+    }
+}

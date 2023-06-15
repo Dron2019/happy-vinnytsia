@@ -7,3 +7,9 @@
     padding-top: calc(var(--header-h) + 20px);
     margin-bottom: -150px;
 }
+.tablet,
+.mobile {
+    .contact-front-screen {
+        margin-bottom: -80px;
+    }
+}

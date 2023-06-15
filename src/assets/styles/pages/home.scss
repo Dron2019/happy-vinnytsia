@@ -429,6 +429,7 @@
         }
         &__left {
             @include size(24);
+            margin-bottom: 40px;
         }
         &__right {
             @include size(24);

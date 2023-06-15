@@ -233,8 +233,8 @@ export default class FormMonster {
           /* eslint-disable-next-line */
           const { error, code_error } = await sendForm(formData);
 
-          if (true) {
-          // if (error === 0) {
+          // if (true) {
+          if (error === 0) {
             this.watchedState.status = 'successSand';
             return true;
           }

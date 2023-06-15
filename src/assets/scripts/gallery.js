@@ -2,6 +2,7 @@ import Swiper, { EffectFade, Lazy, Navigation } from 'swiper';
 import menu from './modules/menu';
 import { lenis } from './modules/scroll/leniscroll';
 import Headroom from 'headroom.js';
+import 'current-device';
 const { useState } = require("./modules/helpers/helpers");
 import './modules/form';
 

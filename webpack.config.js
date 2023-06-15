@@ -9,6 +9,7 @@ const config = {
     progress: './src/assets/scripts/progress.js',
     gallery: './src/assets/scripts/gallery.js',
     news: './src/assets/scripts/news.js',
+    'single-news': './src/assets/scripts/single-news.js',
   },
   output: {
     filename: '[name].bundle.js',

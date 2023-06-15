@@ -53,6 +53,12 @@
         justify-content: flex-end;
         align-items: center;
         padding-top: 3.7vh;
+        padding-left: var(--page-side-fields);
+        &-logo {
+            margin-right: auto;
+            margin-left: 0;
+            display: none;
+        }
         &-link {
             font-size: 14px;
             font-weight: 700;
@@ -100,6 +106,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        text-transform: uppercase;
         svg {
             margin-left: 12px;
         }
@@ -438,6 +445,31 @@
     .menu {
         &__link {
             font-size: 48px;
+        }
+        &__header {
+            padding-left: var(--page-side-fields);
+            padding-right: var(--page-side-fields);
+            &-logo {
+                display: initial;
+            }
+            .action--close,
+            .button-30,
+            &-link {
+                padding: 20px 28px;
+                background-color: var(--color-white);
+                color: var(--color-new-blue);
+                border-radius: 12px;
+            }
+            .action--close {
+                margin-left: 50px;
+                path {
+                    stroke: var(--color-new-blue);
+                }
+            }
+            .button-30 {
+                display: none;
+            }
+            
         }
     }
     .menu__item--1 {
