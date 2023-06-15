@@ -38,6 +38,69 @@ block content
       .text-style-h-1.text-white.text-uppercase твої цінності,
       .text-style-h-1.text-white.text-uppercase твій Щасливий
       button(type="button" class="button-30") Обрати квартиру
+  .container.container--full-screen.circle-screen
+    +responsiveImage([
+      './assets/images/home/home-page-screen1.jpg 1920',
+      './assets/images/home/home-page-screen1@75x.jpg 1240',
+      './assets/images/home/home-page-screen1@05x.jpg 600',
+      './assets/images/home/home-page-screen1@05x.jpg 320',
+    ], 'Альтернативний текст', true).circle-screen__img
+    .circle-screen__text
+      <svg class="circle-screen__circle" width="1080" height="1080" viewBox="0 0 1080 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="540" cy="540" r="540" fill="#D9D9D9"/>
+        </svg>
+      .circle-screen__navigation 
+        <svg data-home-about-slider-prev width="35" height="16" viewBox="0 0 35 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="35" y="8.5" width="30" height="1" transform="rotate(-180 35 8.5)" fill="#001A58"/>
+          <path d="M5.34948 8.21222L7.96852 13.7995C8.19919 14.2916 7.5898 14.7465 7.18361 14.3854L0.420418 8.3737C0.196661 8.17481 0.196661 7.82519 0.420419 7.62629L7.18361 1.61457C7.5898 1.25351 8.19919 1.7084 7.96852 2.20049L5.34948 7.78778C5.28645 7.92224 5.28645 8.07776 5.34948 8.21222Z" fill="#001A58"/>
+          </svg>
+        <div class="slider-counter js-gallery-slider-counter">
+            <div class="slider-counter__arrow slider-counter__arrow-current current">1</div>
+            <div class="slider-counter__delimiter">/</div>
+            <div class="slider-counter__arrow slider-counter__arrow-total total">12</div>
+        </div>
+        <svg data-home-about-slider-next width="35" height="16" viewBox="0 0 35 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect y="7.5" width="30" height="1" fill="#001A58"/>
+          <path d="M29.6505 7.78778L27.0315 2.20049C26.8008 1.7084 27.4102 1.25351 27.8164 1.61457L34.5796 7.6263C34.8033 7.82519 34.8033 8.17481 34.5796 8.3737L27.8164 14.3854C27.4102 14.7465 26.8008 14.2916 27.0315 13.7995L29.6505 8.21222C29.7136 8.07776 29.7136 7.92224 29.6505 7.78778Z" fill="#001A58"/>
+          </svg>
+      .swiper-container(data-home-about-slider)
+        .swiper-wrapper
+          .swiper-slide
+            .text-style-h-1.text-blue.text-uppercase.home-gallery__title 1 Про об’єкт
+            .swiper-slide__text Щасливий у Дніпрі - це Простір:
+            .swiper-slide__text для прогулянок з сім’єю
+            .swiper-slide__text Паркова зона
+            a(href="/project").button-30.button-30--blue Дізнатися більше
+          .swiper-slide
+            .text-style-h-1.text-blue.text-uppercase.home-gallery__title 2 Про об’єкт
+            .swiper-slide__text Щасливий у Дніпрі - це Простір:
+            .swiper-slide__text для прогулянок з сім’єю
+            .swiper-slide__text Паркова зона
+            a(href="/project").button-30.button-30--blue Дізнатися більше
+          .swiper-slide
+            .text-style-h-1.text-blue.text-uppercase.home-gallery__title 3 Про об’єкт
+            .swiper-slide__text Щасливий у Дніпрі - це Простір:
+            .swiper-slide__text для прогулянок з сім’єю
+            .swiper-slide__text Паркова зона
+            a(href="/project").button-30.button-30--blue Дізнатися більше
+          .swiper-slide
+            .text-style-h-1.text-blue.text-uppercase.home-gallery__title 4 Про об’єкт
+            .swiper-slide__text Щасливий у Дніпрі - це Простір:
+            .swiper-slide__text для прогулянок з сім’єю
+            .swiper-slide__text Паркова зона
+            a(href="/project").button-30.button-30--blue Дізнатися більше
+          .swiper-slide
+            .text-style-h-1.text-blue.text-uppercase.home-gallery__title 5 Про об’єкт
+            .swiper-slide__text Щасливий у Дніпрі - це Простір:
+            .swiper-slide__text для прогулянок з сім’єю
+            .swiper-slide__text Паркова зона
+            a(href="/project").button-30.button-30--blue Дізнатися більше
+          .swiper-slide
+            .text-style-h-1.text-blue.text-uppercase.home-gallery__title 6 Про об’єкт
+            .swiper-slide__text Щасливий у Дніпрі - це Простір:
+            .swiper-slide__text для прогулянок з сім’єю
+            .swiper-slide__text Паркова зона
+            a(href="/project").button-30.button-30--blue Дізнатися більше
   .container.home-grid-block
     .home-grid-block__img1
       +responsiveImage([

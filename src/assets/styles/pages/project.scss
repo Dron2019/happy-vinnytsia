@@ -45,6 +45,23 @@
     }
 }
 
+.slider-counter {
+    --self-color: var(--color-new-blue);
+    color: var(--self-color);
+    display: flex;
+    align-items: center;
+    &__arrow {
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: 0.04em;
+    }
+    &__delimiter {
+        color: var(--self-color);
+        margin-right: 1ch;
+        margin-left: 1ch;
+    }
+}
+
 .project-slider {
     position: relative;
     &__navigation {
@@ -61,22 +78,7 @@
             cursor: pointer;
         }
     }
-    .slider-counter {
-        --self-color: var(--color-new-blue);
-        color: var(--self-color);
-        display: flex;
-        align-items: center;
-        &__arrow {
-            font-size: 14px;
-            line-height: 24px;
-            letter-spacing: 0.04em;
-        }
-        &__delimiter {
-            color: var(--self-color);
-            margin-right: 1ch;
-            margin-left: 1ch;
-        }
-    }
+
     .swiper-slide {
         @include row-flex();
         &__text {

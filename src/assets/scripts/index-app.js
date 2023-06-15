@@ -147,3 +147,14 @@ new Swiper('.home-gallery__container', {
     prevEl: '.home-gallery__arrow-prev'
   }
 })
+
+new Swiper('[data-home-about-slider]', {
+  navigation: {
+    nextEl: '[data-home-about-slider-next]',
+    prevEl: '[data-home-about-slider-prev]'
+  },
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true
+  },
+})

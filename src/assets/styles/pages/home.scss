@@ -33,6 +33,7 @@
 @import '../parts/home/home-grid-block';
 @import '../parts/home/genplan';
 @import '../parts/home/home-gallery';
+@import '../parts/home/circle-screen';
 
 .home-news {
     @include row-flex();
