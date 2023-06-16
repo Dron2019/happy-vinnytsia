@@ -1,5 +1,8 @@
 .home-gallery {
     height: auto;
+    .thumbs {
+        display: none;
+    }
     &__title {
         margin-bottom: 40px;
         width: 100%;
@@ -78,6 +81,7 @@
 
 .mobile {
     .home-gallery {
+        position: relative;
         &__title {
         }
         &>.button-30 {
@@ -92,6 +96,7 @@
             height: 100vw;
         }
         &__arrow {
+            display: none;
             &-prev {
                 width: 48px;
                 height: 48px;
@@ -111,5 +116,13 @@
                 object-fit: cover;
             }
         }
+        .thumbs {
+            display: flex;
+            position: absolute;
+            left: 50%;
+            bottom: 8px;
+            transform: translateX(-50%);
+            z-index: 3;
+        } 
     }
 }

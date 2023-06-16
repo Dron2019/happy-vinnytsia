@@ -45,3 +45,33 @@
 
 
 
+.tablet,
+.mobile {
+    .genplan {
+        overflow-x: auto;
+        overflow-y: hidden;
+        &>svg {
+            height: 100%;
+            width: 177.7vh;
+        }
+        .text-style-h-1 {
+            margin-bottom: 20px;
+        }
+        &__legend {
+            height: max-content;
+            justify-content: flex-start;
+            text-align: left;
+            width: 100%;
+        }
+        &__legend-point {
+            font-size: 12px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+            
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+    }
+}

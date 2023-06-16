@@ -438,6 +438,22 @@
 				display: none;
 			}
 		}
+		&.header--dark {
+			[fill]  {
+				fill: var(--color-new-blue);
+			}
+			.header__menu-call {
+				padding: 0;
+				background: none;
+				margin-left: 24px;
+				[stroke] {
+					stroke: var(--color-new-blue);
+				}
+				span {
+					display: none;
+				}
+			}
+		}
 		&>:first-child {
 			width: 100px;
 			svg {
@@ -452,7 +468,7 @@
 				height: 40px;
 			}
 		}
-		&>svg {
+		&__logo-wrap>svg {
 			width: 75px;
 		}
 		.button-30 {

@@ -5,6 +5,7 @@
     justify-content: flex-start;
     align-items: center;
     padding-top: calc(var(--header-h) + 20px);
+
     &__bg {
         img {
             position: absolute;
@@ -77,6 +78,9 @@
         svg {
             cursor: pointer;
         }
+    }
+    .thumbs {
+        display: none;
     }
 
     .swiper-slide {
@@ -159,6 +163,22 @@
     }
 }
 
+.mobile {
+    .project-slider {
+        &__navigation {
+            display: none;
+        }
+        .thumbs {
+            display: flex;
+            position: absolute;
+            left: 50%;
+            bottom: 8px;
+            z-index: 3;
+            transform: translateX(-50%)
+        }
+    }
+}
+
 .project-text-block {
     @include shift-padding(2);
     display: flex;
@@ -203,6 +223,13 @@
     &>* {
         @include size(4.8);
         @include shift(0);
+    }
+}
+.mobile {
+    .project-areas {
+        &>* {
+            
+        }
     }
 }
 
@@ -315,5 +342,10 @@
             svg {
             }
         }
+    }
+}
+.mobile  {
+    .project-quote {
+        height: 100vw;
     }
 }

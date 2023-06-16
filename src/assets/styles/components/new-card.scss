@@ -86,6 +86,13 @@
         }
         &__text {
             @include size(24);
+            font-size: 12px;
+        }
+        &__date {
+            font-size: 12px;
+        }
+        &__title {
+            font-size: 16px;
         }
     }
 }

@@ -1,6 +1,6 @@
 import axios from 'axios';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import Swiper, { EffectFade, Navigation } from 'swiper';
+import Swiper, { EffectFade, Navigation, Pagination } from 'swiper';
 import Headroom from "headroom.js";
 import { lenis } from './modules/scroll/leniscroll';
 import buttonHover from './modules/buttonHover';
@@ -14,7 +14,7 @@ import './modules/form';
 const scroller = lenis;
 
 
-Swiper.use([EffectFade, Navigation]);
+Swiper.use([EffectFade, Navigation, Pagination]);
 /** ******************************* */
 /*
  * smooth scroll start
@@ -145,7 +145,14 @@ new Swiper('.home-gallery__container', {
   navigation: {
     nextEl: '.home-gallery__arrow-next',
     prevEl: '.home-gallery__arrow-prev'
-  }
+  },
+  pagination: {
+    el: '.home-gallery .thumbs',
+    clickable: true,
+    renderBullet: function (index, className) {
+      return '<span class="thumbs__item ' + className + '"></span>';
+    }, 
+  },
 })
 
 const aboutSlider = new Swiper('[data-home-about-slider]', {
@@ -202,3 +209,26 @@ aboutSlider.on('slideChangeTransitionStart', ({ activeIndex, realIndex, slides, 
 })
 
 splitToLinesAndFadeUp('.text-style-h-1');
+
+
+
+function gridBlockSlider() {
+  if (!document.documentElement.classList.contains('mobile')) return;
+
+  const slider = new Swiper('[data-mobile-grid-sldier]',
+  {
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+    pagination: {
+      el: '[data-mobile-grid-sldier] .thumbs',
+			clickable: true,
+      renderBullet: function (index, className) {
+        return '<span class="thumbs__item ' + className + '"></span>';
+      },
+    },
+  });
+}
+
+gridBlockSlider();

@@ -96,31 +96,33 @@ block content
             .swiper-slide__text для прогулянок з сім’єю
             .swiper-slide__text Паркова зона
             a(href="/project").button-30.button-30--blue Дізнатися більше
-  .container.home-grid-block
-    .home-grid-block__img1
-      +responsiveImage([
-        './assets/images/home/home-grid-block/home-grid-block1.jpg 1920',
-        './assets/images/home/home-grid-block/home-grid-block1@075x.jpg 1240',
-        './assets/images/home/home-grid-block/home-grid-block1@05x.jpg 600',
-        './assets/images/home/home-grid-block/home-grid-block1@05x.jpg 320',
-      ], 'Альтернативний текст', true)
-    .home-grid-block__text
-      +responsiveImage([
-        './assets/images/home/home-grid-block/home-grid-block-text.jpg 1920',
-        './assets/images/home/home-grid-block/home-grid-block-text@075x.jpg 1240',
-        './assets/images/home/home-grid-block/home-grid-block-text@05x.jpg 600',
-        './assets/images/home/home-grid-block/home-grid-block-text@05x.jpg 320',
-      ], 'Альтернативний текст', true)
-      .text-style-h-1.text-new-blue.text-uppercase Дивитися квартири
-      .text-style-h-4.text-blue Вільне планування - це чудова можливість не купувати квартиру з певною кількістю та типологією кімнат, а самостійно вирішити які саме зони з'являться на цій площі, визначити їх метраж та конфігурацію. 
-      a(href="#" class="button-30 button-30--blue") Перейти до планувань
-    .home-grid-block__img2
-      +responsiveImage([
-        './assets/images/home/home-grid-block/home-grid-block2.jpg 1920',
-        './assets/images/home/home-grid-block/home-grid-block2@075x.jpg 1240',
-        './assets/images/home/home-grid-block/home-grid-block2@05x.jpg 600',
-        './assets/images/home/home-grid-block/home-grid-block2@05x.jpg 320',
-      ], 'Альтернативний текст', true)
+  .container.swiper-container(data-mobile-grid-sldier)
+    .thumbs
+    .home-grid-block.swiper-wrapper
+      .home-grid-block__text.swiper-slide
+        +responsiveImage([
+          './assets/images/home/home-grid-block/home-grid-block-text.jpg 1920',
+          './assets/images/home/home-grid-block/home-grid-block-text@075x.jpg 1240',
+          './assets/images/home/home-grid-block/home-grid-block-text@05x.jpg 600',
+          './assets/images/home/home-grid-block/home-grid-block-text@05x.jpg 320',
+        ], 'Альтернативний текст', true)
+        .text-style-h-1.text-new-blue.text-uppercase Дивитися квартири
+        .text-style-h-4.text-blue Вільне планування - це чудова можливість не купувати квартиру з певною кількістю та типологією кімнат, а самостійно вирішити які саме зони з'являться на цій площі, визначити їх метраж та конфігурацію. 
+        a(href="#" class="button-30 button-30--blue") Перейти до планувань
+      .home-grid-block__img1.swiper-slide
+        +responsiveImage([
+          './assets/images/home/home-grid-block/home-grid-block1.jpg 1920',
+          './assets/images/home/home-grid-block/home-grid-block1@075x.jpg 1240',
+          './assets/images/home/home-grid-block/home-grid-block1@05x.jpg 600',
+          './assets/images/home/home-grid-block/home-grid-block1@05x.jpg 320',
+        ], 'Альтернативний текст', true)
+      .home-grid-block__img2.swiper-slide
+        +responsiveImage([
+          './assets/images/home/home-grid-block/home-grid-block2.jpg 1920',
+          './assets/images/home/home-grid-block/home-grid-block2@075x.jpg 1240',
+          './assets/images/home/home-grid-block/home-grid-block2@05x.jpg 600',
+          './assets/images/home/home-grid-block/home-grid-block2@05x.jpg 320',
+        ], 'Альтернативний текст', true)
   .container.container--full-screen.genplan
     <svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMinYMin slice ">
       <rect width="1920" height="1080" fill="url(#pattern0)"/>
@@ -149,6 +151,7 @@ block content
   .container.container--full-screen.home-gallery 
     .text-style-h-1.text-new-blue.text-uppercase.home-gallery__title Галерея
     .home-gallery__container.swiper-container
+      .thumbs
       .home-gallery__arrow
         <svg class="home-gallery__arrow-prev" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="50" cy="50" r="49.5" stroke="white"/>
@@ -211,6 +214,18 @@ block content
           <circle cx="50" cy="50" r="50" fill="white"/>
           <path d="M38 64V36L66 50L38 64Z" fill="#001A58"/>
           </svg>
+    <svg class="home-progress__mobile-scroll-helper" width="53" height="39" viewBox="0 0 53 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0H45C49.4183 0 53 3.58172 53 8V31C53 35.4183 49.4183 39 45 39H0V0Z" fill="url(#paint0_linear_759_17849)"/>
+      <path d="M34.6982 19.4104C34.3318 19.4104 33.9904 19.5218 33.7069 19.7117C33.4626 19.0182 32.8002 18.5189 32.0237 18.5189C31.6573 18.5189 31.3159 18.6304 31.0324 18.8202C30.7881 18.1267 30.1257 17.6274 29.3492 17.6274C29.0247 17.6274 28.7198 17.7148 28.4577 17.8672V14.9529C28.4577 13.9696 27.6581 13.1699 26.6747 13.1699C25.6914 13.1699 24.8917 13.9696 24.8917 14.9529V22.5306L23.3423 21.369C22.4241 20.6799 21.1171 20.7717 20.3032 21.5848C19.7817 22.1063 19.7817 22.9541 20.3032 23.4757L26.6516 29.8249C27.4093 30.5827 28.4176 30.9999 29.4892 30.9999H31.578C34.281 30.9999 36.4812 28.8006 36.4812 26.0967V21.1934C36.4812 20.2101 35.6815 19.4104 34.6982 19.4104ZM35.5897 26.0966C35.5897 28.3084 33.7898 30.1084 31.578 30.1084H29.4892C28.6548 30.1084 27.8712 29.7839 27.2819 29.1946L20.9335 22.8454C20.7597 22.6715 20.7597 22.3889 20.9335 22.2151C21.2099 21.9396 21.579 21.7978 21.9498 21.7978C22.2512 21.7978 22.5543 21.8914 22.8083 22.0822L25.0701 23.7787C25.2056 23.8803 25.3875 23.8955 25.5372 23.8206C25.6879 23.7449 25.7833 23.5906 25.7833 23.4221V14.9529C25.7833 14.4617 26.1827 14.0614 26.6748 14.0614C27.1669 14.0614 27.5663 14.4617 27.5663 14.9529V21.6392C27.5663 21.8852 27.766 22.0849 28.012 22.0849C28.2581 22.0849 28.4578 21.8852 28.4578 21.6392V19.4104C28.4578 18.9192 28.8572 18.5189 29.3493 18.5189C29.8414 18.5189 30.2408 18.9192 30.2408 19.4104V21.6392C30.2408 21.8852 30.4405 22.0849 30.6865 22.0849C30.9326 22.0849 31.1323 21.8852 31.1323 21.6392V20.3019C31.1323 19.8107 31.5317 19.4104 32.0238 19.4104C32.5159 19.4104 32.9152 19.8107 32.9152 20.3019V21.6392C32.9152 21.8852 33.115 22.0849 33.361 22.0849C33.6071 22.0849 33.8068 21.8852 33.8068 21.6392V21.1934C33.8068 20.7022 34.2061 20.3019 34.6983 20.3019C35.1904 20.3019 35.5897 20.7022 35.5897 21.1934V26.0966Z" fill="white"/>
+      <path d="M18 9.32837L16.1863 11.1716M16.1863 11.1716L18 13.3284M16.1863 11.1716L22.5 11.1716" stroke="white"/>
+      <path d="M35 13.1716L36.8137 11.3284M36.8137 11.3284L35 9.17163M36.8137 11.3284L30.5 11.3284" stroke="white"/>
+      <defs>
+      <linearGradient id="paint0_linear_759_17849" x1="53" y1="19.5" x2="-5.59603e-07" y2="19.5" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#001A58"/>
+      <stop offset="1" stop-color="#001A58" stop-opacity="0"/>
+      </linearGradient>
+      </defs>
+      </svg>
     .progress-line
       .section-progress-item
         .section-progress-item__value 50%

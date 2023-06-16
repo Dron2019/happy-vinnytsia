@@ -76,6 +76,7 @@
   }
 }
 .input-title {
+  text-transform: uppercase;
 
   text-align: center;
   margin-bottom: 0px;
@@ -422,5 +423,17 @@ textarea.form-field__input {
     .form-close {
       display: none;
     }
+  }
+}
+
+
+.mobile {
+  .form-description {
+    font-size: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  [data-btn-submit] {
+    margin-top: 20px;
   }
 }

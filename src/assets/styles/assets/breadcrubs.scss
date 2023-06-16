@@ -73,3 +73,13 @@
     }
   }
 }
+
+
+.mobile {
+  .breadcrumbs {
+    margin-bottom: 8px;
+    .breadcrumbs-item:last-child, .breadcrumbs-item__link {
+      font-size: 12px;
+    }
+  }
+}
