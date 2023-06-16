@@ -43,4 +43,7 @@ document.querySelector(`[${tab().selector}]`).addEventListener('click', (evt) =>
 setTab({
     ...tab(),
     active: 0
-})
+});
+
+
+

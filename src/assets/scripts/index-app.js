@@ -232,3 +232,22 @@ function gridBlockSlider() {
 }
 
 gridBlockSlider();
+
+
+function genplanMobileLegendSlider() {
+  const html = document.documentElement;
+  if (!html.classList.value.match(/tablet|mobile/)) return;
+  new Swiper('[data-mobile-genplan-slider]', {
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+    loop:true,
+    navigation: {
+      prevEl: '[data-mobile-genplan-slider-prev]',
+      nextEl: '[data-mobile-genplan-slider-next]'
+    }
+  })
+}
+
+genplanMobileLegendSlider();

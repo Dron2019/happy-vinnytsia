@@ -310,6 +310,11 @@
             white-space: nowrap;
     
         }
+        &__icon {
+            flex-shrink: 0;
+            width: 28px;
+            height: auto;
+        }
         &__text {
             font-size: 12px;
         }
@@ -323,7 +328,7 @@
         }
         &__icons-row {
             &>:nth-child(n+2) {
-                margin-left: 20px;
+                margin-left: 10px;
             }
         }
     }

@@ -452,9 +452,29 @@
         &__slider {
             width: 100%;
             flex-grow: 1;
+            height: auto;
+            @include size(24);
         }
         &__nav {
             width: calc(100% - 20px);
+        }
+    }
+}
+
+.mobile {
+    .build-progress-popup {
+        padding-top: 20px;
+        &__title {
+            font-size: 16px;
+            margin-bottom: 8px;
+            &:after {
+                content: '';
+                display: block;
+                height: 1px;
+                width: 75px;
+                margin-top: 8px;
+                background-color: var(--color-light-blue);
+            }
         }
     }
 }

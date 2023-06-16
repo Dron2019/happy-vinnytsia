@@ -1,4 +1,4 @@
-export default function getProgress(id) {
+export default async function getProgress(id) {
     if (document.documentElement.dataset.status==="local") {
         return Promise.resolve({
             data: {
@@ -8,4 +8,9 @@ export default function getProgress(id) {
             }
         })
     }
+
+    const fd = new FormData();
+    fd.append('action', 'construction');
+    fd.append('id', id);
+    return axios.post('/wp-admin/admin-ajax.php', fd);
 }
