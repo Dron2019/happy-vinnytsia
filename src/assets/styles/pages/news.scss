@@ -10,6 +10,14 @@
     }
 }
 
+.mobile {
+    .news-front-screen {
+        .text-style-h-1 {
+            text-align: center;
+        }
+    }
+}
+
 .news-container {
     @include row-flex();
     margin-top: 80px !important;
@@ -40,10 +48,15 @@
             @include shift(0);
         }
         .news-card~.news-card {
-            margin-top: 60px;
+            margin-top: 8px;
         }
         .news-card:nth-of-type(n+3) {
-            margin-top: 60px;
+            margin-top: 8px;
         }
+    }
+}
+.mobile {
+    .news-container  {
+        margin-top: 32px !important;
     }
 }

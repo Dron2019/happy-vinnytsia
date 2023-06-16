@@ -28,8 +28,7 @@
     }
 }
 
-.tablet,
-.mobile {
+.tablet {
     .progress-front-screen  {
         .tabs {
            margin-bottom: 100px;
@@ -38,6 +37,29 @@
     .progress-card {
         padding-bottom: 40px;
         padding-top: 40px;
+    }
+}
+
+.mobile {
+    .progress-front-screen  {
+        padding-left: var(--page-side-fields);
+        padding-right: var(--page-side-fields);
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        .tabs {
+           margin-bottom: 32px;
+           margin-top: 16px;
+        }
+    }
+    .progress-card {
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .progress-card~.progress-card {
+        margin-top: 16px;
     }
 }
 
@@ -58,10 +80,22 @@
         background-color: var(--color-white);
         padding: 12px 32px;
         text-transform: uppercase;
+        cursor: pointer;
         &.active {
             color: var(--color-white);
             background-color: var(--color-new-blue);
 
+        }
+    }
+    &__tab~&__tab {
+        border-left: 1px solid rgba(0, 26, 88, 0.3);
+    }
+}
+
+.mobile {
+    .tabs {
+        &__tab {
+            font-size: 12px;
         }
     }
 }
@@ -183,6 +217,43 @@
     }
 }
 
+
+.mobile {
+    .progress-card {
+        background: rgba(0, 26, 88, 0.1);
+        border-radius: 20px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        
+        .button-30 {
+            display: none;
+        }
+        &__delimiter {
+            display: none;
+        }
+        &__img,&__text {
+            @include size(24);
+            margin-left: calc(0% + 16px);
+            margin-right: calc(0% + 16px);
+
+        }
+        &__img {
+            height: calc(100vw * 0.85);
+            margin-bottom: 16px;
+        }
+        &__text {
+            padding-left: 0;
+            padding-right: 0;
+            &-title {
+                font-size: 14px;
+            }
+            &-text {
+                font-size: 12px;
+                margin-top: 8px;
+            }
+        }
+    }
+}
 
 .build-progress-popup {
     position: fixed;

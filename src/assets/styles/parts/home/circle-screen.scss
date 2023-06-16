@@ -111,6 +111,10 @@
             height: 40vw;
 
         }
+
+        &__circle {
+            will-change: transform;
+        }
         &__navigation {
             position: absolute;
             top: 50vh;

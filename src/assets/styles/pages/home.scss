@@ -430,7 +430,8 @@
             font-size: 18px;
         }
         &__text {
-            font-size: 14px;
+            font-size: 12px;
+            margin-bottom: 8px;
         }
         &__left {
             @include size(24);
@@ -447,6 +448,25 @@
             .contacts__group:first-child {
                 @include size(24);
                 @include shift(0);
+            }
+            .contacts__group:last-child {
+                margin-top: 16px !important;
+            }
+            .contacts__group:first-child {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                .button-30 {
+                    margin-right: auto;
+                    margin-left: 0;
+                }
+                .contacts__title,
+                .contacts__text {
+                    width: 50%;
+                }
+            }
+            .contacts__group~.contacts__group {
+                margin-top: 32px;
             }
         }
         &__right {

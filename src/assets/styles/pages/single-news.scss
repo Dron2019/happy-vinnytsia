@@ -94,3 +94,35 @@
         }
     }
 }
+
+.mobile {
+    .single-news-container {
+        margin-top: 16px !important;
+        position: relative;
+        padding: 16px;
+        padding-left: 6px;
+        padding-right: 6px;
+        border-radius: 12px ;
+        background-color: #FBFBFB;
+        margin-left: auto;
+        margin-right: auto;
+        width: calc(100% - (var(--page-side-fields) * 2));
+        &__title {
+            font-size: 16px;
+        }
+        &__text {
+            font-size: 12px;
+            padding-right: 0;
+            @include size(24);
+        }
+        &__list {
+            font-size: 12px;
+        }
+        &__date {
+            position: absolute;
+            right: var(--page-side-fields);
+            bottom: 0;
+            transform: translateY(-50%);
+        }
+    }
+}

@@ -44,3 +44,16 @@ sec1Slider.on('activeIndexChange',  ({ activeIndex, realIndex }) => {
     document.querySelector('[data-project-slider] .current')
       .textContent = realIndex + 1;
 })
+
+
+
+
+function mobileAreaSlider() {
+  if (!document.documentElement.classList.contains('mobile')) return
+  const slider = new Swiper('[data-mobile-area-slider]', {
+    slidesPerView: 2.5,
+    spaceBetween: 32
+  });
+}
+
+mobileAreaSlider();
