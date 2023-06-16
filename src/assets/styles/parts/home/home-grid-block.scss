@@ -70,3 +70,24 @@
           }
     }
 }
+
+.mobile {
+    .home-grid-block {
+        display: grid; 
+        grid-template-columns: 1fr; 
+        grid-template-rows: auto 33.3vh 33.3vh; 
+        gap: 0px 0px; 
+        grid-template-areas: 
+          "text1"
+          "img1"
+          "img2"; 
+          height: auto;
+          gap: 20px;
+        &__text {
+            padding-left: var(--page-side-fields);
+            padding-right: var(--page-side-fields);
+            padding-top: 32px;
+            padding-bottom: 32px;
+        }
+    }
+}

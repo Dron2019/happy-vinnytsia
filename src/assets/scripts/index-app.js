@@ -148,13 +148,57 @@ new Swiper('.home-gallery__container', {
   }
 })
 
-new Swiper('[data-home-about-slider]', {
+const aboutSlider = new Swiper('[data-home-about-slider]', {
   navigation: {
     nextEl: '[data-home-about-slider-next]',
     prevEl: '[data-home-about-slider-prev]'
   },
+  loop: true,
   effect: 'fade',
   fadeEffect: {
     crossFade: true
   },
+  on: {
+      init: (e) => {
+        document.querySelector('.js-about-slider-counter .total').textContent = e.slides.length;
+        console.log(e);
+      }
+  }
 })
+
+gsap.timeline()
+  .fromTo('.circle-screen__circle', {
+    scale: 2.5
+  }, {
+    scale: 1,
+    scrollTrigger: {
+      scrub: true,
+      trigger: '.home-screen1',
+      start: '75% bottom',
+    }
+  })
+
+
+aboutSlider.on('activeIndexChange',  ({ activeIndex, realIndex, ...data }) => {
+  const img = data.slides[activeIndex].dataset.image;
+  document.querySelector('.circle-screen__img').setAttribute('src' ,img);
+  document.querySelector('.js-about-slider-counter .current')
+      .textContent = realIndex + 1;
+})
+
+aboutSlider.on('beforeSlideChangeStart', ({ activeIndex, realIndex, slides, ...data }) => {
+  console.log('beforeSlideChangeStart', slides[activeIndex]);
+  gsap.to(slides[activeIndex].children, {
+    y: -100,
+    clearProps: 'all'
+  })
+})
+aboutSlider.on('slideChangeTransitionStart', ({ activeIndex, realIndex, slides, ...data }) => {
+  console.log('slideChangeTransitionEnd', slides[activeIndex]);
+  gsap.from(slides[activeIndex].children, {
+    y: 100,
+    clearProps: 'all'
+  })
+})
+
+splitToLinesAndFadeUp('.text-style-h-1');

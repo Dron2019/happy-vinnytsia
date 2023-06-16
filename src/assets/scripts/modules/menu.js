@@ -86,3 +86,28 @@ document.body.addEventListener('click',function(evt){
 
 });
 }
+
+
+/** Mobile callback popup */
+function mobPopupHandler() {
+  function close(el) {
+    gsap.to(el, { autoAlpha: 0, zIndex: 10 });
+  }
+  function open(el) {
+    gsap.to(el, { autoAlpha: 1, zIndex: 50 });
+  }
+  const popup = document.querySelector('[data-mobile-callback-popup]');
+  const call = document.querySelectorAll('[data-call-mobile-callback-popup]');
+  const closeEl = document.querySelectorAll('[data-mobile-callback-close]');
+  closeEl.forEach(el => {
+    el.addEventListener('click', () => close(popup));
+  })
+
+  popup.addEventListener('click', ({target}) => {
+    target === popup ? close(popup) : null;
+  })
+  call.forEach(el => el.addEventListener('click', () => open(popup)));
+  // call.forEach(el => el.addEventListener('touchstart', () => open(popup)));
+}
+
+mobPopupHandler();

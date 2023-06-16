@@ -54,6 +54,9 @@
         align-items: center;
         padding-top: 3.7vh;
         padding-left: var(--page-side-fields);
+        &-mobile-link {
+            display: none;
+        }
         &-logo {
             margin-right: auto;
             margin-left: 0;
@@ -497,11 +500,47 @@
 
 .mobile {
     .menu {
-        display: flex;
-        flex-wrap: wrap;
+        &__header {
+            padding-left: var(--page-side-fields);
+            padding-right: var(--page-side-fields);
+            padding-top: 16px;
+            &-mobile-link {
+                display: block;
+            }
+            &-logo {
+                display: block;
+                width: 98px;
+                svg {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            &-link,
+            .button-30 {
+                display: none;
+            }
+        }
+        &__link {
+            font-size: 20px;
+            line-height: 90%;
+        }
+        &__item {
+            height: max-content;
+            padding-top: 150px;
+            padding-bottom: 56px;
+            border-radius: 0px 0px 12px 12px;
+        }
+        .action--close {
+            padding: 0;
+            span {
+                display: none;
+            }
+        }
     }
+    
+
     .menu__item--1 {
-        background-color: var(--color-white);
+        background-color: var(--color-new-blue);
     }
     .menu__item--2 {
         display: none;

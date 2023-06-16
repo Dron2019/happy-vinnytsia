@@ -78,3 +78,14 @@
         }
     }
 }
+
+.mobile {
+    .news-card {
+        &__image {
+            display: none;
+        }
+        &__text {
+            @include size(24);
+        }
+    }
+}

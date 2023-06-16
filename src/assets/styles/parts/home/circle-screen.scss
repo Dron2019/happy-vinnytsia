@@ -70,3 +70,83 @@
         }
     }
 }
+
+.tablet {
+    .circle-screen {
+        &__text {
+            width: 78.125vw;
+            height: 39vw;
+        }
+        &__navigation {
+            position: absolute;
+            top: 50vh;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            width: 100%;
+            .slider-counter {
+                display: none;
+            }
+            [data-home-about-slider-prev],
+            [data-home-about-slider-next] {
+                background-color: rgba($color-new-blue, 0.7);
+                width: 60px;
+                height: 60px;
+                padding-left: 10px;
+                padding-right: 10px;
+                border-top: 1px solid var(--color-white);
+                border-bottom: 1px solid var(--color-white);
+                &>* {
+                    fill: var(--color-white);
+                }
+            }
+        }
+    }
+}
+
+.mobile {
+    .circle-screen {
+        width: auto;
+        &__text {
+            width: 80vw;
+            height: 40vw;
+
+        }
+        &__navigation {
+            position: absolute;
+            top: 50vh;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            width: 120%;
+            padding-left: 10px;
+            padding-right: 10px;
+            .slider-counter {
+                display: none;
+            }
+            [data-home-about-slider-prev],
+            [data-home-about-slider-next] {
+                background-color: rgba($color-new-blue, 0.7);
+                width: 48px;
+                height: 48px;
+                padding-left: 10px;
+                padding-right: 10px;
+                border-top: 1px solid var(--color-white);
+                border-bottom: 1px solid var(--color-white);
+                &>* {
+                    fill: var(--color-white);
+                }
+            }
+        }
+        .swiper-slide {
+            &__text  {
+                font-size: 14px;
+            }
+            .button-30 {
+                margin-top: 16px;
+            }
+        }
+
+        .swiper-slide__text~.swiper-slide__text{
+            display: none;
+        }
+    }
+}

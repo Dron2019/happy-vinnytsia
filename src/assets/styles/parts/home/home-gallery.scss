@@ -75,3 +75,41 @@
         }
     }
 }
+
+.mobile {
+    .home-gallery {
+        &__title {
+        }
+        &>.button-30 {
+            margin-top: 16px;
+        }
+        &__container {
+            width: calc(100% - (var(--page-side-fields) * 2));
+            margin-left: var(--page-side-fields);
+            margin-right: var(--page-side-fields);
+            border-radius: 20px;
+            overflow: hidden;
+            height: 100vw;
+        }
+        &__arrow {
+            &-prev {
+                width: 48px;
+                height: 48px;
+            }
+            &-next {
+                width: 48px;
+                height: 48px;
+            }
+        }
+        .swiper-slide {
+            &>div {
+                top: 16px;
+                font-size: 16px !important;
+            }
+            img {
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
