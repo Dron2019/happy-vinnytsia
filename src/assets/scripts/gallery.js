@@ -5,6 +5,7 @@ import Headroom from 'headroom.js';
 import 'current-device';
 const { useState } = require("./modules/helpers/helpers");
 import './modules/form';
+import { sideSwitchArrow } from './modules/effects/sideSwitchArrow';
 
 menu();
 
@@ -27,9 +28,16 @@ Swiper.use([Navigation, EffectFade, Lazy]);
             loadOnTransitionStart: false,
             threshold: 50,
         },
-        navigation: {
-            nextEl: $container.querySelector('[class*="-next"'),
-            prevEl: $container.querySelector('[class*="-prev"')
-        }
+        // navigation: {
+        //     nextEl: $container.querySelector('[class*="-next"'),
+        //     prevEl: $container.querySelector('[class*="-prev"')
+        // }
     });
+
+    sideSwitchArrow(
+        gallerySlider,
+        $container.querySelector('[class*="-next"'),
+        $container
+
+    )
 }

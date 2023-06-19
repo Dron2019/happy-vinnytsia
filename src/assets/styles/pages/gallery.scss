@@ -31,13 +31,17 @@
         padding: 0 5vw;
         &-prev {
             cursor: pointer;
+            display: none;
         }
         &-next {
             cursor: pointer;
-
+            position: fixed;
             transform-origin: center;
             transform-box: fill-box;
-            transform: rotate(180deg);
+            &[data-side="rightSide"] {
+                transform: rotate(180deg);
+
+            }
         }
     }
     &__bottom {

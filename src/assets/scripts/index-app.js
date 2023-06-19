@@ -10,6 +10,7 @@ import "current-device";
 import menu from './modules/menu';
 import './modules/form';
 import { useState } from './modules/helpers/helpers';
+import { sideSwitchArrow } from './modules/effects/sideSwitchArrow';
 
 
 const scroller = lenis;
@@ -142,11 +143,11 @@ document.querySelectorAll('[data-lazy]').forEach(el => {
 
 
 
-new Swiper('.home-gallery__container', {
-  navigation: {
-    nextEl: '.home-gallery__arrow-next',
-    prevEl: '.home-gallery__arrow-prev'
-  },
+const gallerySwiper = new Swiper('.home-gallery__container', {
+  // navigation: {
+  //   nextEl: '.home-gallery__arrow-next',
+  //   prevEl: '.home-gallery__arrow-prev'
+  // },
   pagination: {
     el: '.home-gallery .thumbs',
     clickable: true,
@@ -154,7 +155,13 @@ new Swiper('.home-gallery__container', {
       return '<span class="thumbs__item ' + className + '"></span>';
     }, 
   },
-})
+});
+
+sideSwitchArrow(
+  gallerySwiper, 
+  document.querySelector('.home-gallery__arrow-prev'),
+  document.querySelector('.home-gallery__container')  
+)
 
 const aboutSlider = new Swiper('[data-home-about-slider]', {
   navigation: {
@@ -174,17 +181,24 @@ const aboutSlider = new Swiper('[data-home-about-slider]', {
   }
 })
 
-gsap.timeline()
+gsap.timeline({
+  scrollTrigger: {
+    scrub: true,
+    trigger: '.home-screen1',
+    start: '50% bottom',
+    end: '75% top',
+  }
+})
   .fromTo('.circle-screen__circle', {
-    scale: 2.5
+    scale: 1.5
   }, {
     scale: 1,
-    scrollTrigger: {
-      scrub: true,
-      trigger: '.home-screen1',
-      start: '75% bottom',
-    }
   })
+  .fromTo('.circle-screen__img', {
+    scale: 0.1
+  }, {
+    scale: 1
+  }, '<')
 
 
 aboutSlider.on('activeIndexChange',  ({ activeIndex, realIndex, ...data }) => {
@@ -294,3 +308,46 @@ function genplanDesktopHandler() {
 }
 
 genplanDesktopHandler();
+
+gsap.timeline({
+  defaults: {
+    ease: 'power4.out'
+  },
+  scrollTrigger: {
+    once: true,
+    trigger: '.progress-line'
+  }
+})
+  .from('.progress-line', {
+    autoAlpha: 0
+  })
+    .fromTo('.section-progress-item', {
+      autoAlpha: 0
+    }, {
+      autoAlpha: 1,
+      stagger: 0.2
+    })
+    .fromTo('.section-progress-item__title', {
+      autoAlpha: 0,
+      y: 50
+    }, {
+      autoAlpha: 1,
+      y: 0,
+      stagger: 0.2
+    })
+    .fromTo('.section-progress-item__value', {
+      autoAlpha: 0,
+      y: -50
+    }, {
+      autoAlpha: 1,
+      y: 0,
+      stagger: 0.2
+    }, '<')
+    .fromTo('.ocean-wrapper', {
+      autoAlpha: 0,
+      y: -50
+    }, {
+      autoAlpha: 1,
+      y: 0,
+      stagger: 0.2
+    }, '<')

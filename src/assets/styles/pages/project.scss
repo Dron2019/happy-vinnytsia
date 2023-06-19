@@ -269,11 +269,22 @@
     &__distance {
         font-size: 1vw;
         color: var(--color-light-blue);
-
     }
     &__text {
         font-size: 1vw;
     }
+    &__icon {
+        transform-origin: center;
+        transform-box: fill-box;
+        animation: carAnim 2s ease-in-out infinite;
+    }
+
+    @for $i from 1 through 3 {
+        &__row:nth-child(#{$i}) &__icon {
+            animation-delay: #{$i/10}s;
+        }
+    }
+
     &__row {
         display: flex;
         align-items: flex-end;
@@ -286,6 +297,19 @@
         &>:nth-child(n+2) {
             margin-left: 20px;
         }
+    }
+}
+
+@keyframes carAnim {
+    from {
+        transform: rotate(3deg) ;
+    }
+    50% {
+        
+        transform: rotate(-2deg) ;
+    }
+    to {
+        transform: rotate(3deg) ;
     }
 }
 

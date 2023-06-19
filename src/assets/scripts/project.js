@@ -4,6 +4,7 @@ import { lenis } from './modules/scroll/leniscroll';
 import Headroom from 'headroom.js';
 import './modules/form';
 import "current-device";
+import { gsap } from 'gsap/all';
 Swiper.use([EffectFade, Navigation, Pagination]);
 
 var myElement = document.querySelector("header");
@@ -57,3 +58,19 @@ function mobileAreaSlider() {
 }
 
 mobileAreaSlider();
+
+
+const items = document.querySelectorAll(".area-item__title");
+
+gsap.timeline()
+  .from(items, {
+    textContent: 0,
+    duration: 2,
+    ease: 'Power1.easeIn',
+    snap: { textContent: 1 },
+    stagger: 0.2,
+    // onUpdate: textContent.replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+  })
+    .add(() => {
+      items.forEach(el => el.innerHTML = el.textContent+'&nbsp;');
+    });

@@ -100,15 +100,49 @@
         padding: 16px;
         padding-left: 6px;
         padding-right: 6px;
+        background: #DDE0E6;
+        position: relative;
         &__image {
-            display: none;
+            @include size(24);
+            height: 100vw;
+            position: absolute;
+            left: 0;
+            top: 60px;
+            z-index: 2;
+        }
+        &__title {
+            margin-top: calc(100vw + 30px);
+            margin-bottom: 8px;
         }
         &__text {
             @include size(24);
             font-size: 12px;
+            background: none;
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding: 0;
+            &::after {
+                right: -20px;
+                bottom: -20px;
+                display: none;
+            }
+            p {
+                margin-bottom: 8px;
+            }
         }
         &__date {
             font-size: 12px;
+            order: -1;
+            align-self: center;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        
+        &__label {
+            order: -2;
+            padding: 4px 12px;
+            margin-bottom: 0;
+            
         }
         &__title {
             font-size: 16px;

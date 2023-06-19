@@ -18,6 +18,12 @@
         margin-right: auto;
         margin-top: 32px;
     }
+    &__arrow {
+        position: absolute;
+        bottom: 11.1vh;
+        left: 50%;
+        transform: translateX(-50%);
+    }
     img {
         position: absolute;
         left: 0;

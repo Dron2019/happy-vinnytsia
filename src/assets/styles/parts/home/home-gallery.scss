@@ -26,12 +26,19 @@
         padding: 0 5vw;
         &-prev {
             cursor: pointer;
+            position: fixed;
+            z-index: 2;
+            transition: transform .25s ease-out;
         }
         &-next {
             cursor: pointer;
 
             transform-origin: center;
             transform-box: fill-box;
+            transform: rotate(180deg);
+            display: none;
+        }
+        &-prev[data-side="rightSide"] {
             transform: rotate(180deg);
         }
     }
@@ -64,10 +71,12 @@
             &-prev {
                 width: 48px;
                 height: 48px;
+
             }
             &-next {
                 width: 48px;
                 height: 48px;
+                display: none;
             }
         }
         .swiper-slide {
