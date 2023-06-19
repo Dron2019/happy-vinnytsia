@@ -177,7 +177,7 @@
             background-color: var(--color-new-blue);
         }
     }
-    &.reverse {
+    &:nth-child(odd) {
         flex-direction: row-reverse;
     }
 }

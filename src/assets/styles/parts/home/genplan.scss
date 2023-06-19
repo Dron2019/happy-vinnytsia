@@ -17,8 +17,8 @@
         top: 0;
         height: 100%;
         width: 485px;
-        padding-left: 80px;
-        padding-right: 80px;
+        padding-left: Min(4.16vw, 80px);
+        padding-right: Min(4.16vw, 80px);
         padding-top: 4.25vh;
         padding-bottom: 4.25vh;
         &-navigation {
@@ -27,7 +27,7 @@
         
         &-point {
             font-weight: 700;
-            font-size: 24px;
+            font-size: Min(1.1vw, 24px);
             line-height: 140%;
             color: var(--color-white);
             svg {
@@ -53,7 +53,7 @@
         .swiper-wrapper {
             height: auto;
             display: block;
-            margin-top: 14vh;
+            margin-top: 8vh;
             .genplan__legend-point {
                 text-align: left;
             }
@@ -101,6 +101,7 @@
             .swiper-wrapper {
                 border-top: 1px solid var(--color-white);
                 border-bottom: 1px solid var(--color-white);
+                height: 45px;
             }
             &-navigation {
                 display: flex;
@@ -109,7 +110,7 @@
                 padding-bottom: var(--legend-point-v-margin);
                 width: 100%;
                 position: absolute;
-                bottom: 16px;
+                bottom: 22px;
                 left: 20px;
                 width: calc(100% - 40px);
                 pointer-events: none;
@@ -121,9 +122,11 @@
         }
         &__legend-point {
             font-size: 12px;
-            margin-top: var(--legend-point-v-margin);
-            margin-bottom: var(--legend-point-v-margin);
+            padding-top: var(--legend-point-v-margin);
+            padding-bottom: var(--legend-point-v-margin);
+            
             width: 100%;
+            height: 100%;
             
             display: flex;
             align-items: center;

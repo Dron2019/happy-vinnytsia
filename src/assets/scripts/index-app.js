@@ -9,6 +9,7 @@ import { gsap, ScrollTrigger } from 'gsap/all';
 import "current-device";
 import menu from './modules/menu';
 import './modules/form';
+import { useState } from './modules/helpers/helpers';
 
 
 const scroller = lenis;
@@ -233,6 +234,19 @@ function gridBlockSlider() {
 
 gridBlockSlider();
 
+const [ genplanFilter, setGenplanFilter, useGenplanFilterEffect ] = useState([]);
+
+useGenplanFilterEffect(values => {
+  document.querySelectorAll('path[data-polygon], g[data-polygon]').forEach(el => {
+    if (values.includes(el.dataset.polygon)) {
+      el.style.opacity = '';
+      return;
+    }
+    el.style.opacity = 0;
+  })
+})
+
+setGenplanFilter([]);
 
 function genplanMobileLegendSlider() {
   const html = document.documentElement;
@@ -246,8 +260,37 @@ function genplanMobileLegendSlider() {
     navigation: {
       prevEl: '[data-mobile-genplan-slider-prev]',
       nextEl: '[data-mobile-genplan-slider-next]'
+    },
+    on: {
+      activeIndexChange: ({ activeIndex, slides, ...e}) => {
+        const slide = slides[activeIndex];
+        setGenplanFilter([ slide.dataset.polygon ]);
+      }
     }
   })
 }
 
+
+
 genplanMobileLegendSlider();
+
+function genplanDesktopHandler() {
+  if (!document.documentElement.classList.contains('desktop')) return;
+  document.body.addEventListener('click', (evt) => {
+    const target = evt.target.closest('.genplan__legend-point');
+    if (!target) return;
+    if (target.classList.contains('active')) {
+      setGenplanFilter([
+        ...genplanFilter().filter(el => el !== target.dataset.polygon)
+      ]);
+      target.classList.remove('active');
+    } else {
+      setGenplanFilter([
+        ...genplanFilter(), target.dataset.polygon
+      ]);
+      target.classList.add('active');
+    }
+  })
+}
+
+genplanDesktopHandler();
