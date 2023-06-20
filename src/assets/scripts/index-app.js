@@ -296,7 +296,10 @@ function genplanMobileLegendSlider() {
         setGenplanFilter([ slide.dataset.polygon ]);
       }
     }
-  })
+  });
+
+  
+  document.querySelector('.genplan__svg-wrapper').scrollTo(window.innerHeight - window.innerWidth, 0);
 }
 
 
@@ -319,7 +322,8 @@ function genplanDesktopHandler() {
       ]);
       target.classList.add('active');
     }
-  })
+  });
+
 }
 
 genplanDesktopHandler();
@@ -374,9 +378,21 @@ gsap.timeline({
 function mobileHomeNews() {
   if (!document.documentElement.classList.contains('mobile')) return;
   new Swiper('.home-news.swiper-container', {
-    slidesPerView: 1.2,
-    spaceBetween: 29
+    slidesPerView: 1.1,
+    spaceBetween: 12
   })
 }
 
 mobileHomeNews();
+
+
+document.querySelectorAll('.home-progress__video-button').forEach(el => {
+  el.addEventListener('click',function(evt){
+      console.log('click');
+      el.remove();
+      document.querySelector('[data-home-page-video]').setAttribute('controls', true);
+      document.querySelector('[data-home-page-video]').play();
+  }, {
+    once: true
+  });
+})

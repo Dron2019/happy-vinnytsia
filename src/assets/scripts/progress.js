@@ -140,8 +140,26 @@ document.querySelector(`[${tab().selector}]`).addEventListener('click', (evt) =>
     });
     setProgress({
         ...progress(),
-        sections: sections
+        sections: sections,
+        pending: true,
+    });
+
+    getProgressList({
+        type: document.querySelector('[data-progress].active').dataset.progress,
+        sections: progress().sections,
     })
+        .then(el => {
+            setProgress({
+                ...progress(),
+                data: [...el.data, ...el.data],
+            })
+        })
+        .finally(el => {
+            setProgress({
+                ...progress(),
+                pending: false,
+            })
+        })
 })
 
 document.querySelector(`[${tab().selector}]`).addEventListener('click', (evt) => {
@@ -166,4 +184,4 @@ document.querySelector(`[${tab().selector}]`).addEventListener('click', (evt) =>
 setTab({
     ...tab(),
     active: 0
-})
+});
