@@ -171,8 +171,12 @@ function digitLoader() {
 
     let interval = setInterval(() => {
         if (loaderStatus.isCounterAnim === false && loaderStatus.isDOMLoaded === true) {
+            const arrow = document.querySelector('.home-screen1__arrow');
+            const bottom = 
+                arrow  ? 
+                (window.innerHeight - arrow.getBoundingClientRect().bottom) * -1: 
+                0;
 
-            const bottom = document.querySelector('.home-screen1__arrow')  ? document.querySelector('.home-screen1__arrow').getBoundingClientRect().bottom : 0;
             gsap.timeline()
                 .to('.loader-wrap-wrap', {
                     scale: 71/window.innerWidth
