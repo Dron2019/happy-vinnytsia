@@ -1,6 +1,6 @@
 import axios from 'axios';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import Swiper, { EffectFade, Navigation, Pagination } from 'swiper';
+import Swiper, { EffectFade, Navigation, Pagination, Thumbs } from 'swiper';
 import Headroom from "headroom.js";
 import { lenis } from './modules/scroll/leniscroll';
 import buttonHover from './modules/buttonHover';
@@ -16,7 +16,7 @@ import { sideSwitchArrow } from './modules/effects/sideSwitchArrow';
 const scroller = lenis;
 
 
-Swiper.use([EffectFade, Navigation, Pagination]);
+Swiper.use([EffectFade, Navigation, Pagination, Thumbs]);
 /** ******************************* */
 /*
  * smooth scroll start
@@ -163,6 +163,17 @@ sideSwitchArrow(
   document.querySelector('.home-gallery__container')  
 )
 
+const aboutSliderPictures =new Swiper('.circle-screen__img.swiper-container', {
+  loop: true,
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true
+  },
+  on: {
+  }
+});
+
+
 const aboutSlider = new Swiper('[data-home-about-slider]', {
   navigation: {
     nextEl: '[data-home-about-slider-next]',
@@ -173,6 +184,9 @@ const aboutSlider = new Swiper('[data-home-about-slider]', {
   fadeEffect: {
     crossFade: true
   },
+  thumbs: {
+    swiper: aboutSliderPictures,
+  },
   on: {
       init: (e) => {
         document.querySelector('.js-about-slider-counter .total').textContent = e.slides.length;
@@ -180,6 +194,7 @@ const aboutSlider = new Swiper('[data-home-about-slider]', {
       }
   }
 })
+
 
 gsap.timeline({
   scrollTrigger: {
@@ -351,3 +366,17 @@ gsap.timeline({
       y: 0,
       stagger: 0.2
     }, '<')
+
+
+
+
+
+function mobileHomeNews() {
+  if (!document.documentElement.classList.contains('mobile')) return;
+  new Swiper('.home-news.swiper-container', {
+    slidesPerView: 1.2,
+    spaceBetween: 29
+  })
+}
+
+mobileHomeNews();

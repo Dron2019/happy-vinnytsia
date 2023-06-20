@@ -28,6 +28,13 @@
         object-fit: cover;
         transform-origin: top;
         z-index: -1;
+        .swiper-slide {
+            img {
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
+            }
+        }
     }
     &__text {
         @include size(18);

@@ -47,7 +47,6 @@ document.body.addEventListener('click', async (evt) => {
     if (!target) return;
 
     const data  = await getProgress(target.dataset.id);
-    console.log(data);
 
     setPopup({
         ...popupState(),
@@ -99,7 +98,7 @@ const [tab,setTab,useTabEffect] = useState({
 });
 
 useTabEffect((e) => {
-    const { selector, active } = e;
+    const { selector, active, sections } = e;
     document.querySelectorAll(`[${selector}] .tabs__tab`)
     .forEach((singleTab, index) => {
             if (index === active) {
@@ -108,7 +107,10 @@ useTabEffect((e) => {
                     ...progress(),
                     pending: true,
                 })
-                getProgressList(singleTab.dataset.progress)
+                getProgressList({
+                    type: singleTab.dataset.progress,
+                    sections: progress().sections,
+                })
                     .then(el => {
                         setProgress({
                             ...progress(),
@@ -127,9 +129,30 @@ useTabEffect((e) => {
         });
 });
 
+
+
+
+document.querySelector(`[${tab().selector}]`).addEventListener('click', (evt) => {
+    const target = evt.target.closest('[data-progress-section-submit]');
+    if (!target) return;
+    const sections = Array.from(document.querySelectorAll('.active[data-progress-section]')).map(choosedSection => {
+        return choosedSection.dataset.progressSection;
+    });
+    setProgress({
+        ...progress(),
+        sections: sections
+    })
+})
+
 document.querySelector(`[${tab().selector}]`).addEventListener('click', (evt) => {
     const target = evt.target.closest('.tabs__tab');
     if (!target) return;
+
+    if (evt.target.closest('[data-progress-section-submit]')) return;
+    if (evt.target.closest('[data-progress-section]')) {
+        evt.target.closest('[data-progress-section]').classList.toggle('active');
+        return;
+    }
     document.querySelectorAll(`[${tab().selector}] .tabs__tab`).forEach((el,index) => {
         if (target === el) {
             setTab({

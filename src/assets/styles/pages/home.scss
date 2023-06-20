@@ -23,6 +23,7 @@
         bottom: 11.1vh;
         left: 50%;
         transform: translateX(-50%);
+        cursor: pointer;
     }
     img {
         position: absolute;
@@ -77,15 +78,18 @@
 
 .mobile {
     .home-news {
+        margin-left: 0;
+        margin-right: 0;
         .text-style-h-1 {
         }
         .news-card {
-            @include size(24);
-            @include shift(0);
+            width: auto;
+            margin-left: 0;
+            margin-right: 0;
             height: auto;
         }
         .news-card~.news-card {
-            margin-top: 40px;
+            margin-top: 0;
         }
     }
 }

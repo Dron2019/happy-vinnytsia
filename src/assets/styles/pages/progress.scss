@@ -25,6 +25,23 @@
     .tabs {
         margin-bottom: 12.5vh;
         margin-top: 40px;
+        overflow: visible;
+        .tabs__tab {
+            position: relative;
+
+            .chooser {
+                position: absolute;
+                left: 0;
+                top: 100%;
+                opacity: 0;
+                visibility: hidden;
+                z-index: 4;
+            }
+            &.active:hover .chooser {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
     }
 }
 
@@ -68,10 +85,18 @@
     border-radius: 24px;
     border-width: 1px;
     border-style: solid;
-    overflow: hidden;
+    // overflow: hidden;
     display: flex;
     align-items: center;
 
+    &__tab:first-child {
+        border-top-left-radius: 24px;
+        border-bottom-left-radius: 24px;
+    }
+    &__tab:last-child {
+        border-top-right-radius: 24px;
+        border-bottom-right-radius: 24px;
+    }
     &__tab {
         font-weight: 400;
         font-size: 18px;
@@ -475,6 +500,70 @@
                 margin-top: 8px;
                 background-color: var(--color-light-blue);
             }
+        }
+    }
+}
+
+
+.chooser {
+    width: 496px;
+    padding-top: 21px;
+    position: relative;
+    &__birdy {
+        position: absolute;
+        top: 0;
+        left: 60px;
+    }
+    &__inner {
+        padding: 20px;
+        background: #E6ECF2;
+        border-radius: 12px;
+
+    }
+    &__title {
+        color: var(--color-new-blue);
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 130%;
+        text-transform: none;
+        margin-bottom: 10px;
+    }
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        &>:last-child {
+            margin-left: auto;
+        }
+    }
+    &__item  {
+        color: var(--color-new-blue);
+        border-radius: 4px;
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .45s ease-out;
+        &:not(.chooser__item--not-hover):hover,
+        &.active {
+            background-color: var(--color-new-blue);
+            color: var(--color-white);
+        }
+    }
+}
+
+.tablet,
+.mobile {
+    .chooser {
+        width: 235px;
+        &__list {
+            gap: 8px;
+        }
+        &__item {
+            width: 32px;
+            height: 32px;
+            font-size: 16px;
         }
     }
 }

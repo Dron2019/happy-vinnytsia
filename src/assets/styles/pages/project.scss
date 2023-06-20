@@ -367,6 +367,11 @@
 
 .project-quote {
     position: relative;
+    picture {
+        img {
+            object-position: top;
+        }
+    }
     &__content {
         position: absolute;
         left: 0;
@@ -382,6 +387,7 @@
         line-height: 140%;
         color: rgba($color-new-blue, 0.7);
         width: 30%;
+        
         svg {
             margin-bottom: 20px;
         }

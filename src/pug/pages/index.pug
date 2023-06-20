@@ -46,7 +46,20 @@ block content
       <path d="M56.7997 9.48389L56.7997 8.48389L55.7997 8.48388V9.48389H56.7997ZM71 9.48392H72V8.48392L71 8.48392V9.48392ZM0 9.48392V8.48392H-1V9.48392H0ZM14.1997 9.48392L15.1997 9.48391L15.1997 8.48392H14.1997V9.48392ZM55.7997 9.48389C55.7997 22.1296 46.613 32.1936 35.4997 32.1936V34.1936C47.9138 34.1936 57.7997 23.0272 57.7997 9.48389H55.7997ZM56.7997 10.4839L71 10.4839V8.48392L56.7997 8.48389L56.7997 10.4839ZM70 9.48392V13.5H72V9.48392H70ZM70 13.5C70 32.5539 54.5538 48 35.5 48V50C55.6584 50 72 33.6584 72 13.5H70ZM35.5 48C16.4462 48 1 32.5539 1 13.5H-1C-1 33.6584 15.3416 50 35.5 50V48ZM1 13.5V9.48392H-1V13.5H1ZM0 10.4839H14.1997V8.48392H0V10.4839ZM35.4997 32.1936C24.3864 32.1936 15.1997 22.1296 15.1997 9.48391L13.1997 9.48392C13.1997 23.0272 23.0857 34.1936 35.4997 34.1936V32.1936Z" fill="white" mask="url(#path-2-inside-1_909_16555)"/>
       </svg>
   .container.container--full-screen.circle-screen
-    img(src="./assets/images/home/home-page-screen1.jpg").circle-screen__img
+    .circle-screen__img.swiper-container
+      .swiper-wrapper
+        .swiper-slide
+          img(src="./assets/images/home/home-page-screen1.jpg")
+        .swiper-slide
+          img(src="./assets/images/home/home-grid-block/home-grid-block-text.jpg")
+        .swiper-slide
+          img(src="./assets/images/home/home-page-screen1.jpg")
+        .swiper-slide
+          img(src="./assets/images/home/home-grid-block/home-grid-block-text.jpg")
+        .swiper-slide
+          img(src="./assets/images/home/home-page-screen1.jpg")
+        .swiper-slide
+          img(src="./assets/images/home/home-grid-block/home-grid-block-text.jpg")
     .circle-screen__text
       .circle-screen__circle
       .circle-screen__navigation 
@@ -257,26 +270,27 @@ block content
           .text-style-h-1.text-white ПАРК5
           img(src="./assets/images/home/home-page-screen1.jpg")
     a(href="#").button-30.button-30--blue Дивитися більше фото
-  .container.home-news
+  .container.home-news.swiper-container
     .text-style-h-1.text-new-blue.text-uppercase Новини та акції
-    a(href="#").news-card.news
-      img(src="./assets/images/home/home-page-screen1.jpg").news-card__image
-      .news-card__text
-        .news-card__label Новина
-        .news-card__title Старт продаж нових секцій
-        p Гарна новина! Розпочато продаж квартир у 7 секції в ЖК Щасливий у Дніпрі. Встигніть забронювати квартири площею від 40.7 м2 за кращою ціною. 
-        .news-card__date 
-          +svg('calendar')
-          span 24.02.2023
-    a(href="#").news-card.promotion
-      img(src="./assets/images/home/home-page-screen1.jpg").news-card__image
-      .news-card__text
-        .news-card__label Новина
-        .news-card__title Старт продаж нових секцій
-        p Гарна новина! Розпочато продаж квартир у 7 секції в ЖК Щасливий у Дніпрі. Встигніть забронювати квартири площею від 40.7 м2 за кращою ціною. 
-        .news-card__date 
-          +svg('calendar')
-          span 24.02.2023
+    .swiper-wrapper
+      a(href="#").news-card.news.swiper-slide
+        img(src="./assets/images/home/home-page-screen1.jpg").news-card__image
+        .news-card__text
+          .news-card__label Новина
+          .news-card__title Старт продаж нових секцій
+          p Гарна новина! Розпочато продаж квартир у 7 секції в ЖК Щасливий у Дніпрі. Встигніть забронювати квартири площею від 40.7 м2 за кращою ціною. 
+          .news-card__date 
+            +svg('calendar')
+            span 24.02.2023
+      a(href="#").news-card.promotion.swiper-slide
+        img(src="./assets/images/home/home-page-screen1.jpg").news-card__image
+        .news-card__text
+          .news-card__label Новина
+          .news-card__title Старт продаж нових секцій
+          p Гарна новина! Розпочато продаж квартир у 7 секції в ЖК Щасливий у Дніпрі. Встигніть забронювати квартири площею від 40.7 м2 за кращою ціною. 
+          .news-card__date 
+            +svg('calendar')
+            span 24.02.2023
   .container.home-progress
     .text-style-h-1.text-new-blue.text-uppercase Хід будівництва
     .home-progress__video

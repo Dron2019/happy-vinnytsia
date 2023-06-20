@@ -1,5 +1,7 @@
+import axios from "axios";
+
 export default async function getProgress(id) {
-    console.log(id);
+
     if (document.documentElement.dataset.status==="local") {
         return Promise.resolve({
             data: {
@@ -13,6 +15,11 @@ export default async function getProgress(id) {
     const fd = new FormData();
     fd.append('action', 'construction');
     fd.append('id', id);
+
+    sections.forEach((el, index) => {
+        fd.append(`sections[${index}]`, el);
+    })
+
     return axios.post('/wp-admin/admin-ajax.php', fd);
 }
 
@@ -20,7 +27,7 @@ export default async function getProgress(id) {
 
 
 
-export function getProgressList(type) {
+export function getProgressList({ type, sections = [] }) {
     if (document.documentElement.dataset.status === 'local') {
         return new Promise(function (resolve, reject) {
             setTimeout(function () {
@@ -55,5 +62,10 @@ export function getProgressList(type) {
     const fd = new FormData();
     fd.append('action', 'constructionList');
     fd.append('type', type);
+
+    sections.forEach((el, index) => {
+        fd.append(`sections[${index}]`, el);
+    })
+    
     return axios.post('/wp-admin/admin-ajax.php', fd);
 }
