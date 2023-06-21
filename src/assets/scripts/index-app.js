@@ -196,21 +196,31 @@ const aboutSlider = new Swiper('[data-home-about-slider]', {
 })
 
 
+ScrollTrigger.create({
+  trigger: '.circle-screen',
+  start: '5% bottom',
+  onEnter: () => {
+    scroller.scrollTo(document.querySelector('.circle-screen'), {
+      duration: 2.5
+    })
+  }
+})
+
 gsap.timeline({
   scrollTrigger: {
     scrub: true,
     trigger: '.home-screen1',
-    start: '50% bottom',
-    end: '75% top',
+    start: '100% bottom',
+    end: '120% top',
   }
 })
   .fromTo('.circle-screen__circle', {
-    scale: 1.5
+    scale: 0.75
   }, {
     scale: 1,
   })
   .fromTo('.circle-screen__img', {
-    scale: 0.1
+    scale: 1.5
   }, {
     scale: 1
   }, '<')
