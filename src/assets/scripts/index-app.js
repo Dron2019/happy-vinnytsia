@@ -23,6 +23,7 @@ Swiper.use([EffectFade, Navigation, Pagination, Thumbs]);
  */
 global.gsap = gsap;
 global.ScrollTrigger = ScrollTrigger;
+gsap.core.globals("ScrollTrigger", ScrollTrigger);
 global.axios = axios;
 
 gsap.registerPlugin(ScrollTrigger);
