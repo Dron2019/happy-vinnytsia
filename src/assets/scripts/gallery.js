@@ -6,6 +6,7 @@ import 'current-device';
 const { useState } = require("./modules/helpers/helpers");
 import './modules/form';
 import { sideSwitchArrow } from './modules/effects/sideSwitchArrow';
+import { getGallerySlider } from './modules/gallery/getGallerySlider';
 
 menu();
 
@@ -37,7 +38,53 @@ Swiper.use([Navigation, EffectFade, Lazy]);
     sideSwitchArrow(
         gallerySlider,
         $container.querySelector('[class*="-next"'),
-        $container
+        $container.querySelector('.swiper-wrapper')
 
     )
+    const [ gallerySliderState, setGallerySlider, useGallerySliderEffect ] = useState({
+        title: '',
+        gallery: [],
+        img: '',
+    });
+    
+    
+    //data-gallery-id
+    
+    useGallerySliderEffect((state) => {
+
+        const $miniImage = document.querySelector('[data-gallery-mini-image]');
+        if (state.miniFlatImage) {
+            $miniImage.src = state.miniFlatImage;
+            $miniImage.style.opacity = 1;
+        } else {
+            $miniImage.style.opacity = 0;
+        }
+
+        $container.querySelector('.swiper-wrapper').innerHTML = state.gallery.map(el => `
+            <div class="swiper-slide">
+                <img src="${el}" class="swiper-lazy" loading="lazy">
+            </div>
+        `).join('');
+
+        gallerySlider.update();
+    
+    })
+    
+    
+    
+    document.querySelector('body').addEventListener('click',function(evt){
+        const target = evt.target.closest('[data-gallery-id]');
+        if (!target) return;
+        const id = target.dataset.galleryId;
+    
+        getGallerySlider(id)
+            .then(({ data }) => {
+                setGallerySlider({
+                    ...data
+                })
+                console.log(res);
+            })
+    
+    });
 }
+

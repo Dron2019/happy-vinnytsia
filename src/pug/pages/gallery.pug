@@ -53,40 +53,22 @@ block content
       </defs>
       </svg>
     .gallery-slider__menu
-      div.gallery-menu-item.text-white 
+      div.gallery-menu-item.text-white(data-gallery-id="1") 
         span Комплекс
-        ul.gallery-menu-item__inner
-          li.gallery-menu-item__inner-item Point A
-          li.gallery-menu-item__inner-item Point B
-          li.gallery-menu-item__inner-item Point C
-          li.gallery-menu-item__inner-item Point D
-          li.gallery-menu-item__inner-item Point E
-      div.gallery-menu-item.text-white 
+      div.gallery-menu-item.text-white(data-gallery-id="2") 
         span Під’їзд
-        ul.gallery-menu-item__inner
-          li.gallery-menu-item__inner-item Point A
-          li.gallery-menu-item__inner-item Point B
-          li.gallery-menu-item__inner-item Point C
-          li.gallery-menu-item__inner-item Point D
-          li.gallery-menu-item__inner-item Point E
-      div.gallery-menu-item.text-white 
+      div.gallery-menu-item.text-white(data-gallery-id="3") 
         span Парк
-        ul.gallery-menu-item__inner
-          li.gallery-menu-item__inner-item Point A
-          li.gallery-menu-item__inner-item Point B
-          li.gallery-menu-item__inner-item Point C
-          li.gallery-menu-item__inner-item Point D
-          li.gallery-menu-item__inner-item Point E
-      div.gallery-menu-item.text-white 
+      div.gallery-menu-item.text-white
         span Квартири
         ul.gallery-menu-item__inner
-          li.gallery-menu-item__inner-item Point A
-          li.gallery-menu-item__inner-item Point B
-          li.gallery-menu-item__inner-item Point C
-          li.gallery-menu-item__inner-item Point D
-          li.gallery-menu-item__inner-item Point E
+          li.gallery-menu-item__inner-item(data-gallery-id="5") Point A
+          li.gallery-menu-item__inner-item(data-gallery-id="6") Point B
+          li.gallery-menu-item__inner-item(data-gallery-id="7") Point C
+          li.gallery-menu-item__inner-item(data-gallery-id="8") Point D
+          li.gallery-menu-item__inner-item(data-gallery-id="9") Point E
     .gallery-slider__bottom
-      img(src="./assets/images/gallery/flat.png")
+      img(src="./assets/images/gallery/flat.png" data-gallery-mini-image)
       a.button-30.button-30--blue(href="3d" type="button") обрати квартиру
     .swiper-wrapper
       .swiper-slide
