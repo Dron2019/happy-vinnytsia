@@ -88,3 +88,38 @@ Swiper.use([Navigation, EffectFade, Lazy]);
     });
 }
 
+document.body.addEventListener('click',function(evt){
+    // const target = evt.target.closest('[data-cloned]');
+    // if (!target) {
+    //     document.querySelectorAll('[data-cloned]').forEach(el => el.remove());
+    // }
+
+    const mini = evt.target.closest('[data-gallery-mini-image]');
+    if (mini) {
+        const clonedNode = mini.cloneNode(true);
+        clonedNode.dataset.cloned = true;
+        clonedNode.style.cssText = `
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            width: 85%;
+            height: 85%;
+            transform: translate(-50%,-50%);
+            z-index: 10;
+            object-fit: contain;
+            max-width: none;
+        `;
+        document.body.append(clonedNode);
+        clonedNode.removeAttribute('data-gallery-mini-image');
+        clonedNode.addEventListener('click',function(evt){
+            clonedNode.remove();
+        }, {
+            once: true
+        });
+    } else {
+        document.querySelectorAll('[data-cloned]').forEach(el => el.remove());
+    }
+});
+
+
+

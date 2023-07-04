@@ -57,6 +57,15 @@
         img {
             width: 100%;height: auto;
             margin-bottom: 20px;
+            object-fit: contain;
+        }
+        img.zoomed {
+            // position: fixed;
+            // left: 50%;
+            // top: 50%;
+            // width: 85%;
+            // height: 85%;
+            // max-width: none;
         }
     }
     &__mobile-scroll-helper{
