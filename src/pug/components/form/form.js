@@ -224,7 +224,6 @@ export default class FormMonster {
 
       /*  */
       if (this.watchedState.error === false) {
-        this.watchedState.status = 'successSand';
         try {
           this.watchedState.status = 'loading';
           const formData = new FormData(this.elements.$form);
