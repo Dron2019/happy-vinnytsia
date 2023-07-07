@@ -53,7 +53,6 @@ useTabEffect((e) => {
                 })
                 getNews()
                     .then(el => {
-                        console.log(el);
                         setNews({
                             ...news(),
                             data: el.data

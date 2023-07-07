@@ -1,7 +1,7 @@
-export function newsCard({ type, typeTitle, title, date, text, href } = {}) {
+export function newsCard({ type, typeTitle, title, date, text, href, image } = {}) {
     return `
     
-    <a class="news-card ${type ? type : 'news'}" href="${href}"><img class="news-card__image" src="./assets/images/home/home-page-screen1.jpg">
+    <a class="news-card ${type ? type : 'news'}" href="${href}"><img class="news-card__image" src="${image}">
         <div class="news-card__text">
             <div class="news-card__label">${typeTitle}</div>
             <div class="news-card__title">${title}</div>
