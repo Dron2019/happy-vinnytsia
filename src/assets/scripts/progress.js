@@ -9,6 +9,7 @@ import './modules/form';
 import "current-device";
 import Headroom from 'headroom.js';
 import { progressCard } from './modules/progress/progressCard';
+import Swiper, { Navigation } from 'swiper';
 menu();
 
 var myElement = document.querySelector("header");
@@ -31,16 +32,45 @@ useEffectPopup((val) => {
         });
         return;
     }
+
+    document.querySelectorAll('video').forEach(el => el.pause());
     gsap.to(popup, {
         autoAlpha: 0
     });
 });
 
 useEffectPopup((val) => {
-    popup.querySelector('.build-progress-popup__text-content').textContent = val.text;
+    popup.querySelector('.build-progress-popup__text-content').innerHTML = `
+        ${val.text}
+        <div style="color: var(--new-blue, #001A58);">
+            <span>${val.gallery.length} фото</span>
+            ${val.video ? '<span>1 відео</span>' : ''}
+        </div>
+    `;
     popup.querySelector('.build-progress-popup__title').textContent = val.title;
+    popup.querySelector('.build-swiper .swiper-wrapper').innerHTML = Array.isArray(val.gallery) ? val.gallery.map(el => `
+        <img class="swiper-slide" alt="${val.title}" src="${el}">
+    `).join('') : '';
+
+    if (val.video) {
+        popup.querySelector('.build-swiper .swiper-wrapper').insertAdjacentHTML('afterbegin', `
+            <video style="height: auto;" controls muted class="swiper-slide" playsinline poster="/wp-content/themes/3d/assets/images/loader-bg.jpg">
+                <source src="${val.video.replace('http://','https://')}" type="video/mp4">
+            </video>
+        `)
+    }
+
+    popup.querySelector('.build-swiper').swiper.update();
+    console.log(val);
 });
 
+new Swiper('.build-swiper', {
+    modules: [Navigation],
+    navigation: {
+        prevEl: document.querySelector('[data-progress-popup-prev]'),
+        nextEl: '.build-progress-popup__nav>:last-child'
+    }
+})
 
 document.body.addEventListener('click', async (evt) => {
     const target = evt.target.closest('[data-id]');
@@ -114,7 +144,7 @@ useTabEffect((e) => {
                     .then(el => {
                         setProgress({
                             ...progress(),
-                            data: [...el.data, ...el.data],
+                            data: [...el.data ],
                         })
                     })
                     .finally(el => {

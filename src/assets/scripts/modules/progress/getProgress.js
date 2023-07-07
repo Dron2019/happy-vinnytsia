@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default async function getProgress(id) {
+export default async function getProgress(id, sections = []) {
 
     if (document.documentElement.dataset.status==="local") {
         return Promise.resolve({

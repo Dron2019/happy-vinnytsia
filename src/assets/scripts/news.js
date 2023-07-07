@@ -51,7 +51,7 @@ useTabEffect((e) => {
                     ...news(),
                     pending: true
                 })
-                getNews()
+                getNews(singleTab.dataset.type)
                     .then(el => {
                         setNews({
                             ...news(),

@@ -304,6 +304,9 @@
         --text-top-padding: 150px;
         // width: 100%;
     }
+    .build-swiper {
+        height: 100%;
+    }
     &__nav {
         position: absolute;
         top: 50%;
@@ -351,8 +354,8 @@
         justify-content: center;
         color: var(--color-beige);
         position: absolute;
-        right: var(--page-side-fields);
-        top: var(--page-side-fields);
+        right: 10px;
+        top: 10px;
         z-index: 3;
         cursor: pointer;
         span {
@@ -390,6 +393,15 @@
     &__text-content {
         height: 100%;
         overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        color: var(--new-blue, #001A58);
+        &>div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
         @include shift-padding-right(3);
 
         &>* {
