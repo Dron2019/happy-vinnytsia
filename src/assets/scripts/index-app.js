@@ -197,15 +197,19 @@ const aboutSlider = new Swiper('[data-home-about-slider]', {
 })
 
 
-ScrollTrigger.create({
-  trigger: '.circle-screen',
-  start: '5% bottom',
-  onEnter: () => {
-    scroller.scrollTo(document.querySelector('.circle-screen'), {
-      duration: 2.5
+{
+  if (document.documentElement.classList.contains('desktop') ) {
+    ScrollTrigger.create({
+      trigger: '.circle-screen',
+      start: '5% bottom',
+      onEnter: () => {
+        scroller.scrollTo(document.querySelector('.circle-screen'), {
+          duration: 2.5
+        })
+      }
     })
   }
-})
+}
 
 gsap.timeline({
   scrollTrigger: {
