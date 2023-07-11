@@ -103,23 +103,39 @@ const [ progress, setProgress, useProgressEffect ] = useState({
     pending: false,
     tabs: document.querySelector('[data-progress-tabs]'),
     container: document.querySelector('.progress-front-screen'),
+    sections: [],
     data: []
 });
 
 
-useProgressEffect(({ data, container }) => {
+
+useProgressEffect(({ pending, container, tabs }) => {
+    // gsap.to(container, {
+    //     autoAlpha: pending ? 0.5 : 1,
+    // });
+
+    if (pending) return container.classList.add('loading');
+    setTimeout(() => {
+        container.classList.remove('loading');
+    }, 1000);
+});
+useProgressEffect(({ data, container, ...some }) => {
     container.querySelectorAll('.progress-card').forEach(el => el.remove());
 
-    container.insertAdjacentHTML('beforeend', data.map(el => progressCard(el)).join(''));
-});
-useProgressEffect(({ pending, container, tabs }) => {
-    gsap.to(container, {
-        autoAlpha: pending ? 0.5 : 1,
-    });
 
-    pending ? 
-    container.classList.add('loading') :
-    container.classList.remove('loading');
+    container.insertAdjacentHTML('beforeend', data.map(el => {
+        if (progress().sections.length === 0 || !el.sections) return progressCard(el);
+
+        let returnValue = '';
+
+        el.sections.forEach(sectionOfElement => {
+            if (progress().sections.includes(sectionOfElement))  {
+                returnValue = progressCard(el);
+            }
+        })
+
+        return returnValue;
+    }).join(''));
 });
 
 const [tab,setTab,useTabEffect] = useState({

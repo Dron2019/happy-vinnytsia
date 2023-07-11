@@ -6,6 +6,56 @@
     align-items: center;
     padding-top: calc(var(--header-h) + 20px);
     height: auto;
+    transition: .25s ease-out;
+    &:after {
+        content: '';
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-top: -30px;  
+        margin-left: -30px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        border: 5px solid grey;
+        border-top-color: black;
+        animation: loading 2s linear infinite;
+        pointer-events: none;
+        z-index: 11;
+        opacity: 0;
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        pointer-events: none;
+        z-index: 10;
+        opacity: 0;
+    }
+    &.loading:after,
+    &.loading:before {
+            opacity: 1;
+      }
+      @keyframes loading {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    
+    [data-empty-results]:last-child {
+        display: block;
+    }
+    &.loading [data-empty-results],
+    [data-empty-results] {
+        display: none;
+    }
     &__bg {
         img {
             position: absolute;
@@ -288,7 +338,7 @@
     width: calc(100% + 20px);
     height: 100%;
     background-color: var(--color-white);
-    padding-left: var(--page-side-fields);
+    padding-left: 20px;
     padding-right: var(--page-side-fields);
     padding-top: calc(var(--page-side-fields) / 2);
     padding-bottom: var(--page-side-fields);
@@ -481,6 +531,7 @@
 .mobile {
     .build-progress-popup {
         flex-direction: column;
+        padding-left: var(--page-side-fields);
         &__text {
             width: 100%;
             height: auto;
