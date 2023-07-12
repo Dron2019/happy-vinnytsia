@@ -540,8 +540,8 @@
         &__slider {
             width: 100%;
             flex-grow: 1;
-            height: auto;
-            @include size(24);
+            height: 35vh;
+    width: calc(100vw - 75px);
         }
         &__nav {
             width: calc(100% - 20px);

@@ -72,6 +72,7 @@ Swiper.use([Navigation, EffectFade, Lazy]);
         } else {
             $miniImage.style.opacity = 0;
         }
+        console.log(state);
         setPending(true);
         $container.querySelector('.swiper-wrapper').innerHTML = state.gallery.map(el => `
         <div class="swiper-slide">
@@ -82,7 +83,27 @@ Swiper.use([Navigation, EffectFade, Lazy]);
         gallerySlider.update();
         setTimeout(() => {
             setPending(false);
+            if (document.querySelector('[data-active-style]')) {
+                document.querySelector('[data-active-style]').innerHTML = `
+                    [data-gallery-id="${state.type}"] {
+                        background: white;
+                        color: rgb(0, 26, 88);
+                        border-radius: 12px;
+                    }
+                `;
+            } else {
+                document.body.insertAdjacentHTML('beforeend', `
+                    <style data-active-style>
+                        [data-gallery-id="${state.type}"] {
+                            background: white;
+                            color: rgb(0, 26, 88);
+                            border-radius: 12px;
+                        }
+                    </style>
+                `);
+            }
         }, 1000);
+
     
     })
 
@@ -99,6 +120,7 @@ Swiper.use([Navigation, EffectFade, Lazy]);
                 title: 'AAAAA',
                 gallery: [ ...data.gallery.map(el => el.img) ],
                 miniFlatImage: data.img,
+                type: data.type
             })
         }
 
@@ -112,12 +134,12 @@ Swiper.use([Navigation, EffectFade, Lazy]);
 
         const data = galleryList().find(el => el.type == id);
 
-        console.log(data);
         if (data) {
             setGallerySlider({
                 title: 'AAAAA',
                 gallery: [ ...data.gallery.map(el => el.img) ],
                 miniFlatImage: data.img,
+                type: data.type
             })
         }
     
