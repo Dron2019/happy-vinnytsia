@@ -4,6 +4,52 @@
     height: calc(100vh - var(--header-h));
     padding-left: 0;
     padding-right: 0;
+    &.pending {
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -30px;  
+            margin-left: -30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            border: 5px solid grey;
+            border-top-color: black;
+            animation: loading 2s linear infinite;
+            z-index: 40;
+          }
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: white;
+            width: 100%;
+            height: 100%;
+            animation: fadeIn .25s ease-out;
+            z-index: 39;
+          }
+          @keyframes fadeIn {
+            0% {opacity:0;}
+            100% {opacity:1;}
+          }
+          @keyframes loading {
+            0% {
+              transform: rotate(0deg);
+            }
+            100% {
+              transform: rotate(360deg);
+            }
+          }
+        }
+    .swiper-slide {
+        img {
+            object-fit: cover;
+            height: 100%;
+        }
+    }
     &__menu {
         background-color: rgba($color-new-blue, 0.7);
         width: 100%;
@@ -17,7 +63,7 @@
         font-size: 18px;
         line-height: 22px;
         text-transform: uppercase;
-        z-index: 2;
+        z-index: 55;
     }
     &__navigation {
         position: absolute;

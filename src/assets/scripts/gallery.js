@@ -6,7 +6,8 @@ import 'current-device';
 const { useState } = require("./modules/helpers/helpers");
 import './modules/form';
 import { sideSwitchArrow } from './modules/effects/sideSwitchArrow';
-import { getGallerySlider } from './modules/gallery/getGallerySlider';
+import { getGalleryList, getGallerySlider } from './modules/gallery/getGallerySlider';
+
 
 menu();
 
@@ -15,6 +16,18 @@ new Headroom(document.querySelector('.header')).init();
 Swiper.use([Navigation, EffectFade, Lazy]);
 
 {
+
+    const [ pending, setPending, usePendingEffect ] = useState(false);
+
+
+    usePendingEffect(val => {
+        if (val) {
+            document.querySelector('.gallery-slider').classList.add('pending');
+        } else {
+            document.querySelector('.gallery-slider').classList.remove('pending');
+        }
+    })
+
     const $container = document.querySelector('[data-gallery-slider]')
     const gallerySlider = new Swiper($container, {
         loop: true,
@@ -59,31 +72,62 @@ Swiper.use([Navigation, EffectFade, Lazy]);
         } else {
             $miniImage.style.opacity = 0;
         }
-
+        setPending(true);
         $container.querySelector('.swiper-wrapper').innerHTML = state.gallery.map(el => `
-            <div class="swiper-slide">
-                <img src="${el}" class="swiper-lazy" loading="lazy">
-            </div>
+        <div class="swiper-slide">
+        <img src="${el}" class="swiper-lazy" loading="lazy">
+        </div>
         `).join('');
-
+        
         gallerySlider.update();
+        setTimeout(() => {
+            setPending(false);
+        }, 1000);
     
     })
-    
+
+    const [ galleryList, setgalleryList, useGalleryListEffect ] = useState([]);
+
+
+    getGalleryList()
+        .then(res => {
+            setgalleryList(res.data.gallery_list);
+
+            const data = res.data.gallery_list[0];
+        if (data) {
+            setGallerySlider({
+                title: 'AAAAA',
+                gallery: [ ...data.gallery.map(el => el.img) ],
+                miniFlatImage: data.img,
+            })
+        }
+
+        });
     
     
     document.querySelector('body').addEventListener('click',function(evt){
         const target = evt.target.closest('[data-gallery-id]');
         if (!target) return;
         const id = target.dataset.galleryId;
-    
-        getGallerySlider(id)
-            .then(({ data }) => {
-                setGallerySlider({
-                    ...data
-                })
-                console.log(res);
+
+        const data = galleryList().find(el => el.type == id);
+
+        console.log(data);
+        if (data) {
+            setGallerySlider({
+                title: 'AAAAA',
+                gallery: [ ...data.gallery.map(el => el.img) ],
+                miniFlatImage: data.img,
             })
+        }
+    
+        // getGallerySlider(id)
+        //     .then(({ data }) => {
+        //         setGallerySlider({
+        //             ...data
+        //         })
+        //         console.log(res);
+        //     })
     
     });
 }
@@ -108,6 +152,9 @@ document.body.addEventListener('click',function(evt){
             z-index: 10;
             object-fit: contain;
             max-width: none;
+            border: 20px solid white;
+            border-radius: 12px;
+            background: white;
         `;
         document.body.append(clonedNode);
         clonedNode.removeAttribute('data-gallery-mini-image');
@@ -120,6 +167,4 @@ document.body.addEventListener('click',function(evt){
         document.querySelectorAll('[data-cloned]').forEach(el => el.remove());
     }
 });
-
-
 
