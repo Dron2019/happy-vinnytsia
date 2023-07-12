@@ -534,7 +534,7 @@
         padding-left: var(--page-side-fields);
         &__text {
             width: 100%;
-            height: auto;
+            height: 42vh;
             padding-bottom: 40px;
         }
         &__slider {
@@ -545,6 +545,7 @@
         }
         &__nav {
             width: calc(100% - 20px);
+            top: calc(60vh + 30px);
         }
     }
 }
@@ -608,10 +609,20 @@
         align-items: center;
         justify-content: center;
         transition: .45s ease-out;
-        &:not(.chooser__item--not-hover):hover,
         &.active {
             background-color: var(--color-new-blue);
             color: var(--color-white);
+        }
+    }
+}
+
+.desktop {
+    .chooser {
+        &__item {
+            &:not(.chooser__item--not-hover):hover {
+                background-color: var(--color-new-blue);
+                color: var(--color-white);
+            }
         }
     }
 }

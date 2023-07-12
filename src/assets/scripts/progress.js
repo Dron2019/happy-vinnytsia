@@ -147,6 +147,7 @@ useTabEffect((e) => {
     const { selector, active, sections } = e;
     document.querySelectorAll(`[${selector}] .tabs__tab`)
     .forEach((singleTab, index) => {
+            if (singleTab.classList.contains('active') && index === active) return;
             if (index === active) {
                 singleTab.classList.add('active');
                 setProgress({
