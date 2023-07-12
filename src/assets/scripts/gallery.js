@@ -155,6 +155,8 @@ document.body.addEventListener('click',function(evt){
             border: 20px solid white;
             border-radius: 12px;
             background: white;
+            animation: fadeIn .25s ease-out 1;
+            cursor: zoom-out;
         `;
         document.body.append(clonedNode);
         clonedNode.removeAttribute('data-gallery-mini-image');
