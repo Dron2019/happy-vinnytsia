@@ -8,4 +8,9 @@ function raf(time) {
     requestAnimationFrame(raf)
 }
   
-requestAnimationFrame(raf)
+if (!document.documentElement.classList.contains('mobile')) {
+    requestAnimationFrame(raf)
+}
+if (document.documentElement.classList.contains('mobile')) {
+    lenis.destroy();
+}

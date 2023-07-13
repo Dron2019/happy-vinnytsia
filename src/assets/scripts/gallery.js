@@ -86,7 +86,7 @@ Swiper.use([Navigation, EffectFade, Lazy]);
             if (document.querySelector('[data-active-style]')) {
                 document.querySelector('[data-active-style]').innerHTML = `
                     [data-gallery-id="${state.type}"] {
-                        background: white;
+                        background: white !important;
                         color: rgb(0, 26, 88);
                         border-radius: 12px;
                     }
@@ -95,7 +95,7 @@ Swiper.use([Navigation, EffectFade, Lazy]);
                 document.body.insertAdjacentHTML('beforeend', `
                     <style data-active-style>
                         [data-gallery-id="${state.type}"] {
-                            background: white;
+                            background: white !important;
                             color: rgb(0, 26, 88);
                             border-radius: 12px;
                         }

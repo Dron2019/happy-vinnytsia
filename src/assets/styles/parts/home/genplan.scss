@@ -1,12 +1,15 @@
 .genplan {
     position: relative;
-    height: 100vh;
+    height: 62.5vw;
     
     &__svg-wrapper {
         height: 100%;
         &>svg {
             width: 100%;
             height: 100%;
+        }
+        [data-polygon] {
+            transition: .45s ease-out;
         }
     }
     &__legend {
@@ -16,7 +19,7 @@
         right: 0;
         top: 0;
         height: 100%;
-        width: 485px;
+        width: 25vw;
         padding-left: Min(4.16vw, 80px);
         padding-right: Min(4.16vw, 80px);
         padding-top: 4.25vh;

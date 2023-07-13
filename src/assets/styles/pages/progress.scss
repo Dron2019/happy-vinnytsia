@@ -178,6 +178,7 @@
 .progress-card {
     @include row-flex();
     position: relative;
+    cursor: pointer;
     &__text {
         display: flex;
         flex-direction: column;
@@ -254,6 +255,17 @@
     }
     &:nth-child(odd) {
         flex-direction: row-reverse;
+    }
+}
+
+.desktop {
+    .progress-card {
+        img {
+            transition: .45s ease-out;
+        }
+        &:hover img {
+            transform: scale(1.1) rotate(1deg);
+        }
     }
 }
 
@@ -370,6 +382,7 @@
         z-index: 2;
         svg {
             pointer-events: all;
+            cursor: pointer;
             @include to(575px){
                 width: 40px;
                 height: 40px;
@@ -525,6 +538,19 @@
     .swiper-button-disabled {
         opacity: 0 !important;
    }
+}
+
+.desktop {
+    .build-progress-popup {
+        [fill-opacity] {
+            transition: .45s ease-out;
+        }
+        &__nav {
+            svg:hover [fill-opacity] {
+                fill-opacity: 1;
+            }
+        }
+    }
 }
 
 .tablet,

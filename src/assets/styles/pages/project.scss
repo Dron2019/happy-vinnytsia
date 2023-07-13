@@ -85,6 +85,8 @@
 
     .swiper-slide {
         @include row-flex();
+        margin-left: 0;
+        margin-right: 0;
         &__text {
             @include size(8);
             @include shift(0);
@@ -142,11 +144,17 @@
             }
         }
         .swiper-slide {
+            
+            margin-left: 0;
+            margin-right: 0;
+            height: 75vh;
+            flex-direction: column;
             &__text {
                 @include size(24);
                 text-align: center;
                 margin-bottom: 40px;
                 padding-right: 0;
+                height: max-content;
                 &-title {
                 }
                 &-delimiter {
@@ -158,6 +166,8 @@
             }
             &__img {
                 @include size(24);
+                flex-grow: 1;
+                height: auto;
             }
         }
     }

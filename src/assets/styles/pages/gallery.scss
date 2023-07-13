@@ -107,6 +107,7 @@
             width: 100%;height: auto;
             margin-bottom: 20px;
             object-fit: contain;
+            cursor: zoom-in;
         }
         img.zoomed {
             // position: fixed;
@@ -146,9 +147,13 @@
             padding: 16px 6vw 12px 6vw;
             z-index: 56;
         }
+
         .gallery-menu-item {
             flex-shrink: 0;
             -webkit-tap-highlight-color: transparent; /* for removing the highlight */
+            display: flex;
+            align-items: center;
+            justify-content: center;
             &:last-child {
                 width: auto;
                 display: flex;
@@ -169,8 +174,12 @@
                 opacity: 1;
                 visibility: visible;
                 &-item {
-                    padding-top: 0;
+                    padding-top: 4px;
                     border: none;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding-bottom: 4px;
                     background-color: transparent;
                 }
                 // top: 50%;
