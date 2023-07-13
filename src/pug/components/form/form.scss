@@ -251,6 +251,9 @@ textarea.form-field__input {
   }
 }
 [data-field-input][data-status="field--error"]:not(#r) {
+  .input-title {
+    opacity: 0;
+  }
   .input-message {
     color: #EA4041;
     position: absolute;
