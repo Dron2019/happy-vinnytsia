@@ -189,6 +189,28 @@
 		background-color: transparent;
 	}
 }
+
+.desktop {
+	.header {
+		
+		&__menu-call {
+			transition: .25s ease-out;
+			path {
+				transition: .25s ease-out;
+
+			}
+		}
+		&__menu-call:hover {
+			path {
+				stroke: white;
+			}
+			
+			background: #11203e;
+			color: white;
+		}
+	}
+}
+
 .langs-header {
 	// line-height: 46px;
 	position: relative;

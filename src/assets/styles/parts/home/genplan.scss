@@ -59,6 +59,15 @@
             margin-top: 8vh;
             .genplan__legend-point {
                 text-align: left;
+                span {
+                    transition: .25s ease-out;
+                    display: inline-block;
+                }
+                &:hover {
+                    span {
+                        transform: translateX(10px);
+                    }
+                }
             }
             &>:nth-child(n+2) {
                 margin-top: 4vh;

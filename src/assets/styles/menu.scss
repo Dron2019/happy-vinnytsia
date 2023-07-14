@@ -78,6 +78,12 @@
 
 .desktop {
     .menu {
+        &__header-link {
+			transition: .25s ease-out;
+			&:hover  {
+				color: $color-light-blue;
+			}
+		}
         &__link {
             &:hover {
                 color: transparent;

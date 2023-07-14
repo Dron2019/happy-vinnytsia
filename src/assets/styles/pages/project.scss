@@ -118,6 +118,23 @@
     }
 }
 
+.desktop {
+    .project-slider {
+        &__navigation svg {
+            transition: .25s ease-out;
+            path {
+                transition: .25s ease-out;
+            }
+            &:hover {
+                background-color: $color-new-blue;
+                path:first-child {
+                    fill: $color-white;
+                }
+            }
+        }
+    }
+}
+
 .tablet,
 .mobile {
     .project-slider {
@@ -393,7 +410,7 @@
         padding-left: var(--page-side-fields);
         padding-top: var(--page-side-fields);
         font-weight: 400;
-        font-size: 32px;
+        font-size: 1.6vw;
         line-height: 140%;
         color: rgba($color-new-blue, 0.7);
         width: 30%;

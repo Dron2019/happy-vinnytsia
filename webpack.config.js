@@ -4,6 +4,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const config = {
   mode: process.argv.includes('--production') ? 'production' : 'development',
   entry: {
+    'immediate-loading': './src/assets/scripts/immediate-loading.js',
     index: './src/assets/scripts/index-app.js',
     project: './src/assets/scripts/project.js',
     progress: './src/assets/scripts/progress.js',
@@ -20,7 +21,10 @@ const config = {
         commons: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
-          chunks: 'all',
+          chunks(chunk) {
+            // exclude `my-excluded-chunk`
+            return chunk.name !== 'immediate-loading';
+          },
         },
       },
     },

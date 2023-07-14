@@ -411,6 +411,17 @@
     }
 }
 
+.desktop {
+    .contacts {
+        &__text {
+            transition: .25s ease-out;
+            &[href]:hover {
+                color: $color-new-blue;
+            }
+        }
+    }
+}
+
 .tablet {
     .contacts {
         &__title {

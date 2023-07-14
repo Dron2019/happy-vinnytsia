@@ -92,6 +92,16 @@
     }
 }
 
+.desktop {
+    .button-30 {
+        &--blue:hover {
+            background: var(--color-white) !important;
+            color: var(--button-color) !important;;
+        }
+    }
+}
+
+
 .mobile {
     .button-30 {
         padding: 14px 18px;
