@@ -1,11 +1,11 @@
-import Swiper, { EffectFade, Navigation, Pagination } from 'swiper';
+import Swiper, { EffectFade, Navigation, Pagination, FreeMode } from 'swiper';
 import menu from './modules/menu';
 import { lenis } from './modules/scroll/leniscroll';
 import Headroom from 'headroom.js';
 import './modules/form';
 import "current-device";
 import { gsap } from 'gsap/all';
-Swiper.use([EffectFade, Navigation, Pagination]);
+Swiper.use([EffectFade, Navigation, Pagination, FreeMode]);
 
 var myElement = document.querySelector("header");
 // construct an instance of Headroom, passing the element
@@ -19,6 +19,8 @@ const sec1Slider = new Swiper('[data-project-slider]', {
     effect: 'fade',
     loop: true,
     speed: 500,
+    freeMode: false,
+    watchSlidesProgress: false,
     fadeEffect: {
       crossFade: true,
     },

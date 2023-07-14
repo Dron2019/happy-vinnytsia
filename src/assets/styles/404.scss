@@ -56,3 +56,14 @@
         
     }
 }
+
+.tablet,
+.mobile {
+    .page404 {
+        padding-left: 10px;
+        padding-right: 10px;
+        .text-style-h-3 {
+            font-size: 16px;
+        }
+    }
+}

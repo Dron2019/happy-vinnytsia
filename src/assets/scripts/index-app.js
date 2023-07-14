@@ -1,6 +1,6 @@
 import axios from 'axios';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import Swiper, { EffectFade, Navigation, Pagination, Thumbs } from 'swiper';
+import Swiper, { EffectFade, FreeMode, Navigation, Pagination, Thumbs } from 'swiper';
 import Headroom from "headroom.js";
 import { lenis } from './modules/scroll/leniscroll';
 import buttonHover from './modules/buttonHover';
@@ -16,7 +16,7 @@ import { sideSwitchArrow } from './modules/effects/sideSwitchArrow';
 const scroller = lenis;
 
 
-Swiper.use([EffectFade, Navigation, Pagination, Thumbs]);
+Swiper.use([EffectFade, Navigation, Pagination, Thumbs, FreeMode]);
 /** ******************************* */
 /*
  * smooth scroll start
@@ -197,6 +197,13 @@ const aboutSlider = new Swiper('[data-home-about-slider]', {
 })
 
 
+if (document.documentElement.classList.contains('mobile')) {
+
+  aboutSlider.on('slideChangeTransitionEnd', (e) => {
+    document.querySelector('.circle-screen-mobile-button').setAttribute('href', document.querySelector('[data-home-about-slider] .swiper-slide-active .button-30').getAttribute('href'))
+  })
+}
+
 {
   if (document.documentElement.classList.contains('desktop') ) {
     ScrollTrigger.create({
@@ -266,6 +273,7 @@ function gridBlockSlider() {
     fadeEffect: {
       crossFade: true
     },
+    freeMode: false,
     pagination: {
       el: '[data-mobile-grid-sldier] .thumbs',
 			clickable: true,

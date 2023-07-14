@@ -5,6 +5,7 @@ const config = {
   mode: process.argv.includes('--production') ? 'production' : 'development',
   entry: {
     'immediate-loading': './src/assets/scripts/immediate-loading.js',
+    notFound: './src/assets/scripts/notFound.js',
     index: './src/assets/scripts/index-app.js',
     project: './src/assets/scripts/project.js',
     progress: './src/assets/scripts/progress.js',

@@ -113,13 +113,25 @@
     }
 }
 
+.desktop {
+    .circle-screen-mobile-button {
+        display: none;
+    }
+}
 .mobile {
     .circle-screen {
+        .circle-screen-mobile-button {
+            position: absolute;
+            display: flex !important;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+
+        }
         width: auto;
         &__text {
-            width: 80vw;
-            height: 40vw;
-
+            width: 90vw;
+            height: 45vw;
         }
 
         &__circle {
@@ -130,7 +142,7 @@
             top: 50vh;
             left: 50%;
             transform: translateX(-50%) translateY(-50%);
-            width: 120%;
+            width: 100%;
             padding-left: 10px;
             padding-right: 10px;
             .slider-counter {
@@ -159,8 +171,11 @@
             }
         }
 
-        .swiper-slide__text~.swiper-slide__text{
+        .button-30 {
             display: none;
+        }
+        .swiper-slide__text~.swiper-slide__text{
+            // display: none;
         }
     }
 }
