@@ -5,6 +5,9 @@
     align-items: flex-start;
     justify-content: center;
     overflow: hidden;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
     &__circle {
         position: absolute;
         left: 0;
@@ -78,6 +81,15 @@
             margin-left: auto;
             margin-right: auto;
         }
+    }
+}
+
+.desktop {
+    .circle-screen {
+        width: calc(100% + 20px);
+        margin-left: 0;
+        margin-right: 0;
+        right: 10px;
     }
 }
 
