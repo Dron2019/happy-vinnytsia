@@ -1,3 +1,4 @@
+import $ from "jquery";
 import axios from 'axios';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import Swiper, { EffectFade, FreeMode, Navigation, Pagination, Thumbs } from 'swiper';
@@ -166,13 +167,44 @@ sideSwitchArrow(
 
 const aboutSliderPictures =new Swiper('.circle-screen__img.swiper-container', {
   loop: true,
+  on: {
+    
+    setTransition: swiper_blur
+  },
   effect: 'fade',
   fadeEffect: {
     crossFade: true
   },
-  on: {
-  }
+
 });
+
+document.body.insertAdjacentHTML('beforeend', `
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="filters" style="position: absolute;pointer-events:none;">
+    <defs>
+      <filter id="blur">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="0, 0" />
+      </filter>
+    </defs>
+  </svg>
+`);
+
+function swiper_blur(swiper, dur) {
+	var blur = 15;
+	$({state: 0}).animate({state: blur}, {
+		duration: (dur / 2),
+		step: function(now) { 
+			$('#blur feGaussianBlur').attr("stdDeviation", now+", 0");
+		},
+		done: function() {
+			$({state: blur}).animate({state: 0}, {
+				duration: (dur / 2),
+				step: function(now) { 
+					$('#blur feGaussianBlur').attr("stdDeviation", now+", 0");
+				}
+			});
+		}
+	});
+}
 
 
 const aboutSlider = new Swiper('[data-home-about-slider]', {
@@ -192,7 +224,7 @@ const aboutSlider = new Swiper('[data-home-about-slider]', {
       init: (e) => {
         document.querySelector('.js-about-slider-counter .total').textContent = e.slides.length;
         console.log(e);
-      }
+      },
   }
 })
 

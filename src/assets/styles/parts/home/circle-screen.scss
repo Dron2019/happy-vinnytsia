@@ -8,6 +8,9 @@
     width: 100%;
     margin-left: 0;
     margin-right: 0;
+    .circle-screen__img  .swiper-wrapper{
+        filter: url('#blur');
+    }
     &__circle {
         position: absolute;
         left: 0;

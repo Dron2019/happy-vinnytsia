@@ -14,11 +14,9 @@
   "author": "Dmitriy Lukianov",
   "license": "ISC",
   "husky": {
-    "hooks": {
-    }
+    "hooks": {}
   },
-  "lint-staged": {
-  },
+  "lint-staged": {},
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^3.9.0",
     "@typescript-eslint/parser": "^3.9.0",
@@ -86,7 +84,7 @@
     "i18next": "^19.8.4",
     "imagesloaded": "^5.0.0",
     "intl-tel-input": "^17.0.12",
-    "jquery": "^3.2.1",
+    "jquery": "^3.7.0",
     "locomotive-scroll": "^4.0.6",
     "on-change": "^2.2.1",
     "yup": "^0.32.8"
