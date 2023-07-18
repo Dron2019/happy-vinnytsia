@@ -135,6 +135,7 @@
 }
 .mobile {
     .circle-screen {
+        
         .circle-screen-mobile-button {
             position: absolute;
             display: flex !important;
@@ -144,6 +145,8 @@
 
         }
         width: auto;
+        width: calc(100% + 20px);
+        right: 10px;
         &__text {
             width: 90vw;
             height: 45vw;

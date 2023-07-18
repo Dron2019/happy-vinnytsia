@@ -179,7 +179,7 @@ const aboutSliderPictures =new Swiper('.circle-screen__img.swiper-container', {
 });
 
 document.body.insertAdjacentHTML('beforeend', `
-  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="filters" style="position: absolute;pointer-events:none;">
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="filters" style="    position: absolute;pointer-events: none;width: 0;height: 0;">
     <defs>
       <filter id="blur">
         <feGaussianBlur in="SourceGraphic" stdDeviation="0, 0" />
