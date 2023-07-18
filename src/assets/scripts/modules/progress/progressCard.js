@@ -14,7 +14,7 @@ export function progressCard({ title, date, text, id, img, linkText } = {}) {
                 <img src="${img}">
             </div>
             <div class="progress-card__text">
-                <div class="progress-card__text-title">${title}, ${date}</div>
+                <div class="progress-card__text-title">${title} ${date}</div>
                 <div class="progress-card__text-text">${text}</div>
                 <button class="button-30 button-30--blue">${linkText}</button>
             </div>

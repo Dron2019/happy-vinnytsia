@@ -63,12 +63,22 @@
     }
 }
 
+
+.desktop {
+    .single-news-container {
+        &__date {
+            @include shift(0);
+            margin-left: auto;
+        }
+    }
+}
 .tablet,
 .mobile {
     .single-news-container {
         @include shift-padding(0);
         margin-top: 60px !important;
         img {
+            margin-bottom: 0px;
         }
         &__title {
             @include size(18);
@@ -121,7 +131,7 @@
         &__date {
             position: absolute;
             right: var(--page-side-fields);
-            bottom: 0;
+            bottom: 15px;
             transform: translateY(-50%);
         }
     }

@@ -26,28 +26,34 @@ const popup = document.querySelector('[data-build-popup-progress]')
 document.body.append(popup);
 
 useEffectPopup((val) => {
+    console.log('VAL', val);
     if (val.visible) {
         gsap.to(popup, {
             autoAlpha: 1
         });
+        console.log(document.querySelectorAll('video'));
+        document.querySelectorAll('video').forEach(el => el.pause());
         return;
     }
 
     document.querySelectorAll('video').forEach(el => el.pause());
+
+    console.log(document.querySelectorAll('video'));
     gsap.to(popup, {
         autoAlpha: 0
     });
+    window.dispatchEvent(new Event('popup-close'));
 });
 
 useEffectPopup((val) => {
     popup.querySelector('.build-progress-popup__text-content').innerHTML = `
         ${val.text}
         <div style="color: var(--new-blue, #001A58);">
-            <span>${val.gallery.length} фото</span>
+            ${val.gallery ? `<span>${val.gallery.length} фото</span>` : ''}
             ${val.video ? '<span>1 відео</span>' : ''}
         </div>
     `;
-    popup.querySelector('.build-progress-popup__title').textContent = val.title;
+    popup.querySelector('.build-progress-popup__title').textContent = val.title + ' ' + val.date;
     popup.querySelector('.build-swiper .swiper-wrapper').innerHTML = Array.isArray(val.gallery) ? val.gallery.map(el => `
         <img class="swiper-slide" alt="${val.title}" src="${el}">
     `).join('') : '';
@@ -92,7 +98,11 @@ document.querySelectorAll('[data-build-popup-progress]').forEach(el => {
     const close = el.querySelector('[class*="close"]');
     close.addEventListener('click', () => {
         gsap.to(el, { autoAlpha: 0 });
-        window.dispatchEvent(new Event('popup-close'));
+
+        setPopup({
+            ...popupState(),
+            visible: false
+        })
     })
 })
 

@@ -73,6 +73,9 @@
                 margin-top: 4vh;
             }
         }
+        &__svg-wrapper {
+            transform: translateX(-20vw);
+        }
     }
 }
 
@@ -81,14 +84,17 @@
 .mobile {
     .genplan {
         --legend-point-v-margin: 10px;
-        height: 80vh;
+        height: auto;
         &__svg-wrapper {
             height: 100%;
-            overflow-x: auto;
-            overflow-y: hidden;
+            // overflow-x: auto;
+            // overflow-y: hidden;
             &>svg {
-                height: 100%;
-                width: 177.7vh;
+                // height: 100%;
+                // width: 177.7vw;
+                height: 82vw;
+                width: 100vw;
+                margin-bottom: 115px;
             }
         }
         .text-style-h-1 {

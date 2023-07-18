@@ -104,7 +104,9 @@ Swiper.use([Navigation, EffectFade, Lazy]);
             }
         }, 1000);
 
-    
+        document.querySelectorAll('.gallery-slider__bottom .thefloors-custom-widget-link').forEach(el => {
+            el.style.display = state.type_gallery === 'secret' ? '' : 'none';
+        })
     })
 
     const [ galleryList, setgalleryList, useGalleryListEffect ] = useState([]);
@@ -120,7 +122,8 @@ Swiper.use([Navigation, EffectFade, Lazy]);
                 title: 'AAAAA',
                 gallery: [ ...data.gallery.map(el => el.img) ],
                 miniFlatImage: data.img,
-                type: data.type
+                type: data.type,
+                type_gallery: data.type_gallery
             })
         }
 
@@ -139,7 +142,8 @@ Swiper.use([Navigation, EffectFade, Lazy]);
                 title: 'AAAAA',
                 gallery: [ ...data.gallery.map(el => el.img) ],
                 miniFlatImage: data.img,
-                type: data.type
+                type: data.type,
+                type_gallery: data.type_gallery
             })
         }
     

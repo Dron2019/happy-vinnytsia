@@ -51,8 +51,8 @@
         margin-bottom: 40px;
     }
     .news-card {
-        @include size(10);
-        @include shift(1);
+        @include size(12);
+        @include shift(0);
         @include to(1440px){
             @include size(12);
             @include shift(0);
@@ -224,6 +224,7 @@
             position: absolute;
             right: 0;
             bottom: 145px;
+            bottom: 65px;
         }
     }
 }
@@ -346,6 +347,11 @@
     }
 }
 
+.mobile {
+    .progress-line {
+        margin-bottom: 0px;
+    }
+}
 
 .contacts {
     @include row-flex();
@@ -392,6 +398,12 @@
         color: rgba($color-new-blue, 0.7);
         @include text-style-body;
         margin-bottom: 10px;
+        &--no-b-margin {
+            margin-bottom: 0;
+        }
+        &[href*="tel"] {
+            margin-bottom: 20px;
+        }
     }
     &__title {
         @include text-style-h-3;;
@@ -454,6 +466,12 @@
         &__text {
             font-size: 12px;
             margin-bottom: 8px;
+            &[href*=tel] {
+                margin-bottom: 20px;
+            }
+            &--no-b-margin {
+                margin-bottom: 0;
+            }
         }
         &__left {
             @include size(24);
@@ -489,6 +507,14 @@
             }
             .contacts__group~.contacts__group {
                 margin-top: 32px;
+            }
+            .contacts__group:last-child {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .contacts__group:nth-last-child(2) {
+                align-items: flex-end;
             }
         }
         &__right {

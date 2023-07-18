@@ -36,6 +36,9 @@ const closeMenuTl = gsap.timeline({
       pointerEvents: 'none',
       visibility: 'hidden'
     })
+    .set('.header', {
+      autoAlpha: 1
+    }, '<')
 
 
 
@@ -53,6 +56,9 @@ const closeMenuTl = gsap.timeline({
         ease: 'Expo.easeOut',
         duration: 1.25
       })
+      .set('.header', {
+        autoAlpha: 0
+      }, '<')
       .fromTo('.menu__item-inner>*', {
         autoAlpha: 0,
         y: '50%'

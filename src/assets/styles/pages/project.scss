@@ -254,6 +254,7 @@
         p {
             font-size: 12px;
         }
+        margin-bottom: -50px;
     }
 }
 
@@ -387,7 +388,15 @@
 
 .mobile {
     .area-item {
-
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        &__icons-row {
+            width: 100%;
+            &>svg:nth-child(2) {
+                flex-grow: 1;
+            }
+        }
     }
 }
 
