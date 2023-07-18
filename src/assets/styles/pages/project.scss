@@ -301,15 +301,26 @@
     &__text {
         font-size: 1vw;
     }
+    &__arrow {
+        animation: carArrowAnim 3s ease-in-out infinite;
+        
+    }
     &__icon {
         transform-origin: center;
         transform-box: fill-box;
-        animation: carAnim 2s ease-in-out infinite;
+        animation: carAnim 3s ease-in-out infinite;
+        circle {
+            animation: carCircleAnim 3s ease-in-out infinite;
+        }
     }
 
     @for $i from 1 through 3 {
+        &__row:nth-child(#{$i}) &__arrow,
         &__row:nth-child(#{$i}) &__icon {
-            animation-delay: #{$i/10}s;
+            animation-delay: #{$i/5}s;
+            circle {
+                animation-delay: #{$i/5}s;
+            }
         }
     }
 
@@ -328,16 +339,41 @@
     }
 }
 
-@keyframes carAnim {
+@keyframes carArrowAnim {
     from {
-        transform: rotate(3deg) ;
+        transform: translateX(0);
     }
     50% {
         
-        transform: rotate(-2deg) ;
+        transform: translateX(7px);
     }
     to {
-        transform: rotate(3deg) ;
+        transform: translateX(0);
+    }
+}
+
+@keyframes carCircleAnim {
+    from {
+        opacity: 1;
+    }
+    50% {
+        
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes carAnim {
+    from {
+        transform: rotate(4deg) ;
+    }
+    50% {
+        
+        transform: rotate(-2deg) translateX(20%);
+    }
+    to {
+        transform: rotate(4deg) ;
     }
 }
 
