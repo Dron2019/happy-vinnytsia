@@ -167,6 +167,7 @@ sideSwitchArrow(
 
 const aboutSliderPictures =new Swiper('.circle-screen__img.swiper-container', {
   loop: true,
+  speed: 1250,
   on: {
     
     setTransition: swiper_blur
