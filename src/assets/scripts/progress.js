@@ -60,7 +60,7 @@ useEffectPopup((val) => {
 
     if (val.video) {
         popup.querySelector('.build-swiper .swiper-wrapper').insertAdjacentHTML('afterbegin', `
-            <video style="height: auto;" controls muted class="swiper-slide" playsinline poster="/wp-content/themes/3d/assets/images/loader-bg.jpg">
+            <video style="height: auto;" controls muted class="swiper-slide" playsinline poster="${val.video_preview ?  val.video_preview : '/wp-content/themes/3d/assets/images/loader-bg.jpg'}">
                 <source src="${val.video.replace('http://','https://')}" type="video/mp4">
             </video>
         `)
