@@ -300,6 +300,10 @@ splitToLinesAndFadeUp('.text-style-h-1');
 function gridBlockSlider() {
   if (!document.documentElement.classList.contains('mobile')) return;
 
+  document.querySelectorAll('[data-mobile-grid-sldier] .swiper-wrapper .swiper-slide').forEach((slide, index) => {
+    if (index> 0) slide.remove();
+  })
+
   const slider = new Swiper('[data-mobile-grid-sldier]',
   {
     effect: 'fade',
@@ -307,13 +311,13 @@ function gridBlockSlider() {
       crossFade: true
     },
     freeMode: false,
-    pagination: {
-      el: '[data-mobile-grid-sldier] .thumbs',
-			clickable: true,
-      renderBullet: function (index, className) {
-        return '<span class="thumbs__item ' + className + '"></span>';
-      },
-    },
+    // pagination: {
+    //   el: '[data-mobile-grid-sldier] .thumbs',
+		// 	clickable: true,
+    //   renderBullet: function (index, className) {
+    //     return '<span class="thumbs__item ' + className + '"></span>';
+    //   },
+    // },
   });
 }
 
