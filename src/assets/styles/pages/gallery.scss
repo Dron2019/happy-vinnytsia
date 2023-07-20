@@ -48,9 +48,25 @@
           }
         }
     .swiper-slide {
-        img {
-            object-fit: cover;
+        &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
             height: 100%;
+            z-index: 1;
+            background-color: rgba(0, 26, 88, 0.6);
+            /* filter: blur(5px); */
+            backdrop-filter: blur(5px);
+            pointer-events: none;
+            -webkit-backdrop-filter: blur(5px);
+        }
+        img {
+            object-fit: contain;
+            height: 100%;
+            position: relative;
+            z-index: 2;
         }
     }
     &__menu {
@@ -125,7 +141,7 @@
 
 .mobile {
     .gallery-slider {
-        height: calc(90vh - var(--header-h));
+        height: calc(100vh - var(--header-h));
         &__navigation {
             display: none;
         }
@@ -265,6 +281,7 @@
             img {
                 height: 100%;
                 object-fit: cover;
+                object-fit: contain;
             }
         }
     }

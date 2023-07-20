@@ -75,7 +75,7 @@ Swiper.use([Navigation, EffectFade, Lazy]);
         console.log(state);
         setPending(true);
         $container.querySelector('.swiper-wrapper').innerHTML = state.gallery.map(el => `
-        <div class="swiper-slide">
+        <div class="swiper-slide" style="background-image: url(${el})">
         <img src="${el}" class="swiper-lazy" loading="lazy">
         </div>
         `).join('');
