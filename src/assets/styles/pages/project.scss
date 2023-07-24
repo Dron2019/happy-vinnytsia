@@ -466,6 +466,12 @@
     }
 }
 
+.desktop {
+    .project-quote {
+        height: auto;
+    }
+}
+
 .tablet,
 .mobile {
     .project-quote {
@@ -481,8 +487,8 @@
     .project-quote {
         height: 100vw;
         &__content {
-            left: 50%;
-            transform: translateX(-50%);
+            left: 0;
+            transform: none;
             svg {
                 width: 18px;
                 height: 16px;
