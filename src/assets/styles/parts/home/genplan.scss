@@ -53,6 +53,10 @@
 
 .desktop {
     .genplan {
+        height: auto;
+        &__legend {
+            width: 26vw;
+        }
         .swiper-wrapper {
             height: auto;
             display: block;
@@ -60,7 +64,7 @@
             .genplan__legend-point {
                 text-align: left;
                 span {
-                    transition: .25s ease-out;
+                    transition: .25s ease-out; 
                     display: inline-block;
                 }
                 &:hover {
@@ -74,7 +78,9 @@
             }
         }
         &__svg-wrapper {
-            transform: translateX(-20vw);
+            width: 75vw;
+            height: calc(75vw / 16 * 9);
+            // transform: translateX(-20vw);
         }
     }
 }
@@ -92,7 +98,7 @@
             &>svg {
                 // height: 100%;
                 // width: 177.7vw;
-                height: 82vw;
+                height: auto;
                 width: 100vw;
                 margin-bottom: 115px;
             }

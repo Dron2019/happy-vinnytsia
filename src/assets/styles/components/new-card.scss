@@ -99,9 +99,23 @@
 .desktop {
     .news-card {
         transition: .25s ease-out;
+        @include from(1340px){
+            height: calc(50vw / 16 * 10);
+        }
+
         &__text {
             transition: .25s ease-out;
-
+            p {
+                margin-bottom: auto;
+                @include from-to(1024px, 1339px){
+                    margin-bottom: 40px;
+                }
+            }
+        }
+        &__image {
+            @include from(1340px){
+                height: 100%;
+            }
         }
         &:hover {
             background-color: darken(#FBFBFB, 5%);
