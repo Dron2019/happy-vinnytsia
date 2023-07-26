@@ -11,7 +11,9 @@ export function progressCard({ title, date, text, id, img, linkText } = {}) {
                 </svg>
             </div>
             <div class="progress-card__img">
-                <img src="${img}">
+                <div class="progress-card__img-inner">
+                    <img src="${img}">
+                </div>
             </div>
             <div class="progress-card__text">
                 <div class="progress-card__text-title">${title} ${date}</div>

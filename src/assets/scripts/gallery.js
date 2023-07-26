@@ -178,13 +178,16 @@ document.body.addEventListener('click',function(evt){
             z-index: 10;
             object-fit: contain;
             max-width: none;
-            border: 20px solid white;
+            
             border-radius: 12px;
-            background: white;
             animation: fadeIn .25s ease-out 1;
             cursor: zoom-out;
         `;
         document.body.append(clonedNode);
+        
+        document.documentElement.style.overflow = 'hidden';
+
+        clonedNode.setAttribute('data-lenis-prevent', true);
         clonedNode.removeAttribute('data-gallery-mini-image');
         clonedNode.addEventListener('click',function(evt){
             clonedNode.remove();
@@ -192,6 +195,7 @@ document.body.addEventListener('click',function(evt){
             once: true
         });
     } else {
+        document.documentElement.style.overflow = '';
         document.querySelectorAll('[data-cloned]').forEach(el => el.remove());
     }
 });

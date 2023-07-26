@@ -35,7 +35,7 @@ export function getProgressList({ type, sections = [] }) {
                 data: [
                     {
                         title: 'хід будівництва', 
-                        img: './assets/images/home/home-page-screen1@05x.jpg', 
+                        img: 'http://happy-dnipro-wp.smarto.com.ua/wp-content/uploads/2023/06/1840x640.webp', 
                         id: 15055151,
                         linkText: 'Детальніше',
                         title: new Date().getTime(),
