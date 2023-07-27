@@ -54,7 +54,7 @@ sec1Slider.on('activeIndexChange',  ({ activeIndex, realIndex }) => {
 function mobileAreaSlider() {
   if (!document.documentElement.classList.contains('mobile')) return
   const slider = new Swiper('[data-mobile-area-slider]', {
-    slidesPerView: 1,
+    slidesPerView: 1.5,
     spaceBetween: 32
   });
   document.querySelectorAll('.area-item__icons-row [preserveAspectRatio]').forEach(icon => {

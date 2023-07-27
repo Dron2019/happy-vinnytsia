@@ -185,9 +185,9 @@ document.body.addEventListener('click',function(evt){
         `;
         document.body.append(clonedNode);
         
-        document.documentElement.style.overflow = 'hidden';
+        // document.documentElement.style.overflow = 'hidden';
 
-        clonedNode.setAttribute('data-lenis-prevent', true);
+        // clonedNode.setAttribute('data-lenis-prevent', true);
         clonedNode.removeAttribute('data-gallery-mini-image');
         clonedNode.addEventListener('click',function(evt){
             clonedNode.remove();
@@ -195,7 +195,7 @@ document.body.addEventListener('click',function(evt){
             once: true
         });
     } else {
-        document.documentElement.style.overflow = '';
+        // document.documentElement.style.overflow = '';
         document.querySelectorAll('[data-cloned]').forEach(el => el.remove());
     }
 });
