@@ -6,6 +6,7 @@
     align-items: center;
     padding-top: calc(var(--header-h) + 20px);
 
+
     &__bg {
         img {
             position: absolute;
@@ -16,6 +17,14 @@
             object-fit: cover;
             object-position: top;
             z-index: -1;
+        }
+    }
+}
+
+.desktop {
+    .complex-front-screen {
+        @include from(1240px){
+            height: calc(100vw * 0.526);
         }
     }
 }
