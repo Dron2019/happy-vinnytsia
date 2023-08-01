@@ -117,6 +117,16 @@ Swiper.use([Navigation, EffectFade, Lazy]);
             setgalleryList(res.data.gallery_list);
 
             const data = res.data.gallery_list[0];
+        if (data && document.documentElement.classList.contains('mobile')) {
+            setGallerySlider({
+                title: 'AAAAA',
+                gallery: [ ...data.gallery.map(el => el.img_mob ? el.img_mob : el.img) ],
+                miniFlatImage: data.img,
+                type: data.type,
+                type_gallery: data.type_gallery
+            });
+            return;
+        }
         if (data) {
             setGallerySlider({
                 title: 'AAAAA',

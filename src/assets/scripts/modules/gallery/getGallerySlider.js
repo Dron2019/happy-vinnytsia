@@ -16,6 +16,7 @@ export function getGallerySlider(id) {
         })
     }
     const fd = new FormData();
+    fd.append('device', document.documentElement.classList.contains('mobile') ? 'mobile' : 'desktop');
     fd.append('action', 'singleGallery');
     fd.append('id', id);
     return axios.post('/wp-admin/admin-ajax.php', fd);
@@ -36,5 +37,6 @@ export function getGalleryList() {
         })
     }
     const fd = new FormData(); fd.append('action', 'gallery');
+    fd.append('device', document.documentElement.classList.contains('mobile') ? 'mobile' : 'desktop');
     return axios.post('/wp-admin/admin-ajax.php', fd);
 }
