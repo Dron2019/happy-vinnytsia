@@ -563,7 +563,7 @@
 
 .desktop {
     .build-progress-popup {
-        padding-right: 20px;
+        padding-right: 0;
         [fill-opacity] {
             transition: .45s ease-out;
         }

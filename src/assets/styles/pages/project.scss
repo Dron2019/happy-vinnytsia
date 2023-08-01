@@ -22,7 +22,7 @@
 }
 
 .desktop {
-    .complex-front-screen {
+    .complex-front-screen:not(.gallery-front-screen) {
         @include from(1240px){
             height: calc(100vw * 0.526);
         }
