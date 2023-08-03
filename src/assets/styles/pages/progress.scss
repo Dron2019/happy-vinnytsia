@@ -7,6 +7,12 @@
     padding-top: calc(var(--header-h) + 20px);
     height: auto;
     transition: .25s ease-out;
+    #dataContainer {
+        width: 100%;
+    }
+    #demo {
+        margin-top: 40px;
+    }
     &:after {
         content: '';
         position: fixed;
@@ -51,6 +57,7 @@
     
     [data-empty-results]:last-child {
         display: block;
+        display: none;
     }
     &.loading [data-empty-results],
     [data-empty-results] {

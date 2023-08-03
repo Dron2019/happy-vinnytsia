@@ -87,6 +87,7 @@
     "jquery": "^3.7.0",
     "locomotive-scroll": "^4.0.6",
     "on-change": "^2.2.1",
+    "paginationjs": "^2.6.0",
     "yup": "^0.32.8"
   }
 }

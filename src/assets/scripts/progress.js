@@ -1,5 +1,5 @@
-const { gsap } = require("gsap/all");
-
+const { gsap } = require("gsap/all");// Перед імпортом pagination.js підключіть jQuery
+import './modules/pagination/pagination';
 import menu from './modules/menu';
 import { lenis } from './modules/scroll/leniscroll';
 const { useState } = require("./modules/helpers/helpers");
@@ -130,22 +130,37 @@ useProgressEffect(({ pending, container, tabs }) => {
     }, 1000);
 });
 useProgressEffect(({ data, container, ...some }) => {
-    container.querySelectorAll('.progress-card').forEach(el => el.remove());
+    // container.querySelectorAll('.progress-card').forEach(el => el.remove());
 
-
-    container.insertAdjacentHTML('beforeend', data.map(el => {
-        if (progress().sections.length === 0 || !el.sections) return progressCard(el);
-
-        let returnValue = '';
-
-        el.sections.forEach(sectionOfElement => {
-            if (progress().sections.includes(sectionOfElement))  {
-                returnValue = progressCard(el);
+    
+    $('#demo').pagination({
+        dataSource: data,
+        pageSize: 4,
+        callback: function(data, pagination) {
+            // template method of yourself
+            
+            var html = data.map(el => progressCard(el)).join('');
+            $('#dataContainer').html(html);
+            if (document.documentElement.classList.contains('mobile')) {
+                window.scrollTo(0, 0);
+            } else {
+                lenis.scrollTo(document.body)
             }
-        })
+        }
+    })
+    // container.insertAdjacentHTML('beforeend', data.map(el => {
+    //     if (progress().sections.length === 0 || !el.sections) return progressCard(el);
 
-        return returnValue;
-    }).join(''));
+    //     let returnValue = '';
+
+    //     el.sections.forEach(sectionOfElement => {
+    //         if (progress().sections.includes(sectionOfElement))  {
+    //             returnValue = progressCard(el);
+    //         }
+    //     })
+
+    //     return returnValue;
+    // }).join(''));
 });
 
 const [tab,setTab,useTabEffect] = useState({

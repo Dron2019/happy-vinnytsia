@@ -48,8 +48,8 @@ export function getProgressList({ type, sections = [] }) {
                         img: './assets/images/home/home-page-screen1@05x.jpg', 
                         id: 15055151,
                         linkText: 'Детальніше',
-                        title: new Date().getTime(),
-                        date: '30.07.2023',
+                        title: 'fewfewgewgewghewhj',
+                        date: '31.07.2023',
                         text: 'Монтаж ліфтів Продовжується влаштування систем опалення, вентиляції, водопроводу, каналізації та електрики. Проходять фасадні роботи на торцях. Влаштування утеплення на балконах.',
                         gallery: [],
                     }

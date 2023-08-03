@@ -31,6 +31,11 @@ const config = {
     },
   },
   plugins: [
+
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+    }),
     new UglifyJSPlugin({
       sourceMap: true,
       uglifyOptions: {
