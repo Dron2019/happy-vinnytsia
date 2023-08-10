@@ -453,6 +453,12 @@
 			padding: 0;
 			background: none;
 			margin-left: 24px;
+			width: 32px;
+			height: 32px;
+			svg {
+				width: 32px;
+				height: 32px;
+			}
 			[stroke] {
 				stroke: var(--color-white);
 			}
@@ -477,7 +483,7 @@
 			}
 		}
 		&>:first-child {
-			width: 100px;
+			width: 130px;
 			svg {
 				width: 100%;
 				height: auto;
